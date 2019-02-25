@@ -63,13 +63,8 @@ public class ExternalFile {
 
     public static void readBookFile() throws IOException {
         String[] stringArray = splitLine();
-
-        int categoryId = Integer.parseInt(stringArray[stringArray.length - 1]);
-        Category category = getCategory(listOfCategories, categoryId);
-
-        String[] authorID = stringArray[5].split(",");
-        List<Author> authorsInTheBook = new ArrayList<>();
-        getListOfAuthorsInTheBook(listOfAuthors, authorID, authorsInTheBook);
+        Category category = getCategory(stringArray[stringArray.length - 1]);
+        List<Author> authorsInTheBook = getAuthors(stringArray[5]);
 
         Book book = new Book(
                 Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2]),
@@ -77,13 +72,16 @@ public class ExternalFile {
         listOfBooks.add(book);
     }
 
-    private static Category getCategory(List<Category> listOfCategories, int categoryId) {
+    private static Category getCategory(String s) {
+        int categoryId = Integer.parseInt(s);
         return listOfCategories.stream()
                 .filter(x -> x.getId() == categoryId)
                 .findFirst().get();
     }
 
-    private static void getListOfAuthorsInTheBook(List<Author> listOfAuthors, String[] authorID, List<Author> authorsInTheBook) {
+    private static List<Author> getAuthors(String s) {
+        String[] authorID = s.split(",");
+        List<Author> authorsInTheBook = new ArrayList<>();
         for (int i = 0; i < authorID.length; i++) {
             for (Author listOfAuthor : listOfAuthors) {
                 if (listOfAuthor.getId() == Integer.parseInt(authorID[i])) {
@@ -91,5 +89,6 @@ public class ExternalFile {
                 }
             }
         }
+        return authorsInTheBook;
     }
 }
