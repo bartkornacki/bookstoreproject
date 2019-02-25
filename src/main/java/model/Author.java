@@ -39,8 +39,8 @@ public class Author {
     @Override
     public String toString() {
         return
-                "\tid:\t" + id +
-                "\n*\t\tname:\t" + name +
-                "*\n*\t\tage:\t" + age;
+                "\n*\t\tid:\t\t\t" + id +
+                "\n*\t\tname:\t\t" + name +
+                "\n*\t\tage:\t\t" + age;
     }
 }

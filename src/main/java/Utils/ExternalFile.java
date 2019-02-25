@@ -19,9 +19,7 @@ public class ExternalFile {
         readFile(DataType.CATEGORY, fileCategories);
         readFile(DataType.AUTHOR, fileAuthors);
 //        readFile(DataType.BOOK, fileBooks);
-//        readCategoryFile(fileCategories);
-//        readAuthorFile(fileAuthors);
-        readBookFile(fileBooks, listOfCategories, listOfAuthors);
+        readBookFile(fileBooks);
 
         DataPresenting.showData(listOfBooks, listOfAuthors, listOfCategories);
     }
@@ -38,16 +36,16 @@ public class ExternalFile {
     }
 
 
-    public static void readBookFile(String file, List<Category> listOfCategories, List<Author> listOfAuthors) throws IOException {
+    public static void readBookFile(String file) throws IOException {
         reader = new ExternalFile().openAnExternalFile(file);
         while (reader.ready()) {
             String[] stringArray = splitLine();
-            fulfillListOfBooks(listOfCategories, listOfAuthors, stringArray);
+            fulfillListOfBooks(stringArray);
         }
         reader.close();
     }
 
-    private static void fulfillListOfBooks(List<Category> listOfCategories, List<Author> listOfAuthors, String[] stringArray) {
+    private static void fulfillListOfBooks(String[] stringArray) {
         int categoryId = Integer.parseInt(stringArray[stringArray.length - 1]);
         String[] authorID = stringArray[5].split(",");
         List<Author> authorsInTheBook = new ArrayList<>();
@@ -89,8 +87,7 @@ public class ExternalFile {
                     listOfAuthors.add(new Author(
                             Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
 //                case BOOK:
-//                    fulfillListOfBooks(listOfCategories, listOfAuthors, stringArray);
-//                    System.out.println("Wrong turn");
+//                    fulfillListOfBooks(stringArray);
             }
         }
         reader.close();

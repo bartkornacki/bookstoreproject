@@ -81,11 +81,11 @@ public class Book {
     public String toString() {
         return "\n*********************************************************" +
                 "\n*\tBook:" +
-                "\n*\tid:\t\t" + id +
-                "\n*\ttitle:\t" + title +
-                "\n*\tISBN:\t" + isbnNumber +
-                "\n*\tyear:\t" + year +
-                "\n*\tbezel:\t" + bezel +
+                "\n*\tid:\t\t\t\t" + id +
+                "\n*\ttitle:\t\t\t" + title +
+                "\n*\tISBN:\t\t\t" + isbnNumber +
+                "\n*\tyear:\t\t\t" + year +
+                "\n*\tbezel:\t\t\t" + bezel +
                 "\n*\tauthors:\n*\t" + authors +
                 "\n*\tcategory:\n*\t" + category +
                 "\n*********************************************************";

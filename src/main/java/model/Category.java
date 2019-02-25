@@ -38,8 +38,8 @@ public class Category {
     @Override
     public String toString() {
         return
-                "\tid:\t" + id +
-                "\n*\t\tname:\t" + name +
+                "\tid:\t\t\t" + id +
+                "\n*\t\tname:\t\t" + name +
                 "\n*\t\tpriority\t" + priority;
     }
 }
