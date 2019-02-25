@@ -8,8 +8,8 @@ import java.util.List;
 
 public class DataPresenting {
     static void showData(List<Book> listOfBooks, List<Author> listOfAuthors, List<Category> listOfCategories) {
-        showCategories(listOfCategories);
-        showAuthors(listOfAuthors);
+//        showCategories(listOfCategories);
+//        showAuthors(listOfAuthors);
         showBooks(listOfBooks);
     }
 
