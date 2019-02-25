@@ -15,8 +15,50 @@ public class ExternalFile {
     private static List<String> tempList = new ArrayList<>();
     private static BufferedReader reader;
 
-    public static List<Category> categoryFileReader(String file) throws IOException {
-        reader = new ExternalFile().fileOpener(file);
+    public static void readDataFromExternalFiles(String fileCategories, String fileAuthors, String fileBooks) throws IOException {
+        List<Book> listOfBooks;
+        List<Author> listOfAuthors;
+        List<Category> listOfCategories;
+
+        listOfCategories = readCategoryFile(fileCategories);
+        listOfAuthors = readAuthorFile(fileAuthors);
+        listOfBooks = readBookFile(fileBooks, listOfCategories, listOfAuthors);
+
+        showData(listOfBooks, listOfAuthors, listOfCategories);
+    }
+
+    private static void showData(List<Book> listOfBooks, List<Author> listOfAuthors, List<Category> listOfCategories) {
+        showCategories(listOfCategories);
+        showAuthors(listOfAuthors);
+        showBooks(listOfBooks);
+    }
+
+    public static void showCategories(List<Category> listOfCategories) {
+        for (Category c : listOfCategories) {
+            System.out.println(c.toString());
+        }
+    }
+
+    public static void showAuthors(List<Author> listOfAuthors) {
+        for (Author a : listOfAuthors) {
+            System.out.println(a.toString());
+        }
+    }
+
+    public static void showBooks(List<Book> listOfBooks) {
+        for (Book b : listOfBooks) {
+            System.out.println(b.toString());
+        }
+    }
+
+    private BufferedReader openAnExternalFile(String file) throws FileNotFoundException {
+        InputStream is = new FileInputStream(file);
+        InputStreamReader isr = new InputStreamReader(is);
+        return new BufferedReader(isr);
+    }
+
+    public static List<Category> readCategoryFile(String file) throws IOException {
+        reader = new ExternalFile().openAnExternalFile(file);
         while (reader.ready()) {
             String line = reader.readLine();
             tempList.add(line);
@@ -30,9 +72,8 @@ public class ExternalFile {
         return listOfCategories;
     }
 
-    public static List<Author> authorFileReader(String file) throws IOException {
-        reader = new ExternalFile().fileOpener(file);
-
+    public static List<Author> readAuthorFile(String file) throws IOException {
+        reader = new ExternalFile().openAnExternalFile(file);
         while (reader.ready()) {
             String line = reader.readLine();
             tempList.add(line);
@@ -43,13 +84,11 @@ public class ExternalFile {
             listOfAuthors.add(author);
         }
         reader.close();
-
         return listOfAuthors;
     }
 
-    public static List<Book> bookFileReader(String file, List<Category> listOfCategories, List<Author> listOfAuthors) throws IOException {
-        reader = new ExternalFile().fileOpener(file);
-
+    public static List<Book> readBookFile(String file, List<Category> listOfCategories, List<Author> listOfAuthors) throws IOException {
+        reader = new ExternalFile().openAnExternalFile(file);
         while (reader.ready()) {
             String line = reader.readLine();
             tempList.add(line);
@@ -70,7 +109,7 @@ public class ExternalFile {
 
             for (int i = 0; i < authorIDs.length; i++) {
                 for (Author listOfAuthor : listOfAuthors) {
-                    if (listOfAuthor.getId() == Integer.parseInt(authorIDs[i])){
+                    if (listOfAuthor.getId() == Integer.parseInt(authorIDs[i])) {
                         listOfAuthorsInTheBook.add(listOfAuthor);
                     }
                 }
@@ -90,38 +129,6 @@ public class ExternalFile {
             listOfBooks.add(book);
         }
         reader.close();
-
         return listOfBooks;
-    }
-
-    private BufferedReader fileOpener(String file) throws FileNotFoundException {
-        InputStream is = new FileInputStream(file);
-        InputStreamReader isr = new InputStreamReader(is);
-        return new BufferedReader(isr);
-    }
-
-    public static void categoriesReader(List<Category> listOfCategories) {
-        for (Category c : listOfCategories) {
-            System.out.println("*******************");
-            System.out.println("Title of the categories: " + c.getName());
-            System.out.println("Title of the categories: " + c.getId());
-            System.out.println("Title of the categories: " + c.getPriority());
-            System.out.println("*******************");
-        }
-    }
-
-    public static void authorsReader(List<Author> listOfAuthors) {
-        for (Author a : listOfAuthors) {
-            System.out.println("*******************");
-            System.out.println("Title of the authors: " + a.getName());
-            System.out.println("*******************");
-        }
-    }
-
-    public static void booksReader(List<Book> listOfBooks) {
-        for (Book b : listOfBooks) {
-//            System.out.println("*******************");
-            System.out.println(b.toString());
-        }
     }
 }
