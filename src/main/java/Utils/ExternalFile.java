@@ -16,13 +16,12 @@ public class ExternalFile {
     private static BufferedReader reader;
 
     public static void readDataFromExternalFiles(String fileCategories, String fileAuthors, String fileBooks) throws IOException {
-        List<Book> listOfBooks;
-        List<Author> listOfAuthors;
-        List<Category> listOfCategories;
-
-        listOfCategories = readCategoryFile(fileCategories);
-        listOfAuthors = readAuthorFile(fileAuthors);
-        listOfBooks = readBookFile(fileBooks, listOfCategories, listOfAuthors);
+        readFile(DataType.CATEGORY, fileCategories);
+        readFile(DataType.AUTHOR, fileAuthors);
+//        readFile(DataType.BOOK, fileBooks);
+//        readCategoryFile(fileCategories);
+//        readAuthorFile(fileAuthors);
+        readBookFile(fileBooks, listOfCategories, listOfAuthors);
 
         DataPresenting.showData(listOfBooks, listOfAuthors, listOfCategories);
     }
@@ -38,36 +37,14 @@ public class ExternalFile {
         return line.split(";");
     }
 
-    public static List<Category> readCategoryFile(String file) throws IOException {
-        reader = new ExternalFile().openAnExternalFile(file);
-        while (reader.ready()) {
-            String[] stringArray = splitLine();
-            listOfCategories.add(new Category(
-                    Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
-        }
-        reader.close();
-        return listOfCategories;
-    }
 
-    public static List<Author> readAuthorFile(String file) throws IOException {
-        reader = new ExternalFile().openAnExternalFile(file);
-        while (reader.ready()) {
-            String[] stringArray = splitLine();
-            listOfAuthors.add(new Author(
-                    Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
-        }
-        reader.close();
-        return listOfAuthors;
-    }
-
-    public static List<Book> readBookFile(String file, List<Category> listOfCategories, List<Author> listOfAuthors) throws IOException {
+    public static void readBookFile(String file, List<Category> listOfCategories, List<Author> listOfAuthors) throws IOException {
         reader = new ExternalFile().openAnExternalFile(file);
         while (reader.ready()) {
             String[] stringArray = splitLine();
             fulfillListOfBooks(listOfCategories, listOfAuthors, stringArray);
         }
         reader.close();
-        return listOfBooks;
     }
 
     private static void fulfillListOfBooks(List<Category> listOfCategories, List<Author> listOfAuthors, String[] stringArray) {
@@ -96,7 +73,46 @@ public class ExternalFile {
 
     private static Category getCategory(List<Category> listOfCategories, int categoryId) {
         return listOfCategories.stream()
-                    .filter(x -> x.getId() == categoryId)
-                    .findFirst().get();
+                .filter(x -> x.getId() == categoryId)
+                .findFirst().get();
+    }
+
+    public static void readFile(DataType dataType, String file) throws IOException {
+        reader = new ExternalFile().openAnExternalFile(file);
+        while (reader.ready()) {
+            String[] stringArray = splitLine();
+            switch (dataType){
+                case CATEGORY:
+                    listOfCategories.add(new Category(
+                            Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
+                case AUTHOR:
+                    listOfAuthors.add(new Author(
+                            Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
+//                case BOOK:
+//                    fulfillListOfBooks(listOfCategories, listOfAuthors, stringArray);
+//                    System.out.println("Wrong turn");
+            }
+        }
+        reader.close();
+    }
+
+    public static void readCategoryFile(String file) throws IOException {
+        reader = new ExternalFile().openAnExternalFile(file);
+        while (reader.ready()) {
+            String[] stringArray = splitLine();
+            listOfCategories.add(new Category(
+                    Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
+        }
+        reader.close();
+    }
+
+    public static void readAuthorFile(String file) throws IOException {
+        reader = new ExternalFile().openAnExternalFile(file);
+        while (reader.ready()) {
+            String[] stringArray = splitLine();
+            listOfAuthors.add(new Author(
+                    Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
+        }
+        reader.close();
     }
 }

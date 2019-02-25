@@ -9,6 +9,5 @@ public class Main {
         String fileBooks = "books2.csv";
 
         MenuMaintenance.menuNavigation(fileCategories, fileAuthors, fileBooks);
-        System.out.println();
     }
 }
