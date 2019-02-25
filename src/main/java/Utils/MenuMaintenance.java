@@ -8,15 +8,14 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-public class MenuAction {
+public class MenuMaintenance {
 
-    public static void menu(String fileCategories, String fileAuthors, String fileBooks) throws IOException {
+    public static void menuNavigation(String fileCategories, String fileAuthors, String fileBooks) throws IOException {
         int action;
-
         do {
             showMenu();
-            action = readAction();
-            makeAction(action, fileCategories, fileAuthors, fileBooks);
+            action = insertTheNumberOfAnAction();
+            chooseAnActionFromTheMenu(action, fileCategories, fileAuthors, fileBooks);
         } while (action != 2);
     }
 
@@ -30,10 +29,15 @@ public class MenuAction {
         System.out.println("*********************************************************\n");
     }
 
-    private static void makeAction(int readAction, String fileCategories, String fileAuthors, String fileBooks) throws IOException {
+    private static int insertTheNumberOfAnAction() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
+    }
+
+    private static void chooseAnActionFromTheMenu(int readAction, String fileCategories, String fileAuthors, String fileBooks) throws IOException {
         switch (readAction) {
             case 1:
-                readingData(fileCategories, fileAuthors, fileBooks);
+                readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);
                 break;
             case 2:
                 System.out.println("Goodbye.");
@@ -44,12 +48,7 @@ public class MenuAction {
         }
     }
 
-    private static int readAction() {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
-    }
-
-    public static void readingData(String fileCategories, String fileAuthors, String fileBooks) throws IOException {
+    public static void readDataFromExternalFiles(String fileCategories, String fileAuthors, String fileBooks) throws IOException {
         List<Book> listOfBooks;
         List<Author> listOfAuthors;
         List<Category> listOfCategories;

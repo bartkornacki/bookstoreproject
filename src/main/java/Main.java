@@ -8,7 +8,7 @@ public class Main {
         String fileAuthors = "authors.csv";
         String fileBooks = "books2.csv";
 
-        MenuAction.menu(fileCategories, fileAuthors, fileBooks);
+        MenuMaintenance.menuNavigation(fileCategories, fileAuthors, fileBooks);
         System.out.println();
     }
 }
