@@ -75,10 +75,16 @@ public class ExternalFile {
         String[] authorID = stringArray[5].split(",");
         List<Author> authorsInTheBook = new ArrayList<>();
 
-        Category category = listOfCategories.stream()
-                .filter(x -> x.getId() == categoryId)
-                .findFirst().get();
+        Category category = getCategory(listOfCategories, categoryId);
+        getListOfAuthorsInTheBook(listOfAuthors, authorID, authorsInTheBook);
 
+        Book book = new Book(
+                Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2]),
+                Integer.valueOf(stringArray[3]), stringArray[4], authorsInTheBook, category);
+        listOfBooks.add(book);
+    }
+
+    private static void getListOfAuthorsInTheBook(List<Author> listOfAuthors, String[] authorID, List<Author> authorsInTheBook) {
         for (int i = 0; i < authorID.length; i++) {
             for (Author listOfAuthor : listOfAuthors) {
                 if (listOfAuthor.getId() == Integer.parseInt(authorID[i])) {
@@ -86,10 +92,11 @@ public class ExternalFile {
                 }
             }
         }
+    }
 
-        Book book = new Book(
-                Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2]),
-                Integer.valueOf(stringArray[3]), stringArray[4], authorsInTheBook, category);
-        listOfBooks.add(book);
+    private static Category getCategory(List<Category> listOfCategories, int categoryId) {
+        return listOfCategories.stream()
+                    .filter(x -> x.getId() == categoryId)
+                    .findFirst().get();
     }
 }
