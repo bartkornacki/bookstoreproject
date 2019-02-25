@@ -8,12 +8,12 @@ import static utils.DataFromExternalFile.readDataFromExternalFiles;
 public class MenuMaintenance {
 
     public static void menuNavigation(String fileCategories, String fileAuthors, String fileBooks) throws IOException {
-        String action;
+        int action;
         do {
             showMenu();
-            action = insertTheNumberOfAnAction();
+            action = Integer.parseInt(insertTheNumberOfAnAction());
             proceedWithChosenAction(action, fileCategories, fileAuthors, fileBooks);
-        } while (action != "2");
+        } while (action != 2);
     }
 
     public static void showMenu() {
@@ -31,12 +31,12 @@ public class MenuMaintenance {
         return scanner.next();
     }
 
-    private static void proceedWithChosenAction(String readAction, String fileCategories, String fileAuthors, String fileBooks) throws IOException {
+    private static void proceedWithChosenAction(int readAction, String fileCategories, String fileAuthors, String fileBooks) throws IOException {
         switch (readAction) {
-            case "1":
-                readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);
+            case 1:
+                    readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);
                 break;
-            case "2":
+            case 2:
                 System.out.println("Goodbye.");
                 break;
             default:

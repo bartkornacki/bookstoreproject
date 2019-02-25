@@ -50,7 +50,8 @@ public class DataFromExternalFile {
     }
 
     public static void readCategoryFile() throws IOException {
-        String[] stringArray = splitLine();
+        String[] stringArray = new String[0];
+        stringArray = splitLine();
         listOfCategories.add(new Category(
                 Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
     }
