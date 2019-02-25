@@ -1,4 +1,6 @@
-import Utils.*;
+package bookstore;
+
+import utils.*;
 
 import java.io.*;
 

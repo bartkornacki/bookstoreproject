@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 import model.Author;
 import model.Book;
@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExternalFile {
+public class DataFromExternalFile {
     private static List<Book> listOfBooks = new ArrayList<>();
     private static List<Author> listOfAuthors = new ArrayList<>();
     private static List<Category> listOfCategories = new ArrayList<>();
@@ -33,7 +33,7 @@ public class ExternalFile {
     }
 
     public static void readFile(DataType dataType, String file) throws IOException {
-        reader = new ExternalFile().openAnExternalFile(file);
+        reader = new DataFromExternalFile().openAnExternalFile(file);
         while (reader.ready()) {
             switch (dataType) {
                 case CATEGORY:

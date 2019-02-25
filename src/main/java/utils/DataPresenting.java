@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 import model.Author;
 import model.Book;
@@ -8,8 +8,6 @@ import java.util.List;
 
 public class DataPresenting {
     static void showData(List<Book> listOfBooks, List<Author> listOfAuthors, List<Category> listOfCategories) {
-//        showCategories(listOfCategories);
-//        showAuthors(listOfAuthors);
         showBooks(listOfBooks);
     }
 
