@@ -24,31 +24,7 @@ public class ExternalFile {
         listOfAuthors = readAuthorFile(fileAuthors);
         listOfBooks = readBookFile(fileBooks, listOfCategories, listOfAuthors);
 
-        showData(listOfBooks, listOfAuthors, listOfCategories);
-    }
-
-    private static void showData(List<Book> listOfBooks, List<Author> listOfAuthors, List<Category> listOfCategories) {
-        showCategories(listOfCategories);
-        showAuthors(listOfAuthors);
-        showBooks(listOfBooks);
-    }
-
-    public static void showCategories(List<Category> listOfCategories) {
-        for (Category c : listOfCategories) {
-            System.out.println(c.toString());
-        }
-    }
-
-    public static void showAuthors(List<Author> listOfAuthors) {
-        for (Author a : listOfAuthors) {
-            System.out.println(a.toString());
-        }
-    }
-
-    public static void showBooks(List<Book> listOfBooks) {
-        for (Book b : listOfBooks) {
-            System.out.println(b.toString());
-        }
+        DataPresenting.showData(listOfBooks, listOfAuthors, listOfCategories);
     }
 
     private BufferedReader openAnExternalFile(String file) throws FileNotFoundException {
@@ -57,16 +33,17 @@ public class ExternalFile {
         return new BufferedReader(isr);
     }
 
+    private static String[] splitLine() throws IOException {
+        String line = reader.readLine();
+        return line.split(";");
+    }
+
     public static List<Category> readCategoryFile(String file) throws IOException {
         reader = new ExternalFile().openAnExternalFile(file);
         while (reader.ready()) {
-            String line = reader.readLine();
-            tempList.add(line);
-            String[] tempStringArray = line.split(";");
-
-            Category category = new Category(
-                    Integer.valueOf(tempStringArray[0]), tempStringArray[1], Integer.valueOf(tempStringArray[2]));
-            listOfCategories.add(category);
+            String[] stringArray = splitLine();
+            listOfCategories.add(new Category(
+                    Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
         }
         reader.close();
         return listOfCategories;
@@ -75,13 +52,9 @@ public class ExternalFile {
     public static List<Author> readAuthorFile(String file) throws IOException {
         reader = new ExternalFile().openAnExternalFile(file);
         while (reader.ready()) {
-            String line = reader.readLine();
-            tempList.add(line);
-            String[] tempStringArray = line.split(";");
-
-            Author author = new Author(
-                    Integer.valueOf(tempStringArray[0]), tempStringArray[1], Integer.valueOf(tempStringArray[2]));
-            listOfAuthors.add(author);
+            String[] stringArray = splitLine();
+            listOfAuthors.add(new Author(
+                    Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
         }
         reader.close();
         return listOfAuthors;
@@ -90,45 +63,33 @@ public class ExternalFile {
     public static List<Book> readBookFile(String file, List<Category> listOfCategories, List<Author> listOfAuthors) throws IOException {
         reader = new ExternalFile().openAnExternalFile(file);
         while (reader.ready()) {
-            String line = reader.readLine();
-            tempList.add(line);
-            String[] tempStringArray = line.split(";");
-
-            int categoryId = Integer.parseInt(tempStringArray[tempStringArray.length - 1]);
-            Category category = listOfCategories.stream()
-                    .filter(x -> x.getId() == categoryId)
-                    .findFirst().get();
-
-            String[] authorIDs = tempStringArray[5].split(",");
-            List<Integer> listOfAuthorIDs = new ArrayList<>();
-            for (int i = 0; i < authorIDs.length; i++) {
-                listOfAuthorIDs.add(Integer.parseInt(String.valueOf(authorIDs[i])));
-            }
-
-            List<Author> listOfAuthorsInTheBook = new ArrayList<>();
-
-            for (int i = 0; i < authorIDs.length; i++) {
-                for (Author listOfAuthor : listOfAuthors) {
-                    if (listOfAuthor.getId() == Integer.parseInt(authorIDs[i])) {
-                        listOfAuthorsInTheBook.add(listOfAuthor);
-                    }
-                }
-            }
-
-//            int authorID = Integer.parseInt(authorIDs[authorIDs.length - 1]);
-//            for (int i = 0; i < authorIDs.length; i++) {
-//                listOfAuthorsInTheBook = listOfAuthors.stream()
-//                        .filter(x -> x.getId() == authorID)
-//                        .collect(Collectors.toList());
-//                        .findFirst().get();
-//            }
-
-            Book book = new Book(
-                    Integer.valueOf(tempStringArray[0]), tempStringArray[1], Integer.valueOf(tempStringArray[2]),
-                    Integer.valueOf(tempStringArray[3]), tempStringArray[4], listOfAuthorsInTheBook, category);
-            listOfBooks.add(book);
+            String[] stringArray = splitLine();
+            fulfillListOfBooks(listOfCategories, listOfAuthors, stringArray);
         }
         reader.close();
         return listOfBooks;
+    }
+
+    private static void fulfillListOfBooks(List<Category> listOfCategories, List<Author> listOfAuthors, String[] stringArray) {
+        int categoryId = Integer.parseInt(stringArray[stringArray.length - 1]);
+        String[] authorID = stringArray[5].split(",");
+        List<Author> authorsInTheBook = new ArrayList<>();
+
+        Category category = listOfCategories.stream()
+                .filter(x -> x.getId() == categoryId)
+                .findFirst().get();
+
+        for (int i = 0; i < authorID.length; i++) {
+            for (Author listOfAuthor : listOfAuthors) {
+                if (listOfAuthor.getId() == Integer.parseInt(authorID[i])) {
+                    authorsInTheBook.add(listOfAuthor);
+                }
+            }
+        }
+
+        Book book = new Book(
+                Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2]),
+                Integer.valueOf(stringArray[3]), stringArray[4], authorsInTheBook, category);
+        listOfBooks.add(book);
     }
 }
