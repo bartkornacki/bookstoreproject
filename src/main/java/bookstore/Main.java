@@ -6,7 +6,7 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
-        String fileCategories = "categories.csv";
+        String fileCategories = "categories2.csv";
         String fileAuthors = "authors.csv";
         String fileBooks = "books.csv";
 
