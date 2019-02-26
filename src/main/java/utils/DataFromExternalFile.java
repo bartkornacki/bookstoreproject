@@ -7,6 +7,7 @@ import model.Category;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class DataFromExternalFile {
     private static List<Book> listOfBooks = new ArrayList<>();
@@ -15,21 +16,9 @@ public class DataFromExternalFile {
     private static BufferedReader reader;
 
     public static void readDataFromExternalFiles(String fileCategories, String fileAuthors, String fileBooks) {
-        try {
-            readFile(DataType.CATEGORY, fileCategories);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            readFile(DataType.AUTHOR, fileAuthors);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            readFile(DataType.BOOK, fileBooks);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        readFile(DataType.CATEGORY, fileCategories);
+        readFile(DataType.AUTHOR, fileAuthors);
+        readFile(DataType.BOOK, fileBooks);
         DataPresenting.showData(listOfBooks, listOfAuthors, listOfCategories);
     }
 
@@ -54,29 +43,41 @@ public class DataFromExternalFile {
         }
     }
 
-    public static void readFile(DataType dataType, String file) throws IOException {
+    public static void readFile(DataType dataType, String file) {
         reader = new DataFromExternalFile().openAnExternalFile(file);
-        
-        while (reader.ready()) {
-            switch (dataType) {
-                case CATEGORY:
-                    readCategoryFile();
-                    break;
-                case AUTHOR:
-                    readAuthorFile();
-                    break;
-                case BOOK:
-                    readBookFile();
-            }
-        }
+
         try {
-            reader.close();
+            if (reader != null) {
+                while (reader.ready()) {
+                    switch (dataType) {
+                        case CATEGORY:
+                            readCategoryFile();
+                            break;
+                        case AUTHOR:
+                            readAuthorFile();
+                            break;
+                        case BOOK:
+                            readBookFile();
+                    }
+                }
+                reader.close();
+            }
+            else{
+                System.out.println("At least one file wasn't imported. Please ensure that all files exist!");
+                listOfCategories = null;
+                System.out.println("Category file wasn't read");
+                listOfAuthors = null;
+                System.out.println("Author file wasn't read");
+                listOfBooks = null;
+                System.out.println("Book file wasn't read");
+                System.exit(1);
+            }
         } catch (IOException e) {
-            e.printStackTrace();
+
         }
     }
 
-    public static void readCategoryFile()  {
+    public static void readCategoryFile() {
         String[] stringArray = splitLine();
         listOfCategories.add(new Category(
                 Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
@@ -100,10 +101,16 @@ public class DataFromExternalFile {
     }
 
     private static Category getCategory(String s) {
-        int categoryId = Integer.parseInt(s);
-        return listOfCategories.stream()
-                .filter(x -> x.getId() == categoryId)
-                .findFirst().get();
+        try {
+            int categoryId = Integer.parseInt(s);
+            return listOfCategories.stream()
+                    .filter(x -> x.getId() == categoryId)
+                    .findFirst().get();
+        }
+        catch (NoSuchElementException e){
+            System.out.println("Category wasn't assigned to the book");
+            return null;
+        }
     }
 
     private static List<Author> getAuthors(String s) {
