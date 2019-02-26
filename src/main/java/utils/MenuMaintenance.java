@@ -7,7 +7,7 @@ import static utils.DataFromExternalFile.readDataFromExternalFiles;
 
 public class MenuMaintenance {
 
-    public static void menuNavigation(String fileCategories, String fileAuthors, String fileBooks) throws IOException {
+    public static void menuNavigation(String fileCategories, String fileAuthors, String fileBooks) {
         int action;
         do {
             showMenu();
@@ -31,7 +31,7 @@ public class MenuMaintenance {
         return scanner.next();
     }
 
-    private static void proceedWithChosenAction(int readAction, String fileCategories, String fileAuthors, String fileBooks) throws IOException {
+    private static void proceedWithChosenAction(int readAction, String fileCategories, String fileAuthors, String fileBooks) {
         switch (readAction) {
             case 1:
                 readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);

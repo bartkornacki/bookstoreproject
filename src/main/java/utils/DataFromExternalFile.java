@@ -73,15 +73,25 @@ public class DataFromExternalFile {
         printWriter.close();
     }
 
-    private BufferedReader openAnExternalFile(String file) throws FileNotFoundException {
-        InputStream is = new FileInputStream(file);
-        InputStreamReader isr = new InputStreamReader(is);
-        return new BufferedReader(isr);
+    private BufferedReader openAnExternalFile(String file) {
+        InputStream is = null;
+        try {
+            is = new FileInputStream(file);
+            InputStreamReader isr = new InputStreamReader(is);
+            return new BufferedReader(isr);
+        } catch (FileNotFoundException e) {
+            return null;
+        }
     }
 
-    private static String[] splitLine() throws IOException {
-        String line = reader.readLine();
-        return line.split(";");
+    private static String[] splitLine() {
+        String line = null;
+        try {
+            line = reader.readLine();
+            return line.split(";");
+        } catch (IOException e) {
+            return null;
+        }
     }
 
     public static void readFile(DataType dataType, String file) throws IOException {
@@ -101,19 +111,19 @@ public class DataFromExternalFile {
         reader.close();
     }
 
-    public static void readCategoryFile() throws IOException {
+    public static void readCategoryFile()  {
         String[] stringArray = splitLine();
         listOfCategories.add(new Category(
                 Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
     }
 
-    public static void readAuthorFile() throws IOException {
+    public static void readAuthorFile() {
         String[] stringArray = splitLine();
         listOfAuthors.add(new Author(
                 Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
     }
 
-    public static void readBookFile() throws IOException {
+    public static void readBookFile() {
         String[] stringArray = splitLine();
         Category category = getCategory(stringArray[stringArray.length - 1]);
         List<Author> authorsInTheBook = getAuthors(stringArray[5]);
