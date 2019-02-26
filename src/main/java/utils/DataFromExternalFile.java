@@ -18,9 +18,7 @@ public class DataFromExternalFile {
         try {
             readFile(DataType.CATEGORY, fileCategories);
         } catch (IOException e) {
-            listOfCategories.add(new Category(1, "Category may be incorrect!", 1));
-            listOfCategories.add(new Category(2, "Category may be incorrect!", 1));
-            listOfCategories.add(new Category(3, "Category may be incorrect!", 1));
+            fulfillListOfCategories();
 //            try {
 //                String newCategory = "1;Java;3\n" +
 //                        "2;Wzorce projektowe;1\n" +
@@ -36,21 +34,35 @@ public class DataFromExternalFile {
         try {
             readFile(DataType.AUTHOR, fileAuthors);
         } catch (IOException e) {
-            listOfAuthors.add(new Author(1, "Author may be incorrect!", 0));
-            listOfAuthors.add(new Author(2, "Author may be incorrect!", 0));
-            listOfAuthors.add(new Author(3, "Author may be incorrect!", 0));
-            listOfAuthors.add(new Author(4, "Author may be incorrect!", 0));
-            listOfAuthors.add(new Author(5, "Author may be incorrect!", 0));
-            listOfAuthors.add(new Author(6, "Author may be incorrect!", 0));
-            listOfAuthors.add(new Author(7, "Author may be incorrect!", 0));
-            listOfAuthors.add(new Author(8, "Author may be incorrect!", 0));
+            fulfillListOfAuthors();
         }
         try {
             readFile(DataType.BOOK, fileBooks);
         } catch (IOException e) {
-            listOfBooks.add(new Book(1, "Title may be incorrect!", 1, 0, null, null, null));
+            fulfillListOfBooks();
         }
         DataPresenting.showData(listOfBooks, listOfAuthors, listOfCategories);
+    }
+
+    private static void fulfillListOfBooks() {
+        listOfBooks.add(new Book(1, "Title may be incorrect!", 1, 0, null, null, null));
+    }
+
+    private static void fulfillListOfAuthors() {
+        listOfAuthors.add(new Author(1, "Author may be incorrect!", 0));
+        listOfAuthors.add(new Author(2, "Author may be incorrect!", 0));
+        listOfAuthors.add(new Author(3, "Author may be incorrect!", 0));
+        listOfAuthors.add(new Author(4, "Author may be incorrect!", 0));
+        listOfAuthors.add(new Author(5, "Author may be incorrect!", 0));
+        listOfAuthors.add(new Author(6, "Author may be incorrect!", 0));
+        listOfAuthors.add(new Author(7, "Author may be incorrect!", 0));
+        listOfAuthors.add(new Author(8, "Author may be incorrect!", 0));
+    }
+
+    private static void fulfillListOfCategories() {
+        listOfCategories.add(new Category(1, "Category may be incorrect!", 1));
+        listOfCategories.add(new Category(2, "Category may be incorrect!", 1));
+        listOfCategories.add(new Category(3, "Category may be incorrect!", 1));
     }
 
     private static void saveNewObjectToTheNewFile(String newInput, String fileCategories) throws FileNotFoundException {
