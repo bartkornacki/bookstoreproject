@@ -34,7 +34,7 @@ public class MenuMaintenance {
     private static void proceedWithChosenAction(int readAction, String fileCategories, String fileAuthors, String fileBooks) throws IOException {
         switch (readAction) {
             case 1:
-                    readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);
+                readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);
                 break;
             case 2:
                 System.out.println("Goodbye.");
