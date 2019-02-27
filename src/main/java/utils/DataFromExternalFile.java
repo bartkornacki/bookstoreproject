@@ -1,5 +1,6 @@
 package utils;
 
+import com.sun.xml.internal.bind.v2.TODO;
 import model.Author;
 import model.Book;
 import model.Category;
@@ -10,16 +11,16 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public class DataFromExternalFile {
-    private static List<Book> listOfBooks = new ArrayList<>();
-    private static List<Author> listOfAuthors = new ArrayList<>();
-    private static List<Category> listOfCategories = new ArrayList<>();
+    private static List<Book> listOfBooksFromFile = new ArrayList<>();
+    private static List<Author> listOfAuthorsFromFile = new ArrayList<>();
+    private static List<Category> listOfCategoriesFromFile = new ArrayList<>();
     private static BufferedReader reader;
 
     public static void readDataFromExternalFiles(String fileCategories, String fileAuthors, String fileBooks) {
         readFile(DataType.CATEGORY, fileCategories);
         readFile(DataType.AUTHOR, fileAuthors);
         readFile(DataType.BOOK, fileBooks);
-        DataPresenting.showData(listOfBooks, listOfAuthors, listOfCategories);
+        DataPresenting.showData(listOfBooksFromFile, listOfAuthorsFromFile, listOfCategoriesFromFile);
     }
 
     private BufferedReader openAnExternalFile(String file) {
@@ -63,12 +64,13 @@ public class DataFromExternalFile {
                 reader.close();
             }
             else{
+                // TODO: dlaczego nie w catch?
                 System.out.println("At least one file wasn't imported. Please ensure that all files exist!");
-                listOfCategories = null;
+                listOfCategoriesFromFile = null;
                 System.out.println("Category file wasn't read");
-                listOfAuthors = null;
+                listOfAuthorsFromFile = null;
                 System.out.println("Author file wasn't read");
-                listOfBooks = null;
+                listOfBooksFromFile = null;
                 System.out.println("Book file wasn't read");
                 System.exit(1);
             }
@@ -79,13 +81,13 @@ public class DataFromExternalFile {
 
     public static void readCategoryFile() {
         String[] stringArray = splitLine();
-        listOfCategories.add(new Category(
+        listOfCategoriesFromFile.add(new Category(
                 Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
     }
 
     public static void readAuthorFile() {
         String[] stringArray = splitLine();
-        listOfAuthors.add(new Author(
+        listOfAuthorsFromFile.add(new Author(
                 Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
     }
 
@@ -97,13 +99,13 @@ public class DataFromExternalFile {
         Book book = new Book(
                 Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2]),
                 Integer.valueOf(stringArray[3]), stringArray[4], authorsInTheBook, category);
-        listOfBooks.add(book);
+        listOfBooksFromFile.add(book);
     }
 
     private static Category getCategory(String s) {
         try {
             int categoryId = Integer.parseInt(s);
-            return listOfCategories.stream()
+            return listOfCategoriesFromFile.stream()
                     .filter(x -> x.getId() == categoryId)
                     .findFirst().get();
         }
@@ -116,13 +118,20 @@ public class DataFromExternalFile {
     private static List<Author> getAuthors(String s) {
         String[] authorID = s.split(",");
         List<Author> authorsInTheBook = new ArrayList<>();
+
         for (int i = 0; i < authorID.length; i++) {
-            for (Author listOfAuthor : listOfAuthors) {
-                if (listOfAuthor.getId() == Integer.parseInt(authorID[i])) {
-                    authorsInTheBook.add(listOfAuthor);
-                }
-            }
+            int finalI = i;
+            authorsInTheBook.add(listOfAuthorsFromFile.stream()
+                    .filter(x  -> x.getId() == Integer.valueOf(authorID[finalI]))
+                    .findFirst().get());
         }
+//        for (int i = 0; i < authorID.length; i++) {
+//            for (Author listOfAuthor : listOfAuthorsFromFile) {
+//                if (listOfAuthor.getId() == Integer.parseInt(authorID[i])) {
+//                    authorsInTheBook.add(listOfAuthor);
+//                }
+//            }
+//        }
         return authorsInTheBook;
     }
 }
