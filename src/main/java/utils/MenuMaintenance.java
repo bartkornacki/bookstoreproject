@@ -1,22 +1,23 @@
 package utils;
 
-import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static utils.DataFromExternalFile.readDataFromExternalFiles;
 
 public class MenuMaintenance {
 
-    public static void menuNavigation(String fileCategories, String fileAuthors, String fileBooks) {
+    public void menuNavigation(String fileCategories, String fileAuthors, String fileBooks) {
+        MenuMaintenance menuMaintenance = new MenuMaintenance();
         int action;
         do {
             showMenu();
-            action = Integer.parseInt(insertTheNumberOfAnAction());
-            proceedWithChosenAction(action, fileCategories, fileAuthors, fileBooks);
+            action = menuMaintenance.getNumberFromUser();
+            menuMaintenance.proceedWithChosenAction(action, fileCategories, fileAuthors, fileBooks);
         } while (action != 2);
     }
 
-    public static void showMenu() {
+    public void showMenu() {
         System.out.println("*********************************************************");
         System.out.println("*\t\t\t\t\t\t\t\t\t\t\t\t\t\t*");
         System.out.println("*\tPick the action from the list:\t\t\t\t\t\t*");
@@ -26,13 +27,20 @@ public class MenuMaintenance {
         System.out.println("*********************************************************\n");
     }
 
-    private static String insertTheNumberOfAnAction() {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.next();
+    private int getNumberFromUser() {
+        Scanner scanner = null;
+        int temp = 0;
+        try{
+            scanner = new Scanner(System.in);
+            temp = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Number bitch!");
+        }
+        return temp;
     }
 
-    private static void proceedWithChosenAction(int readAction, String fileCategories, String fileAuthors, String fileBooks) {
-        switch (readAction) {
+    private void proceedWithChosenAction(int inputAction, String fileCategories, String fileAuthors, String fileBooks) {
+        switch (inputAction) {
             case 1:
                 readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);
                 break;
