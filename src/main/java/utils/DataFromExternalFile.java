@@ -67,11 +67,8 @@ public class DataFromExternalFile {
                 // TODO: dlaczego nie w catch?
                 System.out.println("At least one file wasn't imported. Please ensure that all files exist!");
                 listOfCategoriesFromFile = null;
-                System.out.println("Category file wasn't read");
                 listOfAuthorsFromFile = null;
-                System.out.println("Author file wasn't read");
                 listOfBooksFromFile = null;
-                System.out.println("Book file wasn't read");
                 System.exit(1);
             }
         } catch (IOException e) {
