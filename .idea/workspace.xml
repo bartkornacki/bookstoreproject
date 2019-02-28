@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54879fbb-c701-400a-9cf2-77cf0fcf801c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bookstore/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bookstore/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/DataFromExternalFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/DataFromExternalFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bookstore/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bookstore/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/DataFromExternalFile$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/DataFromExternalFile$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/DataFromExternalFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/DataFromExternalFile.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,12 +37,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="java" value="3575" />
+          <entry key="java" value="3850" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3575" />
+          <entry key="JAVA" value="3850" />
           <entry key="PLAIN_TEXT" value="37" />
         </counts>
       </usages-collector>
@@ -54,11 +50,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/bookstore/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+            <state relative-caret-position="150">
+              <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -98,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/DataFromExternalFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="72" column="9" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
+            <state relative-caret-position="130">
+              <caret line="64" column="13" lean-forward="true" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -141,8 +137,8 @@
         <option value="$PROJECT_DIR$/categories2.csv" />
         <option value="$PROJECT_DIR$/src/main/java/utils/DataPresenting.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java" />
-        <option value="$PROJECT_DIR$/src/main/java/bookstore/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/DataFromExternalFile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/bookstore/Main.java" />
       </list>
     </option>
   </component>
@@ -215,7 +211,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551348199412" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551349998583" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -476,17 +472,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bookstore/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/DataFromExternalFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+        <state relative-caret-position="130">
+          <caret line="64" column="13" lean-forward="true" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/DataFromExternalFile.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/bookstore/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="72" column="9" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
+        <state relative-caret-position="150">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
         </state>
       </provider>
     </entry>
