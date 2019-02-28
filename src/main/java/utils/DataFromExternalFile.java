@@ -72,7 +72,6 @@ public class DataFromExternalFile {
                 System.exit(1);
             }
         } catch (IOException e) {
-
         }
     }
 
