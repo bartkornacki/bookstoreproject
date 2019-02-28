@@ -45,11 +45,15 @@ public class DataFromExternalFile {
     }
 
     public static void readFile(DataType dataType, String file) {
-        reader = new DataFromExternalFile().openAnExternalFile(file);
-
+        DataFromExternalFile dataFromExternalFile = new DataFromExternalFile();
         try {
+            System.out.println(file);
+            System.out.println(dataType);
+            reader = dataFromExternalFile.openAnExternalFile(file);
+            System.out.println(reader.toString());
             if (reader != null) {
                 while (reader.ready()) {
+                    System.out.println("Test1");
                     switch (dataType) {
                         case CATEGORY:
                             readCategoryFile();
@@ -61,21 +65,16 @@ public class DataFromExternalFile {
                             readBookFile();
                     }
                 }
-                reader.close();
             }
-            else{
-                // TODO: dlaczego nie w catch?
-                System.out.println("At least one file wasn't imported. Please ensure that all files exist!");
-                listOfCategoriesFromFile = null;
-                listOfAuthorsFromFile = null;
-                listOfBooksFromFile = null;
-                System.exit(1);
-            }
-        } catch (IOException e) {
+        }
+        catch (NullPointerException | IOException e){
+            System.out.println("At least one out of three files does not exist. Please ensure all files are uploaded.");
+            System.exit(1);
         }
     }
 
     public static void readCategoryFile() {
+        System.out.println("trest1");
         String[] stringArray = splitLine();
         listOfCategoriesFromFile.add(new Category(
                 Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
@@ -104,8 +103,7 @@ public class DataFromExternalFile {
             return listOfCategoriesFromFile.stream()
                     .filter(x -> x.getId() == categoryId)
                     .findFirst().get();
-        }
-        catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             System.out.println("Category wasn't assigned to the book");
             return null;
         }
@@ -118,7 +116,7 @@ public class DataFromExternalFile {
         for (int i = 0; i < authorID.length; i++) {
             int finalI = i;
             authorsInTheBook.add(listOfAuthorsFromFile.stream()
-                    .filter(x  -> x.getId() == Integer.valueOf(authorID[finalI]))
+                    .filter(x -> x.getId() == Integer.valueOf(authorID[finalI]))
                     .findFirst().get());
         }
 //        for (int i = 0; i < authorID.length; i++) {
