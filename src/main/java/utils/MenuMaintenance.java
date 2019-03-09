@@ -65,10 +65,11 @@ public class MenuMaintenance {
     private void proceedWithChosenAction(int inputAction, String fileCategories, String fileAuthors, String fileBooks) {
 //        readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);
         DataStorage dataStorage = new DataStorage();
-        listOfAuthorsFromFile = dataStorage.getListOfAuthorsFromFile();
-        listOfCategoriesFromFile = dataStorage.getListOfCategoriesFromFile();
-        listOfBooksFromFile = dataStorage.getListOfBooksFromFile();
+        listOfAuthorsFromFile = dataStorage.getListOfAuthors();
+        listOfCategoriesFromFile = dataStorage.getListOfCategories();
+        listOfBooksFromFile = dataStorage.getListOfBooks();
         DataPresenting dataPresenting = new DataPresenting();
+        ExtendTheList extendTheList = new ExtendTheList();
 
         switch (inputAction) {
             case 1:
@@ -76,7 +77,6 @@ public class MenuMaintenance {
                 break;
             case 2:
                 dataPresenting.showAuthors(listOfAuthorsFromFile);
-//                dataPresenting.showAuthors(dataStorage.getListOfAuthorsFromFile());
                 break;
             case 3:
                 dataPresenting.showCategories(listOfCategoriesFromFile);
@@ -85,8 +85,10 @@ public class MenuMaintenance {
                 System.out.println("Goodbye.");
                 break;
             case 5:
-                ExtendTheList extendTheList = new ExtendTheList();
                 extendTheList.addAuthor();
+                break;
+            case 6:
+                extendTheList.addCategory();
                 break;
             default:
                 System.out.println("This option is unavailable");

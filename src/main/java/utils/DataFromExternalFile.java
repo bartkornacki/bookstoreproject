@@ -1,13 +1,11 @@
 package utils;
 
-import com.sun.xml.internal.bind.v2.TODO;
 import model.Author;
 import model.Book;
 import model.Category;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.EmptyStackException;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -23,9 +21,9 @@ public class DataFromExternalFile {
         listOfBooksFromFile = readBookFile(fileBooks);
 
         DataStorage dataStorage = new DataStorage();
-        dataStorage.setListOfCategoriesFromFile(listOfCategoriesFromFile);
-        dataStorage.setListOfAuthorsFromFile(listOfAuthorsFromFile);
-        dataStorage.setListOfBooksFromFile(listOfBooksFromFile);
+        dataStorage.setListOfCategories(listOfCategoriesFromFile);
+        dataStorage.setListOfAuthors(listOfAuthorsFromFile);
+        dataStorage.setListOfBooks(listOfBooksFromFile);
     }
 
     private BufferedReader openAnExternalFile(String file) {

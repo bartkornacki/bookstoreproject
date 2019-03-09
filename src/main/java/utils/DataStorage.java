@@ -8,33 +8,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataStorage {
-    private static List<Book> listOfBooksFromFile = new ArrayList<>();
-    private static List<Author> listOfAuthorsFromFile = new ArrayList<>();
-    private static List<Category> listOfCategoriesFromFile = new ArrayList<>();
+    private static List<Book> listOfBooks = new ArrayList<>();
+    private static List<Author> listOfAuthors = new ArrayList<>();
+    private static List<Category> listOfCategories = new ArrayList<>();
 
 //    DataFromExternalFile dataFromExternalFile = new DataFromExternalFile();
 
-    public static List<Book> getListOfBooksFromFile() {
-        return listOfBooksFromFile;
+    public static List<Book> getListOfBooks() {
+        return listOfBooks;
     }
 
-    public static void setListOfBooksFromFile(List<Book> listOfBooksFromFile) {
-        DataStorage.listOfBooksFromFile = listOfBooksFromFile;
+    public static void setListOfBooks(List<Book> listOfBooks) {
+        DataStorage.listOfBooks = listOfBooks;
     }
 
-    public static List<Author> getListOfAuthorsFromFile() {
-        return listOfAuthorsFromFile;
+    public static List<Author> getListOfAuthors() {
+        return listOfAuthors;
     }
 
-    public static void setListOfAuthorsFromFile(List<Author> listOfAuthorsFromFile) {
-        DataStorage.listOfAuthorsFromFile = listOfAuthorsFromFile;
+    public static void setListOfAuthors(List<Author> listOfAuthors) {
+        DataStorage.listOfAuthors = listOfAuthors;
     }
 
-    public static List<Category> getListOfCategoriesFromFile() {
-        return listOfCategoriesFromFile;
+    public static List<Category> getListOfCategories() {
+        return listOfCategories;
     }
 
-    public static void setListOfCategoriesFromFile(List<Category> listOfCategoriesFromFile) {
-        DataStorage.listOfCategoriesFromFile = listOfCategoriesFromFile;
+    public static void setListOfCategories(List<Category> listOfCategories) {
+        DataStorage.listOfCategories = listOfCategories;
     }
 }
