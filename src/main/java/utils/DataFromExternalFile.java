@@ -26,9 +26,6 @@ public class DataFromExternalFile {
         dataStorage.setListOfCategoriesFromFile(listOfCategoriesFromFile);
         dataStorage.setListOfAuthorsFromFile(listOfAuthorsFromFile);
         dataStorage.setListOfBooksFromFile(listOfBooksFromFile);
-
-        DataPresenting dataPresenting = new DataPresenting();
-        dataPresenting.showBooks(listOfBooksFromFile);
     }
 
     private BufferedReader openAnExternalFile(String file) {
