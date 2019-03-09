@@ -15,6 +15,14 @@ public class Category {
         return id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
     @Override
     public String toString() {
         return

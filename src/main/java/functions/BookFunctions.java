@@ -2,8 +2,11 @@ package functions;
 
 import com.google.common.collect.Lists;
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+import model.Author;
 import model.Book;
+import model.Category;
 import utils.DataFromExternalFile;
+
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -186,6 +189,28 @@ public class BookFunctions {
                 .filter(x -> x.getYear() > 2003)
                 .collect(Collectors.toList());
     }
+
+    public List<Book> getBooksFromWzorce(List<Book> listOfBooks) {
+        return listOfBooks.stream()
+                .filter(x -> x.getCategory().getName().equals("Wzorce projektowe"))
+                .collect(Collectors.toList());
+    }
+
+//    public List<Book> getBooksByAuthor(List<Author> listOfAuthors, List<Book> listOfBooks) {
+//        System.out.println("Please pick the author index:");
+//        listOfAuthors.stream().forEach(x -> System.out.println("\t\t" + listOfAuthors.indexOf(x) + ": " + x.getName()));
+//
+//        Scanner in = new Scanner(System.in);
+//        int action = in.nextInt();
+//
+//        List<Book> tempList = new ArrayList<>();
+//        for (Book b : listOfBooks) {
+//            String[] stringArray = DataFromExternalFile.splitLine();
+//            listOfAuthorsFromFile.add(new Author(
+//                    Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
+//        }
+//        return tempList;
+//    }
 
     public List<Book> add100YearsFor(List<Book> listOfBooks) {
         for (Book b : listOfBooks) {

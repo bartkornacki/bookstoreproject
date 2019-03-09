@@ -106,12 +106,16 @@ public class MenuMaintenance {
                 dataPresenting.showBooks(bookFunctions.getBooksReleasedAfter2003stream(listOfBooks));
                 break;
             case 11:
+                dataPresenting.showCategories(extendTheList.changeCategoryName(listOfCategories));
                 break;
             case 12:
+                dataPresenting.showBooks(bookFunctions.getBooksFromWzorce(listOfBooks));
                 break;
             case 13:
+//                dataPresenting.showBooks(bookFunctions.getBooksByAuthor(listOfAuthors, listOfBooks));
                 break;
             case 14:
+
                 break;
             default:
                 System.out.println("This option is unavailable");
