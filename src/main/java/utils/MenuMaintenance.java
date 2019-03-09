@@ -1,11 +1,21 @@
 package utils;
 
+import model.Author;
+import model.Book;
+import model.Category;
+
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 import static utils.DataFromExternalFile.readDataFromExternalFiles;
 
 public class MenuMaintenance {
+
+    private static List<Book> listOfBooksFromFile = new ArrayList<>();
+    private static List<Author> listOfAuthorsFromFile = new ArrayList<>();
+    private static List<Category> listOfCategoriesFromFile = new ArrayList<>();
 
     public void menuNavigation(String fileCategories, String fileAuthors, String fileBooks) {
         MenuMaintenance menuMaintenance = new MenuMaintenance();
@@ -52,9 +62,22 @@ public class MenuMaintenance {
     }
 
     private void proceedWithChosenAction(int inputAction, String fileCategories, String fileAuthors, String fileBooks) {
+        DataStorage dataStorage = new DataStorage();
+        readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);
+        listOfAuthorsFromFile = dataStorage.getListOfAuthorsFromFile();
+        listOfCategoriesFromFile = dataStorage.getListOfCategoriesFromFile();
+        listOfBooksFromFile = dataStorage.getListOfBooksFromFile();
+        DataPresenting dataPresenting = new DataPresenting();
+
         switch (inputAction) {
             case 1:
-                readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);
+                dataPresenting.showBooks(listOfBooksFromFile);
+                break;
+            case 2:
+                dataPresenting.showAuthors(listOfAuthorsFromFile);
+                break;
+            case 3:
+                dataPresenting.showCategories(listOfCategoriesFromFile);
                 break;
             case 4:
                 System.out.println("Goodbye.");

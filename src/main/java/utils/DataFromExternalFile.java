@@ -18,10 +18,17 @@ public class DataFromExternalFile {
     private static BufferedReader reader;
 
     public static void readDataFromExternalFiles(String fileCategories, String fileAuthors, String fileBooks) {
-        readFile(DataType.CATEGORY, fileCategories);
-        readFile(DataType.AUTHOR, fileAuthors);
-        readFile(DataType.BOOK, fileBooks);
-        DataPresenting.showData(listOfBooksFromFile, listOfAuthorsFromFile, listOfCategoriesFromFile);
+        listOfCategoriesFromFile = readCategoryFile(fileCategories);
+        listOfAuthorsFromFile = readAuthorFile(fileAuthors);
+        listOfBooksFromFile = readBookFile(fileBooks);
+
+        DataStorage dataStorage = new DataStorage();
+        dataStorage.setListOfCategoriesFromFile(listOfCategoriesFromFile);
+        dataStorage.setListOfAuthorsFromFile(listOfAuthorsFromFile);
+        dataStorage.setListOfBooksFromFile(listOfBooksFromFile);
+
+        DataPresenting dataPresenting = new DataPresenting();
+        dataPresenting.showBooks(listOfBooksFromFile);
     }
 
     private BufferedReader openAnExternalFile(String file) {
@@ -45,55 +52,59 @@ public class DataFromExternalFile {
         }
     }
 
-    public static void readFile(DataType dataType, String file) {
+
+    public static List<Category> readCategoryFile(String file) {
         DataFromExternalFile dataFromExternalFile;
         try {
             reader = new DataFromExternalFile().openAnExternalFile(file);
             while (reader.ready()) {
-                switch (dataType) {
-                    case CATEGORY:
-                        readCategoryFile();
-                        break;
-                    case AUTHOR:
-                        readAuthorFile();
-                        break;
-                    case BOOK:
-                        readBookFile();
-                }
+                String[] stringArray = splitLine();
+                listOfCategoriesFromFile.add(new Category(
+                        Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
             }
-        } catch (NullPointerException | IOException e) {
+        } catch (IOException e) {
             System.out.println("At least one out of three files does not exist. Please ensure all files are uploaded.");
             System.exit(1);
         }
+        return listOfCategoriesFromFile;
     }
 
-    public static void readCategoryFile() {
-        String[] stringArray = splitLine();
-        listOfCategoriesFromFile.add(new Category(
-                Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
-    }
-
-    public static void readAuthorFile() {
-        String[] stringArray = splitLine();
-        listOfAuthorsFromFile.add(new Author(
-                Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
-    }
-
-    public static void readBookFile() {
+    public static List<Author> readAuthorFile(String file) {
+        DataFromExternalFile dataFromExternalFile;
         try {
-            String[] stringArray = splitLine();
-            Category category = getCategory(stringArray[stringArray.length - 1]);
+            reader = new DataFromExternalFile().openAnExternalFile(file);
+            while (reader.ready()) {
+                String[] stringArray = splitLine();
+                listOfAuthorsFromFile.add(new Author(
+                        Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
+            }
+        } catch (IOException e) {
+            System.out.println("Author file doesn't exist. Please ensure all files are uploaded.");
+            System.exit(1);
+        }
+        return listOfAuthorsFromFile;
+    }
 
-            List<Author> authorsInTheBook = getAuthors(stringArray[5]);
+    public static List<Book> readBookFile(String file) {
+        DataFromExternalFile dataFromExternalFile;
+        try {
+            reader = new DataFromExternalFile().openAnExternalFile(file);
+            while (reader.ready()) {
+                String[] stringArray = splitLine();
+                Category category = getCategory(stringArray[stringArray.length - 1]);
 
-            Book book = new Book(
-                    Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2]),
-                    Integer.valueOf(stringArray[3]), stringArray[4], authorsInTheBook, category);
-            listOfBooksFromFile.add(book);
-        } catch (NullPointerException e) {
+                List<Author> authorsInTheBook = getAuthors(stringArray[5]);
+
+                Book book = new Book(
+                        Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2]),
+                        Integer.valueOf(stringArray[3]), stringArray[4], authorsInTheBook, category);
+                listOfBooksFromFile.add(book);
+            }
+        } catch (IOException e) {
             System.out.println("Books weren't found. Please ensure 'books' file exists.");
             System.exit(1);
         }
+        return listOfBooksFromFile;
     }
 
     private static Category getCategory(String s) {
@@ -113,7 +124,6 @@ public class DataFromExternalFile {
         String[] authorID = s.split(",");
         List<Author> authorsInTheBook = new ArrayList<>();
         try {
-
             for (int i = 0; i < authorID.length; i++) {
                 int finalI = i;
                 authorsInTheBook.add(listOfAuthorsFromFile.stream()
