@@ -28,4 +28,12 @@ public class Author {
                 "\n*\t\tname:\t\t" + name +
                 "\n*\t\tage:\t\t" + age;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
 }

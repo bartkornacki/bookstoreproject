@@ -13,9 +13,9 @@ import static utils.DataFromExternalFile.readDataFromExternalFiles;
 
 public class MenuMaintenance {
 
-    private static List<Book> listOfBooksFromFile = new ArrayList<>();
-    private static List<Author> listOfAuthorsFromFile = new ArrayList<>();
-    private static List<Category> listOfCategoriesFromFile = new ArrayList<>();
+    private static List<Book> listOfBooks = new ArrayList<>();
+    private static List<Author> listOfAuthors = new ArrayList<>();
+    private static List<Category> listOfCategories = new ArrayList<>();
 
     public void menuNavigation(String fileCategories, String fileAuthors, String fileBooks) {
         MenuMaintenance menuMaintenance = new MenuMaintenance();
@@ -38,7 +38,7 @@ public class MenuMaintenance {
         System.out.println("*\t\t4.  Exit\t\t\t\t\t\t\t\t\t\t\t\t*");
         System.out.println("*\t\t5.  Create new author\t\t\t\t\t\t\t\t\t*");
         System.out.println("*\t\t6.  Create new category\t\t\t\t\t\t\t\t\t*");
-        System.out.println("*\t\t7.  Save all collections to external files\t\t\t\t*");
+        System.out.println("*\t\t7.  Save authors to external file\t\t\t\t\t\t*");
         System.out.println("*\t\t8.  Sort by year (ascending)\t\t\t\t\t\t\t*");
         System.out.println("*\t\t9.  Sort by year (descending)\t\t\t\t\t\t\t*");
         System.out.println("*\t\t10. Show books released after 2003\t\t\t\t\t\t*");
@@ -65,21 +65,22 @@ public class MenuMaintenance {
     private void proceedWithChosenAction(int inputAction, String fileCategories, String fileAuthors, String fileBooks) {
 //        readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);
         DataStorage dataStorage = new DataStorage();
-        listOfAuthorsFromFile = dataStorage.getListOfAuthors();
-        listOfCategoriesFromFile = dataStorage.getListOfCategories();
-        listOfBooksFromFile = dataStorage.getListOfBooks();
+        listOfAuthors = dataStorage.getListOfAuthors();
+        listOfCategories = dataStorage.getListOfCategories();
+        listOfBooks = dataStorage.getListOfBooks();
         DataPresenting dataPresenting = new DataPresenting();
         ExtendTheList extendTheList = new ExtendTheList();
+        DataToExternalFiles dataToExternalFiles = new DataToExternalFiles();
 
         switch (inputAction) {
             case 1:
-                dataPresenting.showBooks(listOfBooksFromFile);
+                dataPresenting.showBooks(listOfBooks);
                 break;
             case 2:
-                dataPresenting.showAuthors(listOfAuthorsFromFile);
+                dataPresenting.showAuthors(listOfAuthors);
                 break;
             case 3:
-                dataPresenting.showCategories(listOfCategoriesFromFile);
+                dataPresenting.showCategories(listOfCategories);
                 break;
             case 4:
                 System.out.println("Goodbye.");
@@ -89,6 +90,9 @@ public class MenuMaintenance {
                 break;
             case 6:
                 extendTheList.addCategory();
+                break;
+            case 7:
+                dataToExternalFiles.writeAuthorsToFile();
                 break;
             default:
                 System.out.println("This option is unavailable");
