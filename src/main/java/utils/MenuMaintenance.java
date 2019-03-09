@@ -14,7 +14,7 @@ public class MenuMaintenance {
             showMenu();
             action = menuMaintenance.getNumberFromUser();
             menuMaintenance.proceedWithChosenAction(action, fileCategories, fileAuthors, fileBooks);
-        } while (action != 2);
+        } while (action != 4);
     }
 
     public void showMenu() {
@@ -56,7 +56,7 @@ public class MenuMaintenance {
             case 1:
                 readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);
                 break;
-            case 2:
+            case 4:
                 System.out.println("Goodbye.");
                 break;
             default:
