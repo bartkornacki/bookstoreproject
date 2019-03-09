@@ -181,6 +181,12 @@ public class BookFunctions {
                 .collect(Collectors.toList());
     }
 
+    public List<Book> getBooksReleasedAfter2003stream(List<Book> listOfBooks) {
+        return listOfBooks.stream()
+                .filter(x -> x.getYear() > 2003)
+                .collect(Collectors.toList());
+    }
+
     public List<Book> add100YearsFor(List<Book> listOfBooks) {
         for (Book b : listOfBooks) {
             b.setYear(b.getYear() + 100);

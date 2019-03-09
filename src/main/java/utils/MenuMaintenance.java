@@ -1,5 +1,6 @@
 package utils;
 
+import functions.BookFunctions;
 import model.Author;
 import model.Book;
 import model.Category;
@@ -71,6 +72,7 @@ public class MenuMaintenance {
         DataPresenting dataPresenting = new DataPresenting();
         ExtendTheList extendTheList = new ExtendTheList();
         DataToExternalFiles dataToExternalFiles = new DataToExternalFiles();
+        BookFunctions bookFunctions = new BookFunctions();
 
         switch (inputAction) {
             case 1:
@@ -93,6 +95,23 @@ public class MenuMaintenance {
                 break;
             case 7:
                 dataToExternalFiles.writeAuthorsToFile();
+                break;
+            case 8:
+                dataPresenting.showBooks(bookFunctions.sortBooksFromOldestStream(listOfBooks));
+                break;
+            case 9:
+                dataPresenting.showBooks(bookFunctions.sortBooksFromNewestStream(listOfBooks));
+                break;
+            case 10:
+                dataPresenting.showBooks(bookFunctions.getBooksReleasedAfter2003stream(listOfBooks));
+                break;
+            case 11:
+                break;
+            case 12:
+                break;
+            case 13:
+                break;
+            case 14:
                 break;
             default:
                 System.out.println("This option is unavailable");
