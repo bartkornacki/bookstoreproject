@@ -1,0 +1,25 @@
+
+gsquid:S2259U"IA "NullPointerException" could be thrown; "stringArray" is nullable here.(¢†±ù8¿ßÑœ“-
+jsquid:UselessImportCheck
+":Remove this unused import 'java.util.EmptyStackException'.(ì¯¨¯ÿÿÿÿÿ8şòœ“-
+psquid:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ôïÉìûÿÿÿÿ8ÆØüİ’-
+msquid:S2095"OUse try-with-resources or close this "InputStreamReader" in a "finally" clause.(Ü¥­Ó8ÆØüİ’-
+Xsquid:S1191"5Use classes from the Java API instead of Sun classes.(Â‡¬°ÿÿÿÿÿ8°ëğú’-
+gsquid:S22594"DA "NullPointerException" could be thrown; "reader" is nullable here.(ê§‚›ÿÿÿÿÿ8µÈ¢“-
+\squid:S14811"9Remove this unused "dataFromExternalFile" local variable.(ßˆÙ¾ÿÿÿÿÿ8¤öœ“-
+V
+squid:S106|"9Replace this use of System.out or System.err by a logger.(©ó§è8¿ßÑœ“-
+V
+squid:S106j"9Replace this use of System.out or System.err by a logger.(±ªÔÿ8¿ßÑœ“-
+Usquid:S3655f"7Call "Optional#isPresent()" before accessing the value.(„Š‹È8¿ßÑœ“-
+lsquid:S2259I"IA "NullPointerException" could be thrown; "stringArray" is nullable here.(ş•åÄşÿÿÿÿ8¿ßÑœ“-
+Dsquid:S1168,"&Return an empty array instead of null.(¥¹ï8ÙõŞ’-
+V
+squid:S106^"9Replace this use of System.out or System.err by a logger.(½É¸8†ëØœ“-
+Isquid:S1168~"+Return an empty collection instead of null.(¥¹ï8¿ßÑœ“-
+V
+squid:S106A"9Replace this use of System.out or System.err by a logger.(öØåÙ8¿ßÑœ“-
+nsquid:UselessImportCheck">Remove this unused import 'com.sun.xml.internal.bind.v2.TODO'.(Â‡¬°ÿÿÿÿÿ8¹Ù»œ“-
+lsquid:S2259O"IA "NullPointerException" could be thrown; "stringArray" is nullable here.(ş•åÄşÿÿÿÿ8¿ßÑœ“-
+osquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(®äáğøÿÿÿÿ8¿ßÑœ“-
+Zsquid:S3655w"7Call "Optional#isPresent()" before accessing the value.(ã¥±ªşÿÿÿÿ8¿ßÑœ“-

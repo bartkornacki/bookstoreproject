@@ -22,7 +22,12 @@ public class MenuMaintenance {
         System.out.println("*\t\t\t\t\t\t\t\t\t\t\t\t\t\t*");
         System.out.println("*\tPick the action from the list:\t\t\t\t\t\t*");
         System.out.println("*\t\t1. Show books stored in the external file\t\t*");
-        System.out.println("*\t\t2. Exit\t\t\t\t\t\t\t\t\t\t\t*");
+        System.out.println("*\t\t2. Show books stored in the external file\t\t*");
+        System.out.println("*\t\t3. Show books stored in the external file\t\t*");
+        System.out.println("*\t\t4. Exit\t\t\t\t\t\t\t\t\t\t\t*");
+        System.out.println("*\t\t5. Show books stored in the external file\t\t*");
+        System.out.println("*\t\t6. Show books stored in the external file\t\t*");
+        System.out.println("*\t\t7. Show books stored in the external file\t\t*");
         System.out.println("*\t\t\t\t\t\t\t\t\t\t\t\t\t\t*");
         System.out.println("*********************************************************\n");
     }
