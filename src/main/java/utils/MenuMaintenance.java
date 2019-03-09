@@ -21,13 +21,20 @@ public class MenuMaintenance {
         System.out.println("*********************************************************");
         System.out.println("*\t\t\t\t\t\t\t\t\t\t\t\t\t\t*");
         System.out.println("*\tPick the action from the list:\t\t\t\t\t\t*");
-        System.out.println("*\t\t1. Show books stored in the external file\t\t*");
-        System.out.println("*\t\t2. Show books stored in the external file\t\t*");
-        System.out.println("*\t\t3. Show books stored in the external file\t\t*");
-        System.out.println("*\t\t4. Exit\t\t\t\t\t\t\t\t\t\t\t*");
-        System.out.println("*\t\t5. Show books stored in the external file\t\t*");
-        System.out.println("*\t\t6. Show books stored in the external file\t\t*");
-        System.out.println("*\t\t7. Show books stored in the external file\t\t*");
+        System.out.println("*\t\t1.  Show the list of books\t\t\t\t\t\t*");
+        System.out.println("*\t\t2.  Show the list of authors\t\t\t\t\t*");
+        System.out.println("*\t\t3.  Show the list of categories\t\t\t\t\t*");
+        System.out.println("*\t\t4.  Exit\t\t\t\t\t\t\t\t\t\t*");
+        System.out.println("*\t\t5.  Create new author\t\t\t\t\t\t\t*");
+        System.out.println("*\t\t6.  Create new category\t\t\t\t\t\t\t*");
+        System.out.println("*\t\t7.  Save all collections to external files\t\t*");
+        System.out.println("*\t\t8.  Sort by year (ascending)\t\t\t\t\t*");
+        System.out.println("*\t\t9.  Sort by year (descending)\t\t\t\t\t*");
+        System.out.println("*\t\t10. Show books released after 2003\t\t\t\t*");
+        System.out.println("*\t\t11. Edit particular category name\t\t\t\t*");
+        System.out.println("*\t\t12. Show all books from 'Wzorce projektowe'\t\t*");
+        System.out.println("*\t\t13. Show all books written by particular author\t*");
+        System.out.println("*\t\t14. Add tests to methods which write csv files\t*");
         System.out.println("*\t\t\t\t\t\t\t\t\t\t\t\t\t\t*");
         System.out.println("*********************************************************\n");
     }
