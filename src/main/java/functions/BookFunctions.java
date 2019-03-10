@@ -109,7 +109,6 @@ public class BookFunctions {
     public int numberOfBooksReleasedPrior2007Stream(List<Book> listOfBooks) {
         return (int) listOfBooks.stream()
                 .filter(x -> x.getYear() > 2007)
-                .mapToInt(x -> x.getYear()) //TODO po co ta linijka?
                 .count();
     }
 
@@ -129,16 +128,13 @@ public class BookFunctions {
     }
 
     public double averageReleaseYearFor(List<Book> listOfBooks) {
-        double res = 0; //TODO nazwa
+        double avgReleaseYear = 0;
         int i = 0;
         for (Book b : listOfBooks) {
-            res = res + b.getYear();
+            avgReleaseYear = avgReleaseYear + b.getYear();
             i++;
         }
-        System.out.println(res); //TODO po co printy?
-        System.out.println(i);
-//        Math.
-        return res / i;
+        return avgReleaseYear / i;
     }
 
     public double averageReleaseYearStream(List<Book> listOfBooks) {

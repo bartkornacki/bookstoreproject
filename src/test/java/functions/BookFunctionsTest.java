@@ -13,69 +13,58 @@ import java.util.TreeMap;
 class BookFunctionsTest {
 
     List<Book> testListOfBooks;
+    BookFunctions bookFunctions;
 
     @BeforeEach
     void setUp() {
+        bookFunctions = new BookFunctions();
         testListOfBooks = new ArrayList<>();
-        Book book1 = new Book(11, "CTitle11",
-                1231, 2010, "T", null, null);
-        Book book2 = new Book(12, "Title12",
-                1232, 2012, "T", null, null);
-        Book book3 = new Book(13, "Title13",
-                1233, 2000, "T", null, null);
-        Book book4 = new Book(14, "CTitle14",
-                1234, 2013, "T", null, null);
-        Book book5 = new Book(15, "Title15",
-                1235, 2015, "T", null, null);
-        Book book6 = new Book(16, "Title16",
-                1236, 2016, "T", null, null);
-        testListOfBooks.add(book1);
-        testListOfBooks.add(book2);
-        testListOfBooks.add(book3);
-        testListOfBooks.add(book4);
-        testListOfBooks.add(book5);
-        testListOfBooks.add(book6);
+        testListOfBooks.add(new Book(11, "CTitle11",
+                1231, 2010, "T", null, null));
+        testListOfBooks.add(new Book(12, "Title12",
+                1232, 2012, "T", null, null));
+        testListOfBooks.add(new Book(13, "Title13",
+                1233, 2000, "T", null, null));
+        testListOfBooks.add(new Book(14, "CTitle14",
+                1234, 2013, "T", null, null));
+        testListOfBooks.add(new Book(15, "Title15",
+                1235, 2015, "T", null, null));
+        testListOfBooks.add(new Book(16, "Title16",
+                1236, 2016, "T", null, null));
     }
 
     @Test
     void getBookByISBN1() {
-        BookFunctions bookFunctions = new BookFunctions(); //TODO mozna raz w setupie
         Assert.assertEquals(testListOfBooks.get(0), bookFunctions.getBookByISBNStream(testListOfBooks, 1231));
     }
 
     @Test
     void getBookByISBN2() {
-        BookFunctions bookFunctions = new BookFunctions();
         Assert.assertNull(bookFunctions.getBookByISBNStream(testListOfBooks, 12311111));
     }
 
     @Test
     void getBookByISBN3() {
-        BookFunctions bookFunctions = new BookFunctions();
-        Assert.assertEquals(null, bookFunctions.getBookByISBNStream(null, 1231)); //TODO assertNull
+        Assert.assertNull(bookFunctions.getBookByISBNStream(null, 1231));
     }
 
     @Test
     void getBookByISBN4() {
-        BookFunctions bookFunctions = new BookFunctions();
-        Assert.assertEquals(testListOfBooks.get(0), bookFunctions.getBookByISBNFor(testListOfBooks, 1231)); //TODO zamiast book1 to testList.get(x)
+        Assert.assertEquals(testListOfBooks.get(0), bookFunctions.getBookByISBNFor(testListOfBooks, 1231));
     }
 
     @Test
     void getBookByISBN5() {
-        BookFunctions bookFunctions = new BookFunctions();
         Assert.assertNull(bookFunctions.getBookByISBNFor(testListOfBooks, 12311111));
     }
 
     @Test
     void getBookByISBN6() {
-        BookFunctions bookFunctions = new BookFunctions();
-        Assert.assertEquals(null, bookFunctions.getBookByISBNFor(null, 1231));
+        Assert.assertNull(bookFunctions.getBookByISBNFor(null, 1231));
     }
 
     @Test
     void getTwoLastBooksFor1() {
-        BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
         tempListOfBooks.add(testListOfBooks.get(4));
         tempListOfBooks.add(testListOfBooks.get(5));
@@ -84,7 +73,6 @@ class BookFunctionsTest {
 
     @Test
     void getTwoLastBooksStream1() {
-        BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
         tempListOfBooks.add(testListOfBooks.get(4));
         tempListOfBooks.add(testListOfBooks.get(5));
@@ -93,92 +81,77 @@ class BookFunctionsTest {
 
     @Test
     void earliestReleasedBookFor() {
-        BookFunctions bookFunctions = new BookFunctions();
         Assert.assertEquals(testListOfBooks.get(2), bookFunctions.earliestReleasedBookFor(testListOfBooks));
     }
 
     @Test
     void earliestReleasedBookStream() {
-        BookFunctions bookFunctions = new BookFunctions();
         Assert.assertEquals(testListOfBooks.get(2), bookFunctions.earliestReleasedBookStream(testListOfBooks));
     }
 
     @Test
     void latestReleasedBookFor() {
-        BookFunctions bookFunctions = new BookFunctions();
         Assert.assertEquals(testListOfBooks.get(5), bookFunctions.latestReleasedBookFor(testListOfBooks));
     }
 
     @Test
     void latestReleasedBookStream() {
-        BookFunctions bookFunctions = new BookFunctions();
         Assert.assertEquals(testListOfBooks.get(5), bookFunctions.latestReleasedBookStream(testListOfBooks));
 
     }
 
     @Test
     void sumOfAllYearsFor() {
-        BookFunctions bookFunctions = new BookFunctions();
         Assert.assertEquals(12066, bookFunctions.sumOfAllYearsFor(testListOfBooks));
     }
 
     @Test
     void sumOfAllYearsStream() {
-        BookFunctions bookFunctions = new BookFunctions();
         Assert.assertEquals(12066, bookFunctions.sumOfAllYearsStream(testListOfBooks));
     }
 
     @Test
     void numberOfBooksReleasedPrior2007For() {
-        BookFunctions bookFunctions = new BookFunctions();
         Assert.assertEquals(5, bookFunctions.numberOfBooksReleasedPrior2007For(testListOfBooks));
     }
 
     @Test
     void numberOfBooksReleasedPrior2007Stream() {
-        BookFunctions bookFunctions = new BookFunctions();
         Assert.assertEquals(5, bookFunctions.numberOfBooksReleasedPrior2007Stream(testListOfBooks));
     }
 
     @Test
     void checkIfAllBooksAreReleasedAfter2000For() {
-        BookFunctions bookFunctions = new BookFunctions();
-        Assert.assertEquals(false, bookFunctions.checkIfAllBooksAreReleasedAfter2000For(testListOfBooks)); //TODO assertfalse
+        Assert.assertFalse(bookFunctions.checkIfAllBooksAreReleasedAfter2000For(testListOfBooks));
     }
 
     @Test
     void checkIfAllBooksAreReleasedAfter2000Stream() {
-        BookFunctions bookFunctions = new BookFunctions();
-        Assert.assertEquals(true, bookFunctions.checkIfAllBooksAreReleasedAfter2000Stream(testListOfBooks));
+        Assert.assertTrue(bookFunctions.checkIfAllBooksAreReleasedAfter2000Stream(testListOfBooks));
     }
 
     @Test
     void averageReleaseYearFor() {
-        BookFunctions bookFunctions = new BookFunctions();
         Assert.assertEquals(2011, bookFunctions.averageReleaseYearFor(testListOfBooks), 0.01);
     }
 
     @Test
     void averageReleaseYearStream() {
-        BookFunctions bookFunctions = new BookFunctions();
         Assert.assertEquals(2011, bookFunctions.averageReleaseYearStream(testListOfBooks), 0.01);
     }
 
     @Test
     void checkIfAnyBookIsReleasedBefore2003For() {
-        BookFunctions bookFunctions = new BookFunctions();
-        Assert.assertEquals(true, bookFunctions.checkIfAnyBookIsReleasedBefore2003For(testListOfBooks));
+        Assert.assertTrue(bookFunctions.checkIfAnyBookIsReleasedBefore2003For(testListOfBooks));
     }
 
     @Test
     void checkIfAnyBookIsReleasedBefore2003Stream() {
-        BookFunctions bookFunctions = new BookFunctions();
-        Assert.assertEquals(true, bookFunctions.checkIfAnyBookIsReleasedBefore2003Stream(testListOfBooks));
+        Assert.assertTrue(bookFunctions.checkIfAnyBookIsReleasedBefore2003Stream(testListOfBooks));
     }
 
     @Test
     void getBooksStartingWithCAndReleasedAfter2007for() {
-        BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
         tempListOfBooks.add(testListOfBooks.get(0));
         tempListOfBooks.add(testListOfBooks.get(3));
@@ -188,7 +161,6 @@ class BookFunctionsTest {
 
     @Test
     void getBooksStartingWithCAndReleasedAfter2007stream() {
-        BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
         tempListOfBooks.add(testListOfBooks.get(0));
         tempListOfBooks.add(testListOfBooks.get(3));
@@ -197,7 +169,6 @@ class BookFunctionsTest {
 
     @Test
     void add100YearsFor() {
-        BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
         tempListOfBooks.add(testListOfBooks.get(0));
         tempListOfBooks.add(testListOfBooks.get(1));
@@ -211,7 +182,6 @@ class BookFunctionsTest {
 
     @Test
     void add100YearsStream() {
-        BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
         tempListOfBooks.add(testListOfBooks.get(0));
         tempListOfBooks.add(testListOfBooks.get(1));
@@ -225,7 +195,6 @@ class BookFunctionsTest {
 
     @Test
     void getBooksDivisibleBy2For() {
-        BookFunctions bookFunctions = new BookFunctions();
         List<String> tempListOfTitles = new ArrayList<>();
         tempListOfTitles.add(testListOfBooks.get(0).getTitle());
         tempListOfTitles.add(testListOfBooks.get(1).getTitle());
@@ -236,7 +205,6 @@ class BookFunctionsTest {
 
     @Test
     void getBooksDivisibleBy2Stream() {
-        BookFunctions bookFunctions = new BookFunctions();
         List<String> tempListOfTitles = new ArrayList<>();
         tempListOfTitles.add(testListOfBooks.get(0).getTitle());
         tempListOfTitles.add(testListOfBooks.get(1).getTitle());
@@ -247,7 +215,6 @@ class BookFunctionsTest {
 
     @Test
     void getMapOfIsbnAndBooksFor() {
-        BookFunctions bookFunctions = new BookFunctions();
         Map<Integer, Book> tempMapOfIsbnAndBooks = new TreeMap<>();
         tempMapOfIsbnAndBooks.put(1231, testListOfBooks.get(0));
         tempMapOfIsbnAndBooks.put(1232, testListOfBooks.get(1));
@@ -260,7 +227,6 @@ class BookFunctionsTest {
 
     @Test
     void getMapOfIsbnAndBooksStream() {
-        BookFunctions bookFunctions = new BookFunctions();
         Map<Integer, Book> tempMapOfIsbnAndBooks = new TreeMap<>();
         tempMapOfIsbnAndBooks.put(1231, testListOfBooks.get(0));
         tempMapOfIsbnAndBooks.put(1232, testListOfBooks.get(1));
@@ -273,7 +239,6 @@ class BookFunctionsTest {
 
     @Test
     void sortBooksFromNewestFor() {
-        BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
         tempListOfBooks.add(testListOfBooks.get(5));
         tempListOfBooks.add(testListOfBooks.get(4));
@@ -286,7 +251,6 @@ class BookFunctionsTest {
 
     @Test
     void sortBooksFromNewestStream() {
-        BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
         tempListOfBooks.add(testListOfBooks.get(5));
         tempListOfBooks.add(testListOfBooks.get(4));
@@ -299,7 +263,6 @@ class BookFunctionsTest {
 
     @Test
     void sortBooksFromOldestFor() {
-        BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
         tempListOfBooks.add(testListOfBooks.get(2));
         tempListOfBooks.add(testListOfBooks.get(0));
@@ -312,7 +275,6 @@ class BookFunctionsTest {
 
     @Test
     void sortBooksFromOldestStream() {
-        BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
         tempListOfBooks.add(testListOfBooks.get(2));
         tempListOfBooks.add(testListOfBooks.get(0));
@@ -325,7 +287,6 @@ class BookFunctionsTest {
 
     @Test
     void getListOfListsOfBooksFor() {
-        BookFunctions bookFunctions = new BookFunctions();
         List<List<Book>> mainTempListOfBooks = new ArrayList<>();
         List<Book> firstTempListOfBooks = new ArrayList<>();
         List<Book> secondTempListOfBooks = new ArrayList<>();
@@ -339,14 +300,12 @@ class BookFunctionsTest {
         mainTempListOfBooks.add(firstTempListOfBooks);
         mainTempListOfBooks.add(secondTempListOfBooks);
         mainTempListOfBooks.add(thirdTempListOfBooks);
-        System.out.println(testListOfBooks.get(2));
         Assert.assertEquals(mainTempListOfBooks, bookFunctions.getListOfListsOfBooksFor(testListOfBooks));
 
     }
 
     @Test
     void getListOfListsOfBooksStream() {
-        BookFunctions bookFunctions = new BookFunctions();
         List<List<Book>> mainTempListOfBooks = new ArrayList<>();
         List<Book> firstTempListOfBooks = new ArrayList<>();
         List<Book> secondTempListOfBooks = new ArrayList<>();

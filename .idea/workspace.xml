@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54879fbb-c701-400a-9cf2-77cf0fcf801c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/externalFilesManagement/DataFromExternalFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/externalFilesManagement/DataFromExternalFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/functions/BookFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/functions/BookFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/ExtendTheList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/ExtendTheList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/functions/BookFunctionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/functions/BookFunctionsTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,7 +29,7 @@
           <entry key="authorsTest" value="2" />
           <entry key="class" value="1" />
           <entry key="csv" value="52" />
-          <entry key="java" value="133" />
+          <entry key="java" value="134" />
           <entry key="txt" value="1" />
           <entry key="xml" value="5" />
         </counts>
@@ -42,7 +37,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="133" />
+          <entry key="JAVA" value="134" />
           <entry key="PLAIN_TEXT" value="55" />
           <entry key="XML" value="5" />
         </counts>
@@ -51,13 +46,13 @@
         <counts>
           <entry key="csv" value="13" />
           <entry key="dummy" value="37" />
-          <entry key="java" value="20061" />
+          <entry key="java" value="20071" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="20061" />
+          <entry key="JAVA" value="20071" />
           <entry key="PLAIN_TEXT" value="50" />
           <entry key="XML" value="4" />
         </counts>
@@ -90,8 +85,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/functions/BookFunctions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="313" column="18" lean-forward="true" selection-start-line="313" selection-start-column="18" selection-end-line="313" selection-end-column="18" />
+            <state relative-caret-position="226">
+              <caret line="279" column="18" selection-start-line="279" selection-start-column="18" selection-end-line="279" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#9557#9574#0" />
@@ -170,8 +165,8 @@
         <option value="$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Category.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/ExtendTheList.java" />
-        <option value="$PROJECT_DIR$/src/test/java/functions/BookFunctionsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/functions/BookFunctions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/functions/BookFunctionsTest.java" />
       </list>
     </option>
   </component>
@@ -315,7 +310,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552223325830" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552223943884" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
@@ -356,20 +351,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BookFunctionsTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="bookstore.Main" />
-      <module name="BookstoreProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bookstore.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.BookFunctionsTest.checkIfAllBooksAreReleasedAfter2000For">
     <configuration name="BookFunctionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BookstoreProject" />
       <extension name="coverage">
@@ -380,6 +362,22 @@
       </extension>
       <option name="PACKAGE_NAME" value="functions" />
       <option name="MAIN_CLASS_NAME" value="functions.BookFunctionsTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookFunctionsTest.checkIfAllBooksAreReleasedAfter2000For" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BookstoreProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="functions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="functions" />
+      <option name="MAIN_CLASS_NAME" value="functions.BookFunctionsTest" />
+      <option name="METHOD_NAME" value="checkIfAllBooksAreReleasedAfter2000For" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -416,34 +414,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataToExternalFilesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookFunctionsTest.numberOfBooksReleasedPrior2007Stream" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BookstoreProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dataStorage.*" />
+          <option name="PATTERN" value="functions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="utils" />
-      <option name="MAIN_CLASS_NAME" value="utils.DataToExternalFilesTest" />
+      <option name="PACKAGE_NAME" value="functions" />
+      <option name="MAIN_CLASS_NAME" value="functions.BookFunctionsTest" />
+      <option name="METHOD_NAME" value="numberOfBooksReleasedPrior2007Stream" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.DataToExternalFilesTest" />
       <item itemvalue="JUnit.BookFunctionsTest.getBookByISBN1" />
       <item itemvalue="JUnit.BookFunctionsTest" />
       <item itemvalue="JUnit.BookFunctionsTest.getListOfListsOfBooksStream" />
+      <item itemvalue="JUnit.BookFunctionsTest.numberOfBooksReleasedPrior2007Stream" />
+      <item itemvalue="JUnit.BookFunctionsTest.checkIfAllBooksAreReleasedAfter2000For" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BookFunctionsTest.checkIfAllBooksAreReleasedAfter2000For" />
+        <item itemvalue="JUnit.BookFunctionsTest.numberOfBooksReleasedPrior2007Stream" />
         <item itemvalue="JUnit.BookFunctionsTest" />
         <item itemvalue="JUnit.BookFunctionsTest.getListOfListsOfBooksStream" />
         <item itemvalue="JUnit.BookFunctionsTest.getBookByISBN1" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.DataToExternalFilesTest" />
       </list>
     </recent_temporary>
   </component>
@@ -461,18 +461,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DataToExternalFilesTest_writeAuthorsToFile - 2019.03.10 at 12h 02m 38s.xml">
-      <configuration name="DataToExternalFilesTest.writeAuthorsToFile" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DataFromExternalFileTest_readBookFile - 2019.03.10 at 12h 10m 50s.xml">
-      <configuration name="DataFromExternalFileTest.readBookFile" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DataFromExternalFileTest_readBookFile - 2019.03.10 at 12h 11m 48s.xml">
-      <configuration name="DataFromExternalFileTest.readBookFile" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DataFromExternalFileTest - 2019.03.10 at 13h 10m 14s.xml">
-      <configuration name="DataFromExternalFileTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DataFromExternalFileTest - 2019.03.10 at 13h 10m 47s.xml">
       <configuration name="DataFromExternalFileTest" configurationId="JUnit" />
     </history-entry>
@@ -491,6 +479,18 @@
     <history-entry file="BookFunctionsTest - 2019.03.10 at 14h 07m 52s.xml">
       <configuration name="BookFunctionsTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="BookFunctionsTest - 2019.03.10 at 14h 12m 34s.xml">
+      <configuration name="BookFunctionsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookFunctionsTest - 2019.03.10 at 14h 15m 59s.xml">
+      <configuration name="BookFunctionsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookFunctionsTest_getListOfListsOfBooksStream - 2019.03.10 at 14h 16m 15s.xml">
+      <configuration name="BookFunctionsTest.getListOfListsOfBooksStream" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookFunctionsTest - 2019.03.10 at 14h 17m 07s.xml">
+      <configuration name="BookFunctionsTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -505,7 +505,7 @@
     <frame x="0" y="23" width="1440" height="838" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24606581" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24606581" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -846,16 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/functions/BookFunctionsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1770">
@@ -866,10 +856,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/functions/BookFunctionsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1430#1431#0" expanded="true" />
+            <element signature="e#1525#1526#0" expanded="true" />
+            <element signature="e#1556#1557#0" expanded="true" />
+            <element signature="e#1637#1638#0" expanded="true" />
+            <element signature="e#1829#1830#0" expanded="true" />
+            <element signature="e#1921#1922#0" expanded="true" />
+            <element signature="e#1960#1961#0" expanded="true" />
+            <element signature="e#2037#2038#0" expanded="true" />
+            <element signature="e#3359#3360#0" expanded="true" />
+            <element signature="e#3450#3451#0" expanded="true" />
+            <element signature="e#3494#3495#0" expanded="true" />
+            <element signature="e#3588#3589#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/functions/BookFunctions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="313" column="18" lean-forward="true" selection-start-line="313" selection-start-column="18" selection-end-line="313" selection-end-column="18" />
+        <state relative-caret-position="226">
+          <caret line="279" column="18" selection-start-line="279" selection-start-column="18" selection-end-line="279" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#9557#9574#0" />
