@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 
 public class DataToExternalFiles {
 
-    public void writeAuthorsToFile() {
-        String authorFileName = "authors.csv";
+    public void writeAuthorsToFile(String fileName) {
+        String authorFileName = fileName;
         DataStorage dataStorage = new DataStorage();
 
         try {
