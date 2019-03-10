@@ -170,8 +170,7 @@ public class BookFunctions {
 
     public List<Book> getBooksStartingWithCAndReleasedAfter2007stream(List<Book> listOfBooks) {
         return listOfBooks.stream()
-                .filter(x -> x.getYear() > 2007) //TODO mozna 1 filtrem. Jak wygodniej
-                .filter(x -> x.getTitle().startsWith("C"))
+                .filter(x -> (x.getYear() > 2007) && (x.getTitle().startsWith("C")))
                 .collect(Collectors.toList());
     }
 

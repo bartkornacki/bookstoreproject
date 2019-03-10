@@ -93,20 +93,16 @@ public class DataFromExternalFile {
     }
 
     private static Category getCategory(String s) {
-//        try {
         int categoryId = Integer.parseInt(s);
         Optional<Category> optionalCategory = listOfCategoriesFromFile.stream()
                 .filter(x -> x.getId() == categoryId)
                 .findFirst();
-//        } catch (NoSuchElementException e) {
-//            System.exit(1);
         if (optionalCategory.isPresent()) {
             return optionalCategory.get();
         } else {
             System.out.println("Category wasn't assigned to the book. Please ensure 'category' file exists.");
             return null;
         }
-//        }
     }
 
     private static List<Author> getAuthors(String s) {
@@ -121,7 +117,6 @@ public class DataFromExternalFile {
             }
         } catch (NoSuchElementException e) { //TODO optioal
             System.out.println("Authors weren't assigned to the book. Please ensure 'authors' file exists.");
-//            System.exit(1);
             return null;
         }
 
