@@ -93,7 +93,7 @@ public class MenuMaintenance {
                 extendTheList.addCategory();
                 break;
             case 7:
-                dataToExternalFiles.writeAuthorsToFile("authors.csv");
+                dataToExternalFiles.writeAuthorsToFile(dataStorage.getListOfAuthors(),"authors.csv");
                 break;
             case 8:
                 dataPresenting.showBooks(bookFunctions.sortBooksFromOldestStream(listOfBooks));

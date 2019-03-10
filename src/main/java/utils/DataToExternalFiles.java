@@ -10,13 +10,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DataToExternalFiles {
-
-    public void writeAuthorsToFile(String fileName) {
+    public void writeAuthorsToFile(List<Author> authorsList, String fileName) {
         String authorFileName = fileName;
         DataStorage dataStorage = new DataStorage();
 
         try {
-            String str = dataStorage.getListOfAuthors()
+            String str = authorsList
                     .stream()
                     .map(x -> x.getId() + ";" + x.getName() + ";" + x.getAge())
                     .collect(Collectors.joining("\n"));
