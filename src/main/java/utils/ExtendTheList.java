@@ -23,6 +23,8 @@ public class ExtendTheList {
             System.out.println("Please provide the age of the author:");
             age = in.next();
 
+//            isNumeric(CharSequence cs)
+//            https://commons.apache.org/proper/commons-lang/javadocs/api-3.1/org/apache/commons/lang3/StringUtils.html
             if (age.matches("-?\\d+(\\.\\d+)?")) {
                 result = Integer.parseInt(age);
             }

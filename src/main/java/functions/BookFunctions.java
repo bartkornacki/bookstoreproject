@@ -54,17 +54,18 @@ public class BookFunctions {
     public Book earliestReleasedBookFor(List<Book> listOfBooks) {
         //TODO co jesli bedzie pusta lista
 
-        Book searchedBook = listOfBooks.get(0);
-        if (searchedBook == null) {
-            throw new IndexOutOfBoundsException();
+        if (listOfBooks.isEmpty()) {
+            System.out.println("The list doesn't exist");
+            return null;
         } else {
+            Book searchedBook = listOfBooks.get(0);
             for (Book book : listOfBooks) {
                 if (book.getYear() < searchedBook.getYear() || searchedBook == null) {
                     searchedBook = book;
                 }
             }
+            return searchedBook;
         }
-        return searchedBook;
     }
 
     public Book earliestReleasedBookStream(List<Book> listOfBooks) {
