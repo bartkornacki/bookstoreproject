@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-public class Book implements Collection<List<Book>> {
+public class Book implements Collection<List<Book>> { //TODO po co implements?
     private int id;
     private String title;
     private int isbnNumber;
@@ -94,7 +94,7 @@ public class Book implements Collection<List<Book>> {
     }
 
     @Override
-    public int size() {
+    public int size() { //TODO jw
         return 0;
     }
 

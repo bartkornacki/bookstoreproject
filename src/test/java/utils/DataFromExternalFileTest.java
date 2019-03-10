@@ -11,13 +11,14 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static javafx.scene.input.KeyCode.M;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DataFromExternalFileTest {
 
     @BeforeEach
     void setUp() {
-    }
+    } //TODO po co setup?
 
     @Test
     void readCategoryFile() {
@@ -45,5 +46,19 @@ class DataFromExternalFileTest {
 
     @Test
     void readBookFile() {
+
+
+
+        List<Book> tempListOfBooks = new ArrayList<>();
+        Book book1 = new Book(1, "Clean Code", 132350882, 2008,
+                "T", null, null);
+        tempListOfBooks.add(book1);
+        Book book2 = new Book(2, "Effective Java (3rd Edition)", 134685997, 2018,
+                "M",null, null);
+        tempListOfBooks.add(book2);
+        List<Book> listFromFile = new ArrayList<>();
+        listFromFile = DataFromExternalFile.readBookFile("testBooks.csv");
+        Assert.assertEquals(tempListOfBooks.get(1).getTitle(), listFromFile.get(1).getTitle());
+        //TODO albo druga asercja albo zapisz 1 ksiazke.
     }
 }

@@ -13,7 +13,7 @@ import java.util.TreeMap;
 class BookFunctionsTest {
 
     List<Book> testListOfBooks;
-    Book book1;
+    Book book1; //TODO to do setupa
     Book book2;
     Book book3;
     Book book4;
@@ -45,7 +45,7 @@ class BookFunctionsTest {
 
     @Test
     void getBookByISBN1() {
-        BookFunctions bookFunctions = new BookFunctions();
+        BookFunctions bookFunctions = new BookFunctions(); //TODO mozna raz w setupie
         Assert.assertEquals(book1, bookFunctions.getBookByISBNStream(testListOfBooks, 1231));
     }
 
@@ -58,13 +58,13 @@ class BookFunctionsTest {
     @Test
     void getBookByISBN3() {
         BookFunctions bookFunctions = new BookFunctions();
-        Assert.assertEquals(null, bookFunctions.getBookByISBNStream(null, 1231));
+        Assert.assertEquals(null, bookFunctions.getBookByISBNStream(null, 1231)); //TODO assertNull
     }
 
     @Test
     void getBookByISBN4() {
         BookFunctions bookFunctions = new BookFunctions();
-        Assert.assertEquals(book1, bookFunctions.getBookByISBNFor(testListOfBooks, 1231));
+        Assert.assertEquals(book1, bookFunctions.getBookByISBNFor(testListOfBooks, 1231)); //TODO zamiast book1 to testList.get(x)
     }
 
     @Test
@@ -149,7 +149,7 @@ class BookFunctionsTest {
     @Test
     void checkIfAllBooksAreReleasedAfter2000For() {
         BookFunctions bookFunctions = new BookFunctions();
-        Assert.assertEquals(false, bookFunctions.checkIfAllBooksAreReleasedAfter2000For(testListOfBooks));
+        Assert.assertEquals(false, bookFunctions.checkIfAllBooksAreReleasedAfter2000For(testListOfBooks)); //TODO assertfalse
     }
 
     @Test

@@ -7,7 +7,7 @@ import model.Category;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataStorage {
+public class DataStorage { //TODO nie powinna byc w utils.
     private static List<Book> listOfBooks = new ArrayList<>();
     private static List<Author> listOfAuthors = new ArrayList<>();
     private static List<Category> listOfCategories = new ArrayList<>();

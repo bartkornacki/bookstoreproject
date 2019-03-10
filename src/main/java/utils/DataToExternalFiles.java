@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class DataToExternalFiles {
     public void writeAuthorsToFile(List<Author> authorsList, String fileName) {
         String authorFileName = fileName;
-        DataStorage dataStorage = new DataStorage();
+        DataStorage dataStorage = new DataStorage(); //TODO do wyrzucenia
 
         try {
             String str = authorsList

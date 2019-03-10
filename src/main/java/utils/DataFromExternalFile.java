@@ -8,8 +8,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
-public class DataFromExternalFile {
+public class DataFromExternalFile { //ToDO do pakietu (files?)
     private static List<Book> listOfBooksFromFile = new ArrayList<>();
     private static List<Author> listOfAuthorsFromFile = new ArrayList<>();
     private static List<Category> listOfCategoriesFromFile = new ArrayList<>();
@@ -37,7 +38,7 @@ public class DataFromExternalFile {
                         Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
             }
         } catch (IOException e) {
-            System.out.println("At least one out of three files does not exist. Please ensure all files are uploaded.");
+            System.out.println("At least one out of three files does not exist. Please ensure all files are uploaded."); //TODO relikt
             System.exit(1);
         }
         return listOfCategoriesFromFile;
@@ -66,7 +67,7 @@ public class DataFromExternalFile {
             InputStreamReader isr = new InputStreamReader(is);
             BufferedReader reader = new BufferedReader(isr);
             while (reader.ready()) {
-                String[] stringArray = reader.readLine().split(";");
+                String[] stringArray = reader.readLine().split(";"); //TODO zawartosc while do metody
                 Category category = getCategory(stringArray[stringArray.length - 1]);
 
                 List<Author> authorsInTheBook = getAuthors(stringArray[5]);
@@ -84,16 +85,20 @@ public class DataFromExternalFile {
     }
 
     private static Category getCategory(String s) {
-        try {
+//        try {
             int categoryId = Integer.parseInt(s);
-            return listOfCategoriesFromFile.stream()
-                    .filter(x -> x.getId() == categoryId)
-                    .findFirst().get();
-        } catch (NoSuchElementException e) {
-            System.out.println("Category wasn't assigned to the book. Please ensure 'category' file exists.");
-            System.exit(1);
-            return null;
-        }
+        Optional<Category> optionalCategory = listOfCategoriesFromFile.stream()
+                .filter(x -> x.getId() == categoryId)
+                .findFirst();
+//        } catch (NoSuchElementException e) {
+//            System.exit(1);
+            if( optionalCategory.isPresent()) {
+                return optionalCategory.get();
+            } else {
+                System.out.println("Category wasn't assigned to the book. Please ensure 'category' file exists.");
+                return null;
+            }
+//        }
     }
 
     private static List<Author> getAuthors(String s) {
@@ -101,14 +106,14 @@ public class DataFromExternalFile {
         List<Author> authorsInTheBook = new ArrayList<>();
         try {
             for (int i = 0; i < authorID.length; i++) {
-                int finalI = i;
+                int finalI = i; //TODO dlaczego tak?
                 authorsInTheBook.add(listOfAuthorsFromFile.stream()
                         .filter(x -> x.getId() == Integer.valueOf(authorID[finalI]))
                         .findFirst().get());
             }
-        } catch (NoSuchElementException e) {
+        } catch (NoSuchElementException e) { //TODO optioal
             System.out.println("Authors weren't assigned to the book. Please ensure 'authors' file exists.");
-            System.exit(1);
+//            System.exit(1);
             return null;
         }
 //        for (int i = 0; i < authorID.length; i++) {

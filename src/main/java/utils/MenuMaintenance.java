@@ -19,7 +19,7 @@ public class MenuMaintenance {
     private static List<Category> listOfCategories = new ArrayList<>();
 
     public void menuNavigation(String fileCategories, String fileAuthors, String fileBooks) {
-        MenuMaintenance menuMaintenance = new MenuMaintenance();
+        MenuMaintenance menuMaintenance = new MenuMaintenance(); //TODO mozna bez tego
         int action;
                 readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);
         do {
@@ -53,7 +53,7 @@ public class MenuMaintenance {
 
     private int getNumberFromUser() {
         Scanner scanner = null;
-        int temp = 0;
+        int temp = 0; //TODO nazwa
         try{
             scanner = new Scanner(System.in);
             temp = scanner.nextInt();
@@ -63,7 +63,7 @@ public class MenuMaintenance {
         return temp;
     }
 
-    private void proceedWithChosenAction(int inputAction, String fileCategories, String fileAuthors, String fileBooks) {
+    private void proceedWithChosenAction(int inputAction, String fileCategories, String fileAuthors, String fileBooks) { //TODO nieuzywane parametry
         DataStorage dataStorage = new DataStorage();
         listOfAuthors = dataStorage.getListOfAuthors();
         listOfCategories = dataStorage.getListOfCategories();

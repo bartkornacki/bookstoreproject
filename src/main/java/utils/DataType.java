@@ -1,5 +1,5 @@
 package utils;
 
-public enum DataType {
+public enum DataType { //TODO do wyrzucenia
     CATEGORY, AUTHOR, BOOK
 }

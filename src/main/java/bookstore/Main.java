@@ -2,7 +2,7 @@ package bookstore;
 
 import utils.*;
 
-import java.io.*;
+import java.io.*; //TODO
 
 public class Main {
     public static void main(String[] args) {
@@ -13,5 +13,6 @@ public class Main {
         String fileBooks = "books.csv";
 
         menuMaintenance.menuNavigation(fileCategories, fileAuthors, fileBooks);
+        //TODO co jesli ktos w wiek autora wpisze "dasdsa"
     }
 }

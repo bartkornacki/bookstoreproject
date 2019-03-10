@@ -67,12 +67,12 @@ public class ExtendTheList {
                 System.out.println("Please provide new name of the category:");
                 String name = in.next();
 
-                listOfCategories.remove(id);
+                listOfCategories.remove(id); //TODO zamist 2 linijek jedna
                 listOfCategories.add(id, new Category(id + 1, name, priority));
             }
         } catch (InputMismatchException e) {
             System.out.println("The list of categories hasn't been modified, as unavailable option was chosen.");
         }
-        return listOfCategories;
+        return listOfCategories; //TODO nie powinna nic zwracac.
     }
 }

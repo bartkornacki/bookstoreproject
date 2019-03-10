@@ -1,7 +1,7 @@
 package functions;
 
 import com.google.common.collect.Lists;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils; //TODO
 import model.Author;
 import model.Book;
 import model.Category;
@@ -42,7 +42,7 @@ public class BookFunctions {
 
     public List<Book> getTwoLastBooksFor(List<Book> listOfBooks) {
         if (listOfBooks == null) {
-            return null;
+            return null; //TODO new ArrayList();
         } else {
             return listOfBooks.subList(listOfBooks.size() - 2, listOfBooks.size());
         }
@@ -57,8 +57,8 @@ public class BookFunctions {
     }
 
     public Book earliestReleasedBookFor(List<Book> listOfBooks) {
-        Book book = listOfBooks.get(0);
-        for (Book b : listOfBooks) {
+        Book book = listOfBooks.get(0); //TODO co jesli bedzie pusta lista
+        for (Book b : listOfBooks) { //TODO nazwa b
             if (b.getYear() < book.getYear()) {
                 book = b;
             }
@@ -68,7 +68,7 @@ public class BookFunctions {
 
     public Book earliestReleasedBookStream(List<Book> listOfBooks) {
         return listOfBooks.stream()
-                .sorted(Comparator.comparing(x -> x.getYear()))
+                .sorted(Comparator.comparing(x -> x.getYear())) //TODO min zamiast sorted
                 .findFirst().get();
     }
 
@@ -91,7 +91,7 @@ public class BookFunctions {
     public int sumOfAllYearsFor(List<Book> listOfBooks) {
         int sum = 0;
         for (Book b : listOfBooks) {
-            sum = sum + b.getYear();
+            sum = sum + b.getYear(); //TODO +=
         }
         return sum;
     }
@@ -114,7 +114,7 @@ public class BookFunctions {
     public int numberOfBooksReleasedPrior2007Stream(List<Book> listOfBooks) {
         return (int) listOfBooks.stream()
                 .filter(x -> x.getYear() > 2007)
-                .mapToInt(x -> x.getYear())
+                .mapToInt(x -> x.getYear()) //TODO po co ta linijka?
                 .count();
     }
 
@@ -134,13 +134,13 @@ public class BookFunctions {
     }
 
     public double averageReleaseYearFor(List<Book> listOfBooks) {
-        double res = 0;
+        double res = 0; //TODO nazwa
         int i = 0;
         for (Book b : listOfBooks) {
             res = res + b.getYear();
             i++;
         }
-        System.out.println(res);
+        System.out.println(res); //TODO po co printy?
         System.out.println(i);
 //        Math.
         return res / i;
@@ -168,7 +168,7 @@ public class BookFunctions {
     }
 
     public List<Book> getBooksStartingWithCAndReleasedAfter2007for(List<Book> listOfBooks) {
-        List<Book> tempListOfBooks = new ArrayList<>();
+        List<Book> tempListOfBooks = new ArrayList<>(); //TODO nazwa
 
         for (Book b : listOfBooks) {
             if ((b.getYear() > 2007) && (b.getTitle().startsWith("C"))) {
@@ -180,7 +180,7 @@ public class BookFunctions {
 
     public List<Book> getBooksStartingWithCAndReleasedAfter2007stream(List<Book> listOfBooks) {
         return listOfBooks.stream()
-                .filter(x -> x.getYear() > 2007)
+                .filter(x -> x.getYear() > 2007) //TODO mozna 1 filtrem. Jak wygodniej
                 .filter(x -> x.getTitle().startsWith("C"))
                 .collect(Collectors.toList());
     }
@@ -206,9 +206,7 @@ public class BookFunctions {
 
         List<Book> tempList = new ArrayList<>();
         for (Book b : listOfBooks) {
-            List<Author> authors1 = b.getAuthors();
-
-            for (Author a : authors1) {
+            for (Author a : b.getAuthors()) {
                 if (a.getName().equalsIgnoreCase(listOfAuthors.get(action).getName())) {
                     tempList.add(b);
                 }
@@ -231,7 +229,6 @@ public class BookFunctions {
     }
 
     public List<String> getBooksDivisibleBy2For(List<Book> listOfBooks) {
-        List<Book> tempListOfBooks = new ArrayList<>();
         List<String> tempListOfTitles = new ArrayList<>();
         for (Book b : listOfBooks) {
             if (b.getYear() % 2 == 0) {
@@ -292,7 +289,7 @@ public class BookFunctions {
 
     public List<List<Book>> getListOfListsOfBooksStream(List<Book> listOfBooks) {
         List<List<Book>> mainList = new ArrayList<>();
-//        List<Book> tempList = new ArrayList<>();
+//        List<Book> tempList = new ArrayList<>(); //TODO wszystkie zakomentowane do wyrzucenia
         List<Book> tempList;
 
         tempList = new ArrayList<>();
