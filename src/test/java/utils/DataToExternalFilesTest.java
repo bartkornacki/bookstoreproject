@@ -24,8 +24,4 @@ class DataToExternalFilesTest {
     @Test
     void writeAuthorsToFile() {
     }
-
-    @Test
-    void writeObject() {
-    }
 }
