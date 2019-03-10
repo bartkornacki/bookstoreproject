@@ -17,13 +17,17 @@ public class ExtendTheList {
         Scanner in = new Scanner(System.in);
         System.out.println("Please provide the name of the author:");
         String name = in.next();
-        int age;
+        String age;
+        int result = -1;
         do {
             System.out.println("Please provide the age of the author:");
-            age = in.nextInt();
+            age = in.next();
 
-        } while (!(age < 120 && age > 0));
-        Author author = new Author(generateIDOfAuthor(listOfAuthors), name, age);
+            if (age.matches("-?\\d+(\\.\\d+)?")) {
+                result = Integer.parseInt(age);
+            }
+        } while ((result > 120) || (result < 0));
+        Author author = new Author(generateIDOfAuthor(listOfAuthors), name, Integer.parseInt(age));
         listOfAuthors.add(author);
     }
 

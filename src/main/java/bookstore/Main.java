@@ -11,6 +11,5 @@ public class Main {
         String fileBooks = "books.csv";
 
         menuMaintenance.menuNavigation(fileCategories, fileAuthors, fileBooks);
-        //TODO co jesli ktos w wiek autora wpisze "dasdsa"
     }
 }
