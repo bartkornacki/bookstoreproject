@@ -13,27 +13,21 @@ import java.util.TreeMap;
 class BookFunctionsTest {
 
     List<Book> testListOfBooks;
-    Book book1; //TODO to do setupa
-    Book book2;
-    Book book3;
-    Book book4;
-    Book book5;
-    Book book6;
 
     @BeforeEach
     void setUp() {
         testListOfBooks = new ArrayList<>();
-        book1 = new Book(11, "CTitle11",
+        Book book1 = new Book(11, "CTitle11",
                 1231, 2010, "T", null, null);
-        book2 = new Book(12, "Title12",
+        Book book2 = new Book(12, "Title12",
                 1232, 2012, "T", null, null);
-        book3 = new Book(13, "Title13",
+        Book book3 = new Book(13, "Title13",
                 1233, 2000, "T", null, null);
-        book4 = new Book(14, "CTitle14",
+        Book book4 = new Book(14, "CTitle14",
                 1234, 2013, "T", null, null);
-        book5 = new Book(15, "Title15",
+        Book book5 = new Book(15, "Title15",
                 1235, 2015, "T", null, null);
-        book6 = new Book(16, "Title16",
+        Book book6 = new Book(16, "Title16",
                 1236, 2016, "T", null, null);
         testListOfBooks.add(book1);
         testListOfBooks.add(book2);
@@ -46,7 +40,7 @@ class BookFunctionsTest {
     @Test
     void getBookByISBN1() {
         BookFunctions bookFunctions = new BookFunctions(); //TODO mozna raz w setupie
-        Assert.assertEquals(book1, bookFunctions.getBookByISBNStream(testListOfBooks, 1231));
+        Assert.assertEquals(testListOfBooks.get(0), bookFunctions.getBookByISBNStream(testListOfBooks, 1231));
     }
 
     @Test
@@ -64,7 +58,7 @@ class BookFunctionsTest {
     @Test
     void getBookByISBN4() {
         BookFunctions bookFunctions = new BookFunctions();
-        Assert.assertEquals(book1, bookFunctions.getBookByISBNFor(testListOfBooks, 1231)); //TODO zamiast book1 to testList.get(x)
+        Assert.assertEquals(testListOfBooks.get(0), bookFunctions.getBookByISBNFor(testListOfBooks, 1231)); //TODO zamiast book1 to testList.get(x)
     }
 
     @Test
@@ -83,8 +77,8 @@ class BookFunctionsTest {
     void getTwoLastBooksFor1() {
         BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
-        tempListOfBooks.add(book5);
-        tempListOfBooks.add(book6);
+        tempListOfBooks.add(testListOfBooks.get(4));
+        tempListOfBooks.add(testListOfBooks.get(5));
         Assert.assertEquals(tempListOfBooks, bookFunctions.getTwoLastBooksFor(testListOfBooks));
     }
 
@@ -92,33 +86,33 @@ class BookFunctionsTest {
     void getTwoLastBooksStream1() {
         BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
-        tempListOfBooks.add(book5);
-        tempListOfBooks.add(book6);
+        tempListOfBooks.add(testListOfBooks.get(4));
+        tempListOfBooks.add(testListOfBooks.get(5));
         Assert.assertEquals(tempListOfBooks, bookFunctions.getTwoLastBooksStream(testListOfBooks));
     }
 
     @Test
     void earliestReleasedBookFor() {
         BookFunctions bookFunctions = new BookFunctions();
-        Assert.assertEquals(book3, bookFunctions.earliestReleasedBookFor(testListOfBooks));
+        Assert.assertEquals(testListOfBooks.get(2), bookFunctions.earliestReleasedBookFor(testListOfBooks));
     }
 
     @Test
     void earliestReleasedBookStream() {
         BookFunctions bookFunctions = new BookFunctions();
-        Assert.assertEquals(book3, bookFunctions.earliestReleasedBookStream(testListOfBooks));
+        Assert.assertEquals(testListOfBooks.get(2), bookFunctions.earliestReleasedBookStream(testListOfBooks));
     }
 
     @Test
     void latestReleasedBookFor() {
         BookFunctions bookFunctions = new BookFunctions();
-        Assert.assertEquals(book6, bookFunctions.latestReleasedBookFor(testListOfBooks));
+        Assert.assertEquals(testListOfBooks.get(5), bookFunctions.latestReleasedBookFor(testListOfBooks));
     }
 
     @Test
     void latestReleasedBookStream() {
         BookFunctions bookFunctions = new BookFunctions();
-        Assert.assertEquals(book6, bookFunctions.latestReleasedBookStream(testListOfBooks));
+        Assert.assertEquals(testListOfBooks.get(5), bookFunctions.latestReleasedBookStream(testListOfBooks));
 
     }
 
@@ -186,8 +180,8 @@ class BookFunctionsTest {
     void getBooksStartingWithCAndReleasedAfter2007for() {
         BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
-        tempListOfBooks.add(book1);
-        tempListOfBooks.add(book4);
+        tempListOfBooks.add(testListOfBooks.get(0));
+        tempListOfBooks.add(testListOfBooks.get(3));
         Assert.assertEquals(tempListOfBooks, bookFunctions.getBooksStartingWithCAndReleasedAfter2007for(testListOfBooks));
 
     }
@@ -196,8 +190,8 @@ class BookFunctionsTest {
     void getBooksStartingWithCAndReleasedAfter2007stream() {
         BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
-        tempListOfBooks.add(book1);
-        tempListOfBooks.add(book4);
+        tempListOfBooks.add(testListOfBooks.get(0));
+        tempListOfBooks.add(testListOfBooks.get(3));
         Assert.assertEquals(tempListOfBooks, bookFunctions.getBooksStartingWithCAndReleasedAfter2007stream(testListOfBooks));
     }
 
@@ -205,36 +199,38 @@ class BookFunctionsTest {
     void add100YearsFor() {
         BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
-        tempListOfBooks.add(book1);
-        tempListOfBooks.add(book2);
-        tempListOfBooks.add(book3);
-        tempListOfBooks.add(book4);
-        tempListOfBooks.add(book5);
-        tempListOfBooks.add(book6);
-        Assert.assertEquals(book3.getYear() + 100, bookFunctions.add100YearsFor(testListOfBooks).get(2).getYear());
+        tempListOfBooks.add(testListOfBooks.get(0));
+        tempListOfBooks.add(testListOfBooks.get(1));
+        tempListOfBooks.add(testListOfBooks.get(2));
+        tempListOfBooks.add(testListOfBooks.get(3));
+        tempListOfBooks.add(testListOfBooks.get(4));
+        tempListOfBooks.add(testListOfBooks.get(5));
+        Assert.assertEquals(testListOfBooks.get(2).getYear() + 100,
+                bookFunctions.add100YearsFor(testListOfBooks).get(2).getYear());
     }
 
     @Test
     void add100YearsStream() {
         BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
-        tempListOfBooks.add(book1);
-        tempListOfBooks.add(book2);
-        tempListOfBooks.add(book3);
-        tempListOfBooks.add(book4);
-        tempListOfBooks.add(book5);
-        tempListOfBooks.add(book6);
-        Assert.assertEquals(book3.getYear() + 100, bookFunctions.add100YearsStream(testListOfBooks).get(2).getYear());
+        tempListOfBooks.add(testListOfBooks.get(0));
+        tempListOfBooks.add(testListOfBooks.get(1));
+        tempListOfBooks.add(testListOfBooks.get(2));
+        tempListOfBooks.add(testListOfBooks.get(3));
+        tempListOfBooks.add(testListOfBooks.get(4));
+        tempListOfBooks.add(testListOfBooks.get(5));
+        Assert.assertEquals(testListOfBooks.get(2).getYear() + 100,
+                bookFunctions.add100YearsStream(testListOfBooks).get(2).getYear());
     }
 
     @Test
     void getBooksDivisibleBy2For() {
         BookFunctions bookFunctions = new BookFunctions();
         List<String> tempListOfTitles = new ArrayList<>();
-        tempListOfTitles.add(book1.getTitle());
-        tempListOfTitles.add(book2.getTitle());
-        tempListOfTitles.add(book3.getTitle());
-        tempListOfTitles.add(book6.getTitle());
+        tempListOfTitles.add(testListOfBooks.get(0).getTitle());
+        tempListOfTitles.add(testListOfBooks.get(1).getTitle());
+        tempListOfTitles.add(testListOfBooks.get(2).getTitle());
+        tempListOfTitles.add(testListOfBooks.get(5).getTitle());
         Assert.assertEquals(tempListOfTitles, bookFunctions.getBooksDivisibleBy2For(testListOfBooks));
     }
 
@@ -242,10 +238,10 @@ class BookFunctionsTest {
     void getBooksDivisibleBy2Stream() {
         BookFunctions bookFunctions = new BookFunctions();
         List<String> tempListOfTitles = new ArrayList<>();
-        tempListOfTitles.add(book1.getTitle());
-        tempListOfTitles.add(book2.getTitle());
-        tempListOfTitles.add(book3.getTitle());
-        tempListOfTitles.add(book6.getTitle());
+        tempListOfTitles.add(testListOfBooks.get(0).getTitle());
+        tempListOfTitles.add(testListOfBooks.get(1).getTitle());
+        tempListOfTitles.add(testListOfBooks.get(2).getTitle());
+        tempListOfTitles.add(testListOfBooks.get(5).getTitle());
         Assert.assertEquals(tempListOfTitles, bookFunctions.getBooksDivisibleBy2Stream(testListOfBooks));
     }
 
@@ -253,12 +249,12 @@ class BookFunctionsTest {
     void getMapOfIsbnAndBooksFor() {
         BookFunctions bookFunctions = new BookFunctions();
         Map<Integer, Book> tempMapOfIsbnAndBooks = new TreeMap<>();
-        tempMapOfIsbnAndBooks.put(1231, book1);
-        tempMapOfIsbnAndBooks.put(1232, book2);
-        tempMapOfIsbnAndBooks.put(1233, book3);
-        tempMapOfIsbnAndBooks.put(1234, book4);
-        tempMapOfIsbnAndBooks.put(1235, book5);
-        tempMapOfIsbnAndBooks.put(1236, book6);
+        tempMapOfIsbnAndBooks.put(1231, testListOfBooks.get(0));
+        tempMapOfIsbnAndBooks.put(1232, testListOfBooks.get(1));
+        tempMapOfIsbnAndBooks.put(1233, testListOfBooks.get(2));
+        tempMapOfIsbnAndBooks.put(1234, testListOfBooks.get(3));
+        tempMapOfIsbnAndBooks.put(1235, testListOfBooks.get(4));
+        tempMapOfIsbnAndBooks.put(1236, testListOfBooks.get(5));
         Assert.assertEquals(tempMapOfIsbnAndBooks, bookFunctions.getMapOfIsbnAndBooksFor(testListOfBooks));
     }
 
@@ -266,12 +262,12 @@ class BookFunctionsTest {
     void getMapOfIsbnAndBooksStream() {
         BookFunctions bookFunctions = new BookFunctions();
         Map<Integer, Book> tempMapOfIsbnAndBooks = new TreeMap<>();
-        tempMapOfIsbnAndBooks.put(1231, book1);
-        tempMapOfIsbnAndBooks.put(1232, book2);
-        tempMapOfIsbnAndBooks.put(1233, book3);
-        tempMapOfIsbnAndBooks.put(1234, book4);
-        tempMapOfIsbnAndBooks.put(1235, book5);
-        tempMapOfIsbnAndBooks.put(1236, book6);
+        tempMapOfIsbnAndBooks.put(1231, testListOfBooks.get(0));
+        tempMapOfIsbnAndBooks.put(1232, testListOfBooks.get(1));
+        tempMapOfIsbnAndBooks.put(1233, testListOfBooks.get(2));
+        tempMapOfIsbnAndBooks.put(1234, testListOfBooks.get(3));
+        tempMapOfIsbnAndBooks.put(1235, testListOfBooks.get(4));
+        tempMapOfIsbnAndBooks.put(1236, testListOfBooks.get(5));
         Assert.assertEquals(tempMapOfIsbnAndBooks, bookFunctions.getMapOfIsbnAndBooksStream(testListOfBooks));
     }
 
@@ -279,12 +275,12 @@ class BookFunctionsTest {
     void sortBooksFromNewestFor() {
         BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
-        tempListOfBooks.add(book6);
-        tempListOfBooks.add(book5);
-        tempListOfBooks.add(book4);
-        tempListOfBooks.add(book2);
-        tempListOfBooks.add(book1);
-        tempListOfBooks.add(book3);
+        tempListOfBooks.add(testListOfBooks.get(5));
+        tempListOfBooks.add(testListOfBooks.get(4));
+        tempListOfBooks.add(testListOfBooks.get(3));
+        tempListOfBooks.add(testListOfBooks.get(1));
+        tempListOfBooks.add(testListOfBooks.get(0));
+        tempListOfBooks.add(testListOfBooks.get(2));
         Assert.assertEquals(tempListOfBooks, bookFunctions.sortBooksFromNewestFor(testListOfBooks));
     }
 
@@ -292,12 +288,12 @@ class BookFunctionsTest {
     void sortBooksFromNewestStream() {
         BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
-        tempListOfBooks.add(book6);
-        tempListOfBooks.add(book5);
-        tempListOfBooks.add(book4);
-        tempListOfBooks.add(book2);
-        tempListOfBooks.add(book1);
-        tempListOfBooks.add(book3);
+        tempListOfBooks.add(testListOfBooks.get(5));
+        tempListOfBooks.add(testListOfBooks.get(4));
+        tempListOfBooks.add(testListOfBooks.get(3));
+        tempListOfBooks.add(testListOfBooks.get(1));
+        tempListOfBooks.add(testListOfBooks.get(0));
+        tempListOfBooks.add(testListOfBooks.get(2));
         Assert.assertEquals(tempListOfBooks, bookFunctions.sortBooksFromNewestStream(testListOfBooks));
     }
 
@@ -305,12 +301,12 @@ class BookFunctionsTest {
     void sortBooksFromOldestFor() {
         BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
-        tempListOfBooks.add(book3);
-        tempListOfBooks.add(book1);
-        tempListOfBooks.add(book2);
-        tempListOfBooks.add(book4);
-        tempListOfBooks.add(book5);
-        tempListOfBooks.add(book6);
+        tempListOfBooks.add(testListOfBooks.get(2));
+        tempListOfBooks.add(testListOfBooks.get(0));
+        tempListOfBooks.add(testListOfBooks.get(1));
+        tempListOfBooks.add(testListOfBooks.get(3));
+        tempListOfBooks.add(testListOfBooks.get(4));
+        tempListOfBooks.add(testListOfBooks.get(5));
         Assert.assertEquals(tempListOfBooks, bookFunctions.sortBooksFromOldestFor(testListOfBooks));
     }
 
@@ -318,12 +314,12 @@ class BookFunctionsTest {
     void sortBooksFromOldestStream() {
         BookFunctions bookFunctions = new BookFunctions();
         List<Book> tempListOfBooks = new ArrayList<>();
-        tempListOfBooks.add(book3);
-        tempListOfBooks.add(book1);
-        tempListOfBooks.add(book2);
-        tempListOfBooks.add(book4);
-        tempListOfBooks.add(book5);
-        tempListOfBooks.add(book6);
+        tempListOfBooks.add(testListOfBooks.get(2));
+        tempListOfBooks.add(testListOfBooks.get(0));
+        tempListOfBooks.add(testListOfBooks.get(1));
+        tempListOfBooks.add(testListOfBooks.get(3));
+        tempListOfBooks.add(testListOfBooks.get(4));
+        tempListOfBooks.add(testListOfBooks.get(5));
         Assert.assertEquals(tempListOfBooks, bookFunctions.sortBooksFromOldestStream(testListOfBooks));
     }
 
@@ -334,12 +330,12 @@ class BookFunctionsTest {
         List<Book> firstTempListOfBooks = new ArrayList<>();
         List<Book> secondTempListOfBooks = new ArrayList<>();
         List<Book> thirdTempListOfBooks = new ArrayList<>();
-        firstTempListOfBooks.add(book1);
-        firstTempListOfBooks.add(book2);
-        secondTempListOfBooks.add(book3);
-        secondTempListOfBooks.add(book4);
-        thirdTempListOfBooks.add(book5);
-        thirdTempListOfBooks.add(book6);
+        firstTempListOfBooks.add(testListOfBooks.get(0));
+        firstTempListOfBooks.add(testListOfBooks.get(1));
+        secondTempListOfBooks.add(testListOfBooks.get(2));
+        secondTempListOfBooks.add(testListOfBooks.get(3));
+        thirdTempListOfBooks.add(testListOfBooks.get(4));
+        thirdTempListOfBooks.add(testListOfBooks.get(5));
         mainTempListOfBooks.add(firstTempListOfBooks);
         mainTempListOfBooks.add(secondTempListOfBooks);
         mainTempListOfBooks.add(thirdTempListOfBooks);
@@ -355,12 +351,12 @@ class BookFunctionsTest {
         List<Book> firstTempListOfBooks = new ArrayList<>();
         List<Book> secondTempListOfBooks = new ArrayList<>();
         List<Book> thirdTempListOfBooks = new ArrayList<>();
-        firstTempListOfBooks.add(book1);
-        firstTempListOfBooks.add(book2);
-        secondTempListOfBooks.add(book3);
-        secondTempListOfBooks.add(book4);
-        thirdTempListOfBooks.add(book5);
-        thirdTempListOfBooks.add(book6);
+        firstTempListOfBooks.add(testListOfBooks.get(0));
+        firstTempListOfBooks.add(testListOfBooks.get(1));
+        secondTempListOfBooks.add(testListOfBooks.get(2));
+        secondTempListOfBooks.add(testListOfBooks.get(3));
+        thirdTempListOfBooks.add(testListOfBooks.get(4));
+        thirdTempListOfBooks.add(testListOfBooks.get(5));
         mainTempListOfBooks.add(firstTempListOfBooks);
         mainTempListOfBooks.add(secondTempListOfBooks);
         mainTempListOfBooks.add(thirdTempListOfBooks);

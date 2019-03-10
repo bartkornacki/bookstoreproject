@@ -47,8 +47,7 @@ public class ExtendTheList {
         return listOfCategories.stream().mapToInt(x -> x.getId()).max().getAsInt() + 1;
     }
 
-    public List<Category> changeCategoryName(List<Category> listOfCategories) {
-
+    public void changeCategoryName(List<Category> listOfCategories) {
         Scanner in = new Scanner(System.in);
         int id = 0;
         try {
@@ -66,12 +65,10 @@ public class ExtendTheList {
                 System.out.println("Please provide new name of the category:");
                 String name = in.next();
 
-                listOfCategories.remove(id); //TODO zamist 2 linijek jedna
-                listOfCategories.add(id, new Category(id + 1, name, priority));
+                listOfCategories.get(id).setName(name);
             }
         } catch (InputMismatchException e) {
             System.out.println("The list of categories hasn't been modified, as unavailable option was chosen.");
         }
-        return listOfCategories; //TODO nie powinna nic zwracac.
     }
 }

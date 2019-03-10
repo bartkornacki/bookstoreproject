@@ -284,22 +284,7 @@ public class BookFunctions {
 
     public List<List<Book>> getListOfListsOfBooksStream(List<Book> listOfBooks) {
         List<List<Book>> mainList = new ArrayList<>();
-//        List<Book> tempList = new ArrayList<>(); //TODO wszystkie zakomentowane do wyrzucenia
-        List<Book> tempList;
-
-        tempList = new ArrayList<>();
-        int j = 0;
-        for (int i = 0; i < listOfBooks.size(); i++) {
-            if (j == 2) {
-                mainList.add((i / 2) - 1, tempList);
-                j = -1;
-                tempList.clear();
-                tempList = new ArrayList<>();
-            } else {
-                tempList.add(i % 2, listOfBooks.get(i));
-            }
-            j++;
-        }
+        List<Book> tempList = new ArrayList<>();
 
 //        //Rafał
 //        for(int i = 0; i < listOfBooks.size(); i++) {
@@ -325,18 +310,18 @@ public class BookFunctions {
 //            return resultList;
 //        }
 
-//        //Bartek
-//        int j = 0;
-//        for (int i = 0; i < listOfBooks.size(); i++) {
-//            tempList.add(listOfBooks.get(i));
-//            j++;
-//            if (j == 2) {;
-//                mainList.add(tempList.stream().collect(Collectors.toList()));
-//                tempList.clear();
-//                j = 0;
-//            }
-//        }
+        //Bartek
+        int j = 0;
+        for (int i = 0; i < listOfBooks.size(); i++) {
+            tempList.add(listOfBooks.get(i));
+            j++;
+            if (j == 2) {
+                ;
+                mainList.add(tempList.stream().collect(Collectors.toList()));
+                tempList.clear();
+                j = 0;
+            }
+        }
         return mainList;
     }
-
 }

@@ -68,21 +68,28 @@ public class DataFromExternalFile {
             InputStreamReader isr = new InputStreamReader(is);
             BufferedReader reader = new BufferedReader(isr);
             while (reader.ready()) {
-                String[] stringArray = reader.readLine().split(";"); //TODO zawartosc while do metody
-                Category category = getCategory(stringArray[stringArray.length - 1]);
-
-                List<Author> authorsInTheBook = getAuthors(stringArray[5]);
-
-                Book book = new Book(
-                        Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2]),
-                        Integer.valueOf(stringArray[3]), stringArray[4], authorsInTheBook, category);
-                listOfBooksFromFile.add(book);
+                addBookToList(reader);
             }
         } catch (IOException e) {
             System.out.println("Books weren't found. Please ensure 'books' file exists.");
             System.exit(1);
         }
         return listOfBooksFromFile;
+    }
+
+    private static void addBookToList(BufferedReader reader) {
+        try {
+            String[] stringArray = reader.readLine().split(";");
+            Category category = getCategory(stringArray[stringArray.length - 1]);
+            List<Author> authorsInTheBook = getAuthors(stringArray[5]);
+            Book book = new Book(
+                    Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2]),
+                    Integer.valueOf(stringArray[3]), stringArray[4], authorsInTheBook, category);
+            listOfBooksFromFile.add(book);
+        } catch (IOException e) {
+            System.out.println("Books weren't found. Please ensure 'books' file exists.");
+            System.exit(1);
+        }
     }
 
     private static Category getCategory(String s) {
@@ -117,7 +124,7 @@ public class DataFromExternalFile {
 //            System.exit(1);
             return null;
         }
-        
+
 //        Other way to get authors to the book
 //        for (int i = 0; i < authorID.length; i++) {
 //            for (Author listOfAuthor : listOfAuthorsFromFile) {
