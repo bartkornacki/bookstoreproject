@@ -26,34 +26,13 @@ public class DataFromExternalFile {
         dataStorage.setListOfBooks(listOfBooksFromFile);
     }
 
-    private BufferedReader openAnExternalFile(String file) {
-        InputStream is = null;
-        try {
-            is = new FileInputStream(file);
-            InputStreamReader isr = new InputStreamReader(is);
-            return new BufferedReader(isr);
-        } catch (FileNotFoundException e) {
-            return null;
-        }
-    }
-
-    private static String[] splitLine() {
-        String line = null;
-        try {
-            line = reader.readLine();
-            return line.split(";");
-        } catch (IOException e) {
-            return null;
-        }
-    }
-
-
     public static List<Category> readCategoryFile(String file) {
-        DataFromExternalFile dataFromExternalFile;
         try {
-            reader = new DataFromExternalFile().openAnExternalFile(file);
+            InputStream is = new FileInputStream(file);
+            InputStreamReader isr = new InputStreamReader(is);
+            BufferedReader reader = new BufferedReader(isr);
             while (reader.ready()) {
-                String[] stringArray = splitLine();
+                String[] stringArray = reader.readLine().split(";");
                 listOfCategoriesFromFile.add(new Category(
                         Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
             }
@@ -65,11 +44,12 @@ public class DataFromExternalFile {
     }
 
     public static List<Author> readAuthorFile(String file) {
-        DataFromExternalFile dataFromExternalFile;
         try {
-            reader = new DataFromExternalFile().openAnExternalFile(file);
+            InputStream is = new FileInputStream(file);
+            InputStreamReader isr = new InputStreamReader(is);
+            BufferedReader reader = new BufferedReader(isr);
             while (reader.ready()) {
-                String[] stringArray = splitLine();
+                String[] stringArray = reader.readLine().split(";");
                 listOfAuthorsFromFile.add(new Author(
                         Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
             }
@@ -81,11 +61,12 @@ public class DataFromExternalFile {
     }
 
     public static List<Book> readBookFile(String file) {
-        DataFromExternalFile dataFromExternalFile;
         try {
-            reader = new DataFromExternalFile().openAnExternalFile(file);
+            InputStream is = new FileInputStream(file);
+            InputStreamReader isr = new InputStreamReader(is);
+            BufferedReader reader = new BufferedReader(isr);
             while (reader.ready()) {
-                String[] stringArray = splitLine();
+                String[] stringArray = reader.readLine().split(";");
                 Category category = getCategory(stringArray[stringArray.length - 1]);
 
                 List<Author> authorsInTheBook = getAuthors(stringArray[5]);
@@ -130,7 +111,6 @@ public class DataFromExternalFile {
             System.exit(1);
             return null;
         }
-
 //        for (int i = 0; i < authorID.length; i++) {
 //            for (Author listOfAuthor : listOfAuthorsFromFile) {
 //                if (listOfAuthor.getId() == Integer.parseInt(authorID[i])) {

@@ -64,7 +64,6 @@ public class MenuMaintenance {
     }
 
     private void proceedWithChosenAction(int inputAction, String fileCategories, String fileAuthors, String fileBooks) {
-//        readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);
         DataStorage dataStorage = new DataStorage();
         listOfAuthors = dataStorage.getListOfAuthors();
         listOfCategories = dataStorage.getListOfCategories();
@@ -112,7 +111,7 @@ public class MenuMaintenance {
                 dataPresenting.showBooks(bookFunctions.getBooksFromWzorce(listOfBooks));
                 break;
             case 13:
-//                dataPresenting.showBooks(bookFunctions.getBooksByAuthor(listOfAuthors, listOfBooks));
+                dataPresenting.showBooks(bookFunctions.getBooksByAuthor(listOfAuthors, listOfBooks));
                 break;
             case 14:
 

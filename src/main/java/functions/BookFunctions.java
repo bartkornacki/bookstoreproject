@@ -6,6 +6,7 @@ import model.Author;
 import model.Book;
 import model.Category;
 import utils.DataFromExternalFile;
+import utils.DataStorage;
 
 import java.util.*;
 import java.util.function.Function;
@@ -196,21 +197,25 @@ public class BookFunctions {
                 .collect(Collectors.toList());
     }
 
-//    public List<Book> getBooksByAuthor(List<Author> listOfAuthors, List<Book> listOfBooks) {
-//        System.out.println("Please pick the author index:");
-//        listOfAuthors.stream().forEach(x -> System.out.println("\t\t" + listOfAuthors.indexOf(x) + ": " + x.getName()));
-//
-//        Scanner in = new Scanner(System.in);
-//        int action = in.nextInt();
-//
-//        List<Book> tempList = new ArrayList<>();
-//        for (Book b : listOfBooks) {
-//            String[] stringArray = DataFromExternalFile.splitLine();
-//            listOfAuthorsFromFile.add(new Author(
-//                    Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
-//        }
-//        return tempList;
-//    }
+    public List<Book> getBooksByAuthor(List<Author> listOfAuthors, List<Book> listOfBooks) {
+        System.out.println("Please pick the author index:");
+        listOfAuthors.stream().forEach(x -> System.out.println("\t\t" + listOfAuthors.indexOf(x) + ": " + x.getName()));
+
+        Scanner in = new Scanner(System.in);
+        int action = in.nextInt();
+
+        List<Book> tempList = new ArrayList<>();
+        for (Book b : listOfBooks) {
+            List<Author> authors1 = b.getAuthors();
+
+            for (Author a : authors1) {
+                if (a.getName().equalsIgnoreCase(listOfAuthors.get(action).getName())) {
+                    tempList.add(b);
+                }
+            }
+        }
+        return tempList;
+    }
 
     public List<Book> add100YearsFor(List<Book> listOfBooks) {
         for (Book b : listOfBooks) {
