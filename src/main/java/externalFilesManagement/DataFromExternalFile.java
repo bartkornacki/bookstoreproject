@@ -1,4 +1,4 @@
-package utils;
+package externalFilesManagement;
 
 import dataStorage.DataStorage;
 import model.Author;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
-public class DataFromExternalFile { //ToDO do pakietu (files?)
+public class DataFromExternalFile {
     private static List<Book> listOfBooksFromFile = new ArrayList<>();
     private static List<Author> listOfAuthorsFromFile = new ArrayList<>();
     private static List<Category> listOfCategoriesFromFile = new ArrayList<>();
@@ -39,7 +39,7 @@ public class DataFromExternalFile { //ToDO do pakietu (files?)
                         Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
             }
         } catch (IOException e) {
-            System.out.println("At least one out of three files does not exist. Please ensure all files are uploaded."); //TODO relikt
+            System.out.println("Category file doesn't exist. Please ensure all files are uploaded.");
             System.exit(1);
         }
         return listOfCategoriesFromFile;
@@ -87,18 +87,18 @@ public class DataFromExternalFile { //ToDO do pakietu (files?)
 
     private static Category getCategory(String s) {
 //        try {
-            int categoryId = Integer.parseInt(s);
+        int categoryId = Integer.parseInt(s);
         Optional<Category> optionalCategory = listOfCategoriesFromFile.stream()
                 .filter(x -> x.getId() == categoryId)
                 .findFirst();
 //        } catch (NoSuchElementException e) {
 //            System.exit(1);
-            if( optionalCategory.isPresent()) {
-                return optionalCategory.get();
-            } else {
-                System.out.println("Category wasn't assigned to the book. Please ensure 'category' file exists.");
-                return null;
-            }
+        if (optionalCategory.isPresent()) {
+            return optionalCategory.get();
+        } else {
+            System.out.println("Category wasn't assigned to the book. Please ensure 'category' file exists.");
+            return null;
+        }
 //        }
     }
 
@@ -117,6 +117,8 @@ public class DataFromExternalFile { //ToDO do pakietu (files?)
 //            System.exit(1);
             return null;
         }
+        
+//        Other way to get authors to the book
 //        for (int i = 0; i < authorID.length; i++) {
 //            for (Author listOfAuthor : listOfAuthorsFromFile) {
 //                if (listOfAuthor.getId() == Integer.parseInt(authorID[i])) {

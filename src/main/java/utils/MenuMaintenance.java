@@ -1,6 +1,7 @@
 package utils;
 
 import dataStorage.DataStorage;
+import externalFilesManagement.DataToExternalFiles;
 import functions.BookFunctions;
 import model.Author;
 import model.Book;
@@ -11,7 +12,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-import static utils.DataFromExternalFile.readDataFromExternalFiles;
+import static externalFilesManagement.DataFromExternalFile.readDataFromExternalFiles;
 
 public class MenuMaintenance {
 
@@ -20,13 +21,12 @@ public class MenuMaintenance {
     private static List<Category> listOfCategories = new ArrayList<>();
 
     public void menuNavigation(String fileCategories, String fileAuthors, String fileBooks) {
-        MenuMaintenance menuMaintenance = new MenuMaintenance(); //TODO mozna bez tego
         int action;
                 readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);
         do {
             showMenu();
-            action = menuMaintenance.getNumberFromUser();
-            menuMaintenance.proceedWithChosenAction(action, fileCategories, fileAuthors, fileBooks);
+            action = getNumberFromUser();
+            proceedWithChosenAction(action);
         } while (action != 4);
     }
 
@@ -54,17 +54,17 @@ public class MenuMaintenance {
 
     private int getNumberFromUser() {
         Scanner scanner = null;
-        int temp = 0; //TODO nazwa
+        int numberOfChosenAction = 0;
         try{
             scanner = new Scanner(System.in);
-            temp = scanner.nextInt();
+            numberOfChosenAction = scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("Number bitch!");
         }
-        return temp;
+        return numberOfChosenAction;
     }
 
-    private void proceedWithChosenAction(int inputAction, String fileCategories, String fileAuthors, String fileBooks) { //TODO nieuzywane parametry
+    private void proceedWithChosenAction(int inputAction) {
         DataStorage dataStorage = new DataStorage();
         listOfAuthors = dataStorage.getListOfAuthors();
         listOfCategories = dataStorage.getListOfCategories();
