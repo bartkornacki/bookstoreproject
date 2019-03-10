@@ -85,6 +85,12 @@ class BookFunctionsTest {
         Assert.assertEquals(testListOfBooks.get(2), bookFunctions.earliestReleasedBookFor(testListOfBooks));
     }
 
+//    @Test
+//    void earliestReleasedBookFor() {
+//        bookFunctions.earliestReleasedBookFor(new ArrayList<>())
+//
+//    }
+
     @Test
     void earliestReleasedBookStream() {
         Assert.assertEquals(testListOfBooks.get(2), bookFunctions.earliestReleasedBookStream(testListOfBooks));

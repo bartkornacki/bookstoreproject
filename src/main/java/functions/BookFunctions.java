@@ -55,9 +55,13 @@ public class BookFunctions {
         //TODO co jesli bedzie pusta lista
 
         Book searchedBook = listOfBooks.get(0);
-        for (Book book : listOfBooks) {
-            if (book.getYear() < searchedBook.getYear() || searchedBook == null) {
-                searchedBook = book;
+        if (searchedBook == null) {
+            throw new IndexOutOfBoundsException();
+        } else {
+            for (Book book : listOfBooks) {
+                if (book.getYear() < searchedBook.getYear() || searchedBook == null) {
+                    searchedBook = book;
+                }
             }
         }
         return searchedBook;

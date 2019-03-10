@@ -109,13 +109,12 @@ public class DataFromExternalFile {
         String[] authorID = s.split(",");
         List<Author> authorsInTheBook = new ArrayList<>();
         try {
-            for (int i = 0; i < authorID.length; i++) {
-                int finalI = i; //TODO dlaczego tak?
+            for (String s1 : authorID) {
                 authorsInTheBook.add(listOfAuthorsFromFile.stream()
-                        .filter(x -> x.getId() == Integer.valueOf(authorID[finalI]))
+                        .filter(x -> x.getId() == Integer.valueOf(s1))
                         .findFirst().get());
             }
-        } catch (NoSuchElementException e) { //TODO optioal
+        } catch (NoSuchElementException e) {
             System.out.println("Authors weren't assigned to the book. Please ensure 'authors' file exists.");
             return null;
         }
