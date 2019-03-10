@@ -2,21 +2,12 @@ package utils;
 
 import model.Author;
 import org.junit.Assert;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class DataToExternalFilesTest {
-//
-//    @BeforeEach
-//    void setUp() {
-//        DataStorage dataStorage = new DataStorage();
-//
-//    }
 
     @Test
     void writeAuthorsToFile() {
@@ -31,10 +22,11 @@ class DataToExternalFilesTest {
 
         DataToExternalFiles dataToExternalFiles = new DataToExternalFiles();
 
-
         dataToExternalFiles.writeAuthorsToFile(tempListOfAuthors, "test.csv");
         listFromFile = DataFromExternalFile.readAuthorFile("test.csv");
 
+        Assert.assertEquals(tempListOfAuthors.get(0).getName(), listFromFile.get(0).getName());
+        Assert.assertEquals(tempListOfAuthors.get(1).getName(), listFromFile.get(1).getName());
         Assert.assertEquals(tempListOfAuthors.get(2).getName(), listFromFile.get(2).getName());
     }
 }

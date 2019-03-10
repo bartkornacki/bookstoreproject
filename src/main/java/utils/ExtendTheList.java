@@ -1,13 +1,11 @@
 package utils;
 
 import model.Author;
-import model.Book;
 import model.Category;
 
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class ExtendTheList {
     public void addAuthor() {

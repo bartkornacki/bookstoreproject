@@ -1,15 +1,10 @@
 package functions;
 
 import com.google.common.collect.Lists;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils; //TODO
 import model.Author;
 import model.Book;
-import model.Category;
-import utils.DataFromExternalFile;
-import utils.DataStorage;
 
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class BookFunctions {
