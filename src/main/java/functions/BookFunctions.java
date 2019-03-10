@@ -12,7 +12,7 @@ public class BookFunctions {
     public Book getBookByISBNStream(List<Book> listOfBooks, int isbn) {
         Book book = null;
         if (listOfBooks == null) {
-            return null;
+            return book;
         } else {
             book = listOfBooks.stream()
                     .findFirst().filter(x -> x.getIsbnNumber() == isbn)
@@ -24,7 +24,7 @@ public class BookFunctions {
     public Book getBookByISBNFor(List<Book> listOfBooks, int isbn) {
         Book book = null;
         if (listOfBooks == null) {
-            return null;
+            return book;
         } else {
             for (Book b : listOfBooks) {
                 if (b.getIsbnNumber() == isbn) {
@@ -37,7 +37,7 @@ public class BookFunctions {
 
     public List<Book> getTwoLastBooksFor(List<Book> listOfBooks) {
         if (listOfBooks == null) {
-            return null; //TODO new ArrayList();
+            return new ArrayList<>();
         } else {
             return listOfBooks.subList(listOfBooks.size() - 2, listOfBooks.size());
         }
@@ -45,26 +45,27 @@ public class BookFunctions {
 
     public List<Book> getTwoLastBooksStream(List<Book> listOfBooks) {
         if (listOfBooks == null) {
-            return null;
+            return new ArrayList<>();
         } else {
             return listOfBooks.stream().skip(4).collect(Collectors.toList());
         }
     }
 
     public Book earliestReleasedBookFor(List<Book> listOfBooks) {
-        Book book = listOfBooks.get(0); //TODO co jesli bedzie pusta lista
-        for (Book b : listOfBooks) { //TODO nazwa b
-            if (b.getYear() < book.getYear()) {
-                book = b;
+        //TODO co jesli bedzie pusta lista
+
+        Book searchedBook = listOfBooks.get(0);
+        for (Book book : listOfBooks) {
+            if (book.getYear() < searchedBook.getYear() || searchedBook == null) {
+                searchedBook = book;
             }
         }
-        return book;
+        return searchedBook;
     }
 
     public Book earliestReleasedBookStream(List<Book> listOfBooks) {
         return listOfBooks.stream()
-                .sorted(Comparator.comparing(x -> x.getYear())) //TODO min zamiast sorted
-                .findFirst().get();
+                .min(Comparator.comparing(x -> x.getYear())).get();
     }
 
     public Book latestReleasedBookFor(List<Book> listOfBooks) {
@@ -79,14 +80,13 @@ public class BookFunctions {
 
     public Book latestReleasedBookStream(List<Book> listOfBooks) {
         return listOfBooks.stream()
-                .max(Comparator.comparing(x -> x.getYear()))
-                .get();
+                .max(Comparator.comparing(x -> x.getYear())).get();
     }
 
     public int sumOfAllYearsFor(List<Book> listOfBooks) {
         int sum = 0;
         for (Book b : listOfBooks) {
-            sum = sum + b.getYear(); //TODO +=
+            sum += b.getYear();
         }
         return sum;
     }
@@ -108,8 +108,7 @@ public class BookFunctions {
 
     public int numberOfBooksReleasedPrior2007Stream(List<Book> listOfBooks) {
         return (int) listOfBooks.stream()
-                .filter(x -> x.getYear() > 2007)
-                .count();
+                .filter(x -> x.getYear() > 2007).count();
     }
 
     public boolean checkIfAllBooksAreReleasedAfter2000For(List<Book> listOfBooks) {
@@ -159,14 +158,14 @@ public class BookFunctions {
     }
 
     public List<Book> getBooksStartingWithCAndReleasedAfter2007for(List<Book> listOfBooks) {
-        List<Book> tempListOfBooks = new ArrayList<>(); //TODO nazwa
+        List<Book> booksReleasedAfter2007StartingOnC = new ArrayList<>();
 
-        for (Book b : listOfBooks) {
-            if ((b.getYear() > 2007) && (b.getTitle().startsWith("C"))) {
-                tempListOfBooks.add(b);
+        for (Book book : listOfBooks) {
+            if ((book.getYear() > 2007) && (book.getTitle().startsWith("C"))) {
+                booksReleasedAfter2007StartingOnC.add(book);
             }
         }
-        return tempListOfBooks;
+        return booksReleasedAfter2007StartingOnC;
     }
 
     public List<Book> getBooksStartingWithCAndReleasedAfter2007stream(List<Book> listOfBooks) {
