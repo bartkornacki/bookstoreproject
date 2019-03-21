@@ -6,9 +6,9 @@ public class Main {
     public static void main(String[] args) {
         MenuMaintenance menuMaintenance = new MenuMaintenance();
 
-        String fileCategories = "categories.csv";
-        String fileAuthors = "authors.csv";
-        String fileBooks = "books.csv";
+        String fileCategories = "src/main/resources/categories.csv";
+        String fileAuthors = "src/main/resources/authors.csv";
+        String fileBooks = "src/main/resources/books.csv";
 
         menuMaintenance.menuNavigation(fileCategories, fileAuthors, fileBooks);
     }
