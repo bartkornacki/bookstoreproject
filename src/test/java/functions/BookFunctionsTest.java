@@ -19,7 +19,6 @@ class BookFunctionsTest {
     void setUp() {
         bookFunctions = new BookFunctions();
         testListOfBooks = new ArrayList<>();
-//        testListOfBooks.set(0, null);
         testListOfBooks.add(new Book(11, "CTitle11",
                 1231, 2010, "T", null, null));
         testListOfBooks.add(new Book(12, "Title12",

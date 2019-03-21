@@ -60,7 +60,7 @@ public class BookFunctions {
         } else {
             Book searchedBook = listOfBooks.get(0);
             for (Book book : listOfBooks) {
-                if (book.getYear() < searchedBook.getYear() || searchedBook == null) {
+                if (book.getYear() < searchedBook.getYear()) {
                     searchedBook = book;
                 }
             }
@@ -260,7 +260,7 @@ public class BookFunctions {
     }
 
     public List<Book> sortBooksFromNewestFor(List<Book> listOfBooks) {
-        Collections.sort(listOfBooks, (o1, o2) -> Integer.compare(o2.getYear(), o1.getYear()));
+        listOfBooks.sort(((o1, o2) -> Integer.compare(o2.getYear(), o1.getYear())));
         return listOfBooks;
     }
 
@@ -271,7 +271,7 @@ public class BookFunctions {
     }
 
     public List<Book> sortBooksFromOldestFor(List<Book> listOfBooks) {
-        Collections.sort(listOfBooks, (o1, o2) -> Integer.compare(o1.getYear(), o2.getYear()));
+        listOfBooks.sort(((o1, o2) -> Integer.compare(o1.getYear(), o2.getYear())));
         return listOfBooks;
     }
 

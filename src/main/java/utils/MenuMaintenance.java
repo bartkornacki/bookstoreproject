@@ -7,7 +7,6 @@ import model.Author;
 import model.Book;
 import model.Category;
 
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -16,14 +15,11 @@ import static externalfilesmanagement.DataFromExternalFile.readDataFromExternalF
 
 public class MenuMaintenance {
 
-    private static List<Book> listOfBooks = new ArrayList<>();
-    private static List<Author> listOfAuthors = new ArrayList<>();
-    private static List<Category> listOfCategories = new ArrayList<>();
     private static int exitFromMenu = 4;
 
     public void menuNavigation(String fileCategories, String fileAuthors, String fileBooks) {
         int action;
-                readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);
+        readDataFromExternalFiles(fileCategories, fileAuthors, fileBooks);
         do {
             showMenu();
             action = getNumberFromUser();
@@ -56,7 +52,7 @@ public class MenuMaintenance {
     private int getNumberFromUser() {
         Scanner scanner = null;
         int numberOfChosenAction = 0;
-        try{
+        try {
             scanner = new Scanner(System.in);
             numberOfChosenAction = scanner.nextInt();
         } catch (InputMismatchException e) {
@@ -67,9 +63,9 @@ public class MenuMaintenance {
 
     private void proceedWithChosenAction(int inputAction) {
         DataStorage dataStorage = new DataStorage();
-        listOfAuthors = dataStorage.getListOfAuthors();
-        listOfCategories = dataStorage.getListOfCategories();
-        listOfBooks = dataStorage.getListOfBooks();
+        List<Author> listOfAuthors = dataStorage.getListOfAuthors();
+        List<Category> listOfCategories = dataStorage.getListOfCategories();
+        List<Book> listOfBooks = dataStorage.getListOfBooks();
         DataPresenting dataPresenting = new DataPresenting();
         ExtendTheList extendTheList = new ExtendTheList();
         DataToExternalFiles dataToExternalFiles = new DataToExternalFiles();
@@ -95,7 +91,7 @@ public class MenuMaintenance {
                 extendTheList.addCategory();
                 break;
             case 7:
-                dataToExternalFiles.writeAuthorsToFile(dataStorage.getListOfAuthors(),"authors.csv");
+                dataToExternalFiles.writeAuthorsToFile(dataStorage.getListOfAuthors(), "authors.csv");
                 break;
             case 8:
                 dataPresenting.showBooks(bookFunctions.sortBooksFromOldestStream(listOfBooks));

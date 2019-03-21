@@ -1,6 +1,5 @@
 package externalfilesmanagement;
 
-import datastorage.DataStorage;
 import model.Author;
 import model.Book;
 import model.Category;
@@ -11,9 +10,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
-import static datastorage.DataStorage.setListOfAuthors;
-import static datastorage.DataStorage.setListOfBooks;
-import static datastorage.DataStorage.setListOfCategories;
+import static datastorage.DataStorage.*;
 
 public class DataFromExternalFile {
     private static List<Book> listOfBooksFromFile = new ArrayList<>();
