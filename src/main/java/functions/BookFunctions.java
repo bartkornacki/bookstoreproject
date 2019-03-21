@@ -192,7 +192,7 @@ public class BookFunctions {
 
     public List<Book> getBooksByAuthor(List<Author> listOfAuthors, List<Book> listOfBooks) {
         System.out.println("Please pick the author index:");
-        listOfAuthors.stream().forEach(x -> System.out.println("\t\t" + listOfAuthors.indexOf(x) + ": " + x.getName()));
+        listOfAuthors.forEach(x -> System.out.println("\t\t" + listOfAuthors.indexOf(x) + ": " + x.getName()));
 
         List<Book> tempList = new ArrayList<>();
         Scanner in = null;
@@ -321,8 +321,7 @@ public class BookFunctions {
             tempList.add(listOfBooks.get(i));
             j++;
             if (j == 2) {
-                ;
-                mainList.add(tempList.stream().collect(Collectors.toList()));
+                mainList.add(new ArrayList<>(tempList));
                 tempList.clear();
                 j = 0;
             }
