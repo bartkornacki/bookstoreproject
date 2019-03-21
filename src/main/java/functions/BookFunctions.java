@@ -22,17 +22,17 @@ public class BookFunctions {
     }
 
     public Book getBookByISBNFor(List<Book> listOfBooks, int isbn) {
-        Book book = null;
+        Book searchedBook = null;
         if (listOfBooks == null) {
-            return book;
+            return searchedBook;
         } else {
-            for (Book b : listOfBooks) {
-                if (b.getIsbnNumber() == isbn) {
-                    book = b;
+            for (Book book : listOfBooks) {
+                if (book.getIsbnNumber() == isbn) {
+                    searchedBook = book;
                 }
             }
         }
-        return book;
+        return searchedBook;
     }
 
     public List<Book> getTwoLastBooksFor(List<Book> listOfBooks) {
@@ -74,13 +74,13 @@ public class BookFunctions {
     }
 
     public Book latestReleasedBookFor(List<Book> listOfBooks) {
-        Book book = listOfBooks.get(0);
-        for (Book b : listOfBooks) {
-            if (b.getYear() > book.getYear()) {
-                book = b;
+        Book searchedBook = listOfBooks.get(0);
+        for (Book book : listOfBooks) {
+            if (book.getYear() > searchedBook.getYear()) {
+                searchedBook = book;
             }
         }
-        return book;
+        return searchedBook;
     }
 
     public Book latestReleasedBookStream(List<Book> listOfBooks) {
@@ -90,8 +90,8 @@ public class BookFunctions {
 
     public int sumOfAllYearsFor(List<Book> listOfBooks) {
         int sum = 0;
-        for (Book b : listOfBooks) {
-            sum += b.getYear();
+        for (Book book : listOfBooks) {
+            sum += book.getYear();
         }
         return sum;
     }
@@ -103,8 +103,8 @@ public class BookFunctions {
 
     public int numberOfBooksReleasedPrior2007For(List<Book> listOfBooks) {
         int count = 0;
-        for (Book b : listOfBooks) {
-            if (b.getYear() > 2007) {
+        for (Book book : listOfBooks) {
+            if (book.getYear() > 2007) {
                 count++;
             }
         }
@@ -118,8 +118,8 @@ public class BookFunctions {
 
     public boolean checkIfAllBooksAreReleasedAfter2000For(List<Book> listOfBooks) {
         boolean res = true;
-        for (Book b : listOfBooks) {
-            if (b.getYear() < 2001) {
+        for (Book book : listOfBooks) {
+            if (book.getYear() < 2001) {
                 res = false;
             }
         }
@@ -134,8 +134,8 @@ public class BookFunctions {
     public double averageReleaseYearFor(List<Book> listOfBooks) {
         double avgReleaseYear = 0;
         int i = 0;
-        for (Book b : listOfBooks) {
-            avgReleaseYear = avgReleaseYear + b.getYear();
+        for (Book book : listOfBooks) {
+            avgReleaseYear = avgReleaseYear + book.getYear();
             i++;
         }
         return avgReleaseYear / i;
@@ -148,13 +148,12 @@ public class BookFunctions {
     }
 
     public boolean checkIfAnyBookIsReleasedBefore2003For(List<Book> listOfBooks) {
-        boolean res = false;
-        for (Book b : listOfBooks) {
-            if (b.getYear() < 2003) {
-                res = true;
+        for (Book book : listOfBooks) {
+            if (book.getYear() < 2003) {
+                return true;
             }
         }
-        return res;
+        return false;
     }
 
     public boolean checkIfAnyBookIsReleasedBefore2003Stream(List<Book> listOfBooks) {
@@ -202,10 +201,10 @@ public class BookFunctions {
             in = new Scanner(System.in);
             action = in.nextInt();
 
-            for (Book b : listOfBooks) {
-                for (Author a : b.getAuthors()) {
-                    if (a.getName().equalsIgnoreCase(listOfAuthors.get(action).getName())) {
-                        tempList.add(b);
+            for (Book book : listOfBooks) {
+                for (Author author : book.getAuthors()) {
+                    if (author.getName().equalsIgnoreCase(listOfAuthors.get(action).getName())) {
+                        tempList.add(book);
                     }
                 }
             }
@@ -217,8 +216,8 @@ public class BookFunctions {
     }
 
     public List<Book> add100YearsFor(List<Book> listOfBooks) {
-        for (Book b : listOfBooks) {
-            b.setYear(b.getYear() + 100);
+        for (Book book : listOfBooks) {
+            book.setYear(book.getYear() + 100);
         }
         return listOfBooks;
     }
@@ -231,9 +230,9 @@ public class BookFunctions {
 
     public List<String> getBooksDivisibleBy2For(List<Book> listOfBooks) {
         List<String> tempListOfTitles = new ArrayList<>();
-        for (Book b : listOfBooks) {
-            if (b.getYear() % 2 == 0) {
-                tempListOfTitles.add(b.getTitle());
+        for (Book book : listOfBooks) {
+            if (book.getYear() % 2 == 0) {
+                tempListOfTitles.add(book.getTitle());
             }
         }
         return tempListOfTitles;
@@ -249,8 +248,8 @@ public class BookFunctions {
     public Map<Integer, Book> getMapOfIsbnAndBooksFor(List<Book> listOfBooks) {
         Map<Integer, Book> mapOfIsbnsAndBooks = new TreeMap<>();
 
-        for (Book b : listOfBooks) {
-            mapOfIsbnsAndBooks.put(b.getIsbnNumber(), b);
+        for (Book book : listOfBooks) {
+            mapOfIsbnsAndBooks.put(book.getIsbnNumber(), book);
         }
         return mapOfIsbnsAndBooks;
     }
@@ -316,7 +315,7 @@ public class BookFunctions {
 //            return resultList;
 //        }
 
-        //Bartek
+//        Bartek K. czyli ja :)
         int j = 0;
         for (int i = 0; i < listOfBooks.size(); i++) {
             tempList.add(listOfBooks.get(i));

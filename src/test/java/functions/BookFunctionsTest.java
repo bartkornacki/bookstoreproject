@@ -175,26 +175,12 @@ class BookFunctionsTest {
 
     @Test
     void add100YearsFor() {
-        List<Book> tempListOfBooks = new ArrayList<>();
-        tempListOfBooks.add(testListOfBooks.get(0));
-        tempListOfBooks.add(testListOfBooks.get(1));
-        tempListOfBooks.add(testListOfBooks.get(2));
-        tempListOfBooks.add(testListOfBooks.get(3));
-        tempListOfBooks.add(testListOfBooks.get(4));
-        tempListOfBooks.add(testListOfBooks.get(5));
         Assert.assertEquals(testListOfBooks.get(2).getYear() + 100,
                 bookFunctions.add100YearsFor(testListOfBooks).get(2).getYear());
     }
 
     @Test
     void add100YearsStream() {
-        List<Book> tempListOfBooks = new ArrayList<>();
-        tempListOfBooks.add(testListOfBooks.get(0));
-        tempListOfBooks.add(testListOfBooks.get(1));
-        tempListOfBooks.add(testListOfBooks.get(2));
-        tempListOfBooks.add(testListOfBooks.get(3));
-        tempListOfBooks.add(testListOfBooks.get(4));
-        tempListOfBooks.add(testListOfBooks.get(5));
         Assert.assertEquals(testListOfBooks.get(2).getYear() + 100,
                 bookFunctions.add100YearsStream(testListOfBooks).get(2).getYear());
     }

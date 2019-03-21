@@ -19,7 +19,6 @@ public class DataFromExternalFile {
     private static List<Book> listOfBooksFromFile = new ArrayList<>();
     private static List<Author> listOfAuthorsFromFile = new ArrayList<>();
     private static List<Category> listOfCategoriesFromFile = new ArrayList<>();
-    private static BufferedReader reader;
 
     public static void readDataFromExternalFiles(String fileCategories, String fileAuthors, String fileBooks) {
         listOfCategoriesFromFile = readCategoryFile(fileCategories);
