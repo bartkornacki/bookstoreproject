@@ -1,6 +1,6 @@
-package externalFilesManagement;
+package externalfilesmanagement;
 
-import dataStorage.DataStorage;
+import datastorage.DataStorage;
 import model.Author;
 import model.Book;
 import model.Category;

@@ -1,7 +1,7 @@
 package utils;
 
-import externalFilesManagement.DataFromExternalFile;
-import externalFilesManagement.DataToExternalFiles;
+import externalfilesmanagement.DataFromExternalFile;
+import externalfilesmanagement.DataToExternalFiles;
 import model.Author;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package dataStorage;
+package datastorage;
 
 import model.Author;
 import model.Book;

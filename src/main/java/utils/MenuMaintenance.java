@@ -1,7 +1,7 @@
 package utils;
 
-import dataStorage.DataStorage;
-import externalFilesManagement.DataToExternalFiles;
+import datastorage.DataStorage;
+import externalfilesmanagement.DataToExternalFiles;
 import functions.BookFunctions;
 import model.Author;
 import model.Book;
@@ -12,7 +12,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-import static externalFilesManagement.DataFromExternalFile.readDataFromExternalFiles;
+import static externalfilesmanagement.DataFromExternalFile.readDataFromExternalFiles;
 
 public class MenuMaintenance {
 

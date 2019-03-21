@@ -1,4 +1,4 @@
-package externalFilesManagement;
+package externalfilesmanagement;
 
 import model.Author;
 

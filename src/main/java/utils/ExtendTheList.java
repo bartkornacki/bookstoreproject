@@ -1,6 +1,6 @@
 package utils;
 
-import dataStorage.DataStorage;
+import datastorage.DataStorage;
 import model.Author;
 import model.Category;
 

@@ -1,6 +1,6 @@
 package utils;
 
-import externalFilesManagement.DataFromExternalFile;
+import externalfilesmanagement.DataFromExternalFile;
 import model.Author;
 import model.Book;
 import model.Category;
