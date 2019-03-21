@@ -19,6 +19,7 @@ public class MenuMaintenance {
     private static List<Book> listOfBooks = new ArrayList<>();
     private static List<Author> listOfAuthors = new ArrayList<>();
     private static List<Category> listOfCategories = new ArrayList<>();
+    private static int exitFromMenu = 4;
 
     public void menuNavigation(String fileCategories, String fileAuthors, String fileBooks) {
         int action;
@@ -27,7 +28,7 @@ public class MenuMaintenance {
             showMenu();
             action = getNumberFromUser();
             proceedWithChosenAction(action);
-        } while (action != 4);
+        } while (action != exitFromMenu);
     }
 
     public void showMenu() {

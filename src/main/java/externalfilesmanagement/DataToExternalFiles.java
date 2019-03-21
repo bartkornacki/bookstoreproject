@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 
 public class DataToExternalFiles {
     public void writeAuthorsToFile(List<Author> authorsList, String fileName) {
-        String authorFileName = fileName;
 
         try {
             String str = authorsList
@@ -18,7 +17,7 @@ public class DataToExternalFiles {
                     .map(x -> x.getId() + ";" + x.getName() + ";" + x.getAge())
                     .collect(Collectors.joining("\n"));
 
-            File file = new File(authorFileName);
+            File file = new File(fileName);
             PrintWriter printWriter = new PrintWriter(file);
             printWriter.println(str);
             printWriter.flush();

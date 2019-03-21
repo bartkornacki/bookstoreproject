@@ -11,6 +11,10 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
+import static datastorage.DataStorage.setListOfAuthors;
+import static datastorage.DataStorage.setListOfBooks;
+import static datastorage.DataStorage.setListOfCategories;
+
 public class DataFromExternalFile {
     private static List<Book> listOfBooksFromFile = new ArrayList<>();
     private static List<Author> listOfAuthorsFromFile = new ArrayList<>();
@@ -22,10 +26,9 @@ public class DataFromExternalFile {
         listOfAuthorsFromFile = readAuthorFile(fileAuthors);
         listOfBooksFromFile = readBookFile(fileBooks);
 
-        DataStorage dataStorage = new DataStorage();
-        dataStorage.setListOfCategories(listOfCategoriesFromFile);
-        dataStorage.setListOfAuthors(listOfAuthorsFromFile);
-        dataStorage.setListOfBooks(listOfBooksFromFile);
+        setListOfCategories(listOfCategoriesFromFile);
+        setListOfAuthors(listOfAuthorsFromFile);
+        setListOfBooks(listOfBooksFromFile);
     }
 
     public static List<Category> readCategoryFile(String file) {

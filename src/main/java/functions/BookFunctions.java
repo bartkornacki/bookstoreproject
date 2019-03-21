@@ -195,16 +195,23 @@ public class BookFunctions {
         System.out.println("Please pick the author index:");
         listOfAuthors.stream().forEach(x -> System.out.println("\t\t" + listOfAuthors.indexOf(x) + ": " + x.getName()));
 
-        Scanner in = new Scanner(System.in);
-        int action = in.nextInt();
-
         List<Book> tempList = new ArrayList<>();
-        for (Book b : listOfBooks) {
-            for (Author a : b.getAuthors()) {
-                if (a.getName().equalsIgnoreCase(listOfAuthors.get(action).getName())) {
-                    tempList.add(b);
+        Scanner in = null;
+        int action = 0;
+        try {
+            in = new Scanner(System.in);
+            action = in.nextInt();
+
+            for (Book b : listOfBooks) {
+                for (Author a : b.getAuthors()) {
+                    if (a.getName().equalsIgnoreCase(listOfAuthors.get(action).getName())) {
+                        tempList.add(b);
+                    }
                 }
             }
+
+        } catch (InputMismatchException e) {
+            System.out.println("Number bitch!");
         }
         return tempList;
     }
