@@ -69,8 +69,13 @@ public class BookFunctions {
     }
 
     public Book earliestReleasedBookStream(List<Book> listOfBooks) {
-        return listOfBooks.stream()
-                .min(Comparator.comparing(x -> x.getYear())).get();
+        if (listOfBooks.isEmpty()) {
+            System.out.println("The list doesn't exist");
+            return null;
+        } else {
+            return listOfBooks.stream()
+                    .min(Comparator.comparing(x -> x.getYear())).get();
+        }
     }
 
     public Book latestReleasedBookFor(List<Book> listOfBooks) {
@@ -84,8 +89,13 @@ public class BookFunctions {
     }
 
     public Book latestReleasedBookStream(List<Book> listOfBooks) {
-        return listOfBooks.stream()
-                .max(Comparator.comparing(x -> x.getYear())).get();
+        if (listOfBooks.isEmpty()) {
+            System.out.println("The list doesn't exist");
+            return null;
+        } else {
+            return listOfBooks.stream()
+                    .max(Comparator.comparing(x -> x.getYear())).get();
+        }
     }
 
     public int sumOfAllYearsFor(List<Book> listOfBooks) {
@@ -142,9 +152,14 @@ public class BookFunctions {
     }
 
     public double averageReleaseYearStream(List<Book> listOfBooks) {
-        return listOfBooks.stream()
-                .mapToDouble(x -> x.getYear())
-                .average().getAsDouble();
+        if (listOfBooks.isEmpty()) {
+            System.out.println("The list doesn't exist");
+            return 0;
+        } else {
+            return listOfBooks.stream()
+                    .mapToDouble(x -> x.getYear())
+                    .average().getAsDouble();
+        }
     }
 
     public boolean checkIfAnyBookIsReleasedBefore2003For(List<Book> listOfBooks) {

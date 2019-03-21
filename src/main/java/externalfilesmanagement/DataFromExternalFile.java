@@ -37,6 +37,9 @@ public class DataFromExternalFile {
                 listOfCategoriesFromFile.add(new Category(
                         Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
             }
+            reader.close();
+            isr.close();
+            is.close();
         } catch (IOException e) {
             System.out.println("Category file doesn't exist. Please ensure all files are uploaded.");
             System.exit(1);
@@ -54,6 +57,9 @@ public class DataFromExternalFile {
                 listOfAuthorsFromFile.add(new Author(
                         Integer.valueOf(stringArray[0]), stringArray[1], Integer.valueOf(stringArray[2])));
             }
+            reader.close();
+            isr.close();
+            is.close();
         } catch (IOException e) {
             System.out.println("Author file doesn't exist. Please ensure all files are uploaded.");
             System.exit(1);
@@ -69,6 +75,9 @@ public class DataFromExternalFile {
             while (reader.ready()) {
                 addBookToList(reader);
             }
+            reader.close();
+            isr.close();
+            is.close();
         } catch (IOException e) {
             System.out.println("Books weren't found. Please ensure 'books' file exists.");
             System.exit(1);
