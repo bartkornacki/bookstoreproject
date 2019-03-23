@@ -122,7 +122,8 @@ public class MenuMaintenance {
                 dataToExternalFiles.writeBooksToFile(dataStorage.getListOfBooks(), fileNamesMaintenance.getFileBooks());
                 break;
             case 15:
-                changeTracker = true;
+                changeTracker = extendTheList.deleteItem(dataStorage.getListOfCategories(),
+                        dataStorage.getListOfAuthors(), dataStorage.getListOfBooks());
                 break;
             case 16:
                 dataToExternalFiles.writeCategoriesToFile(dataStorage.getListOfCategories(), fileNamesMaintenance.getFileCategories());

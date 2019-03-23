@@ -2,6 +2,7 @@ package utils;
 
 import datastorage.DataStorage;
 import model.Author;
+import model.Book;
 import model.Category;
 
 import java.util.InputMismatchException;
@@ -106,6 +107,32 @@ public class AmendTheList {
             return true;
         } catch (InputMismatchException e) {
             System.out.println("The age of the author hasn't been modified, as unavailable option was chosen.");
+        }
+        return false;
+    }
+
+    public boolean deleteItem(List<Category> listOfCategories, List<Author> listOfAuthors, List<Book> listOfBooks) {
+        Scanner in = new Scanner(System.in);
+        int listTypeID = 0;
+        try {
+            do {
+                System.out.println("Please pick the listTypeID of the list that you want to modify:");
+                System.out.println("\n1: \tBooks\n2: \tAuthors\n3: \tCategories\n4: \tExit");
+                listTypeID = in.nextInt();
+            } while (listTypeID > 4 || listTypeID < 1);
+            switch (listTypeID) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            }
+            return true;
+        } catch (InputMismatchException e) {
+            System.out.println("The chosen action is incorrect.");
         }
         return false;
     }

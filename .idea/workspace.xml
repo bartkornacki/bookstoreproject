@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54879fbb-c701-400a-9cf2-77cf0fcf801c" name="Default Changelist" comment="Updated 2 out of 21 points.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/ExtendTheList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/AmendTheList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/RemoveItemByID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/AmendTheList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/AmendTheList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/ExtendTheList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/MenuMaintenance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/MenuMaintenance.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,7 +31,7 @@
           <entry key="authorsTest" value="2" />
           <entry key="class" value="2" />
           <entry key="csv" value="88" />
-          <entry key="java" value="232" />
+          <entry key="java" value="233" />
           <entry key="txt" value="1" />
           <entry key="xml" value="7" />
         </counts>
@@ -41,7 +39,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="232" />
+          <entry key="JAVA" value="233" />
           <entry key="PLAIN_TEXT" value="91" />
           <entry key="XML" value="7" />
         </counts>
@@ -50,14 +48,14 @@
         <counts>
           <entry key="csv" value="21" />
           <entry key="dummy" value="49" />
-          <entry key="java" value="25265" />
+          <entry key="java" value="25572" />
           <entry key="txt" value="28" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="25265" />
+          <entry key="JAVA" value="25572" />
           <entry key="PLAIN_TEXT" value="98" />
           <entry key="XML" value="5" />
         </counts>
@@ -69,7 +67,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bookstore/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="51">
               <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -81,8 +79,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="94" column="51" selection-start-line="94" selection-start-column="51" selection-end-line="94" selection-end-column="51" />
+            <state relative-caret-position="355">
+              <caret line="124" column="54" selection-start-line="124" selection-start-column="54" selection-end-line="124" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/utils/AmendTheList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="123" column="23" selection-start-line="123" selection-start-column="23" selection-end-line="123" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,13 +101,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utils/AmendTheList.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/utils/RemoveItemByID.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="45">
+              <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -111,6 +118,7 @@
         <option value="Singleton" />
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -194,6 +202,7 @@
         <option value="$PROJECT_DIR$/src/main/java/utils/ExtendTheList.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/AmendTheList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/RemoveItemByID.java" />
       </list>
     </option>
   </component>
@@ -352,7 +361,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553347966508" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553349462394" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
@@ -957,7 +966,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bookstore/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="51">
           <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -967,8 +976,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="94" column="51" selection-start-line="94" selection-start-column="51" selection-end-line="94" selection-end-column="51" />
+        <state relative-caret-position="355">
+          <caret line="124" column="54" selection-start-line="124" selection-start-column="54" selection-end-line="124" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -977,11 +986,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/AmendTheList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+        <state relative-caret-position="346">
+          <caret line="123" column="23" selection-start-line="123" selection-start-column="23" selection-end-line="123" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/RemoveItemByID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
         </state>
       </provider>
     </entry>
