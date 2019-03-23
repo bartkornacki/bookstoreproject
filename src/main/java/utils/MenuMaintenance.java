@@ -17,6 +17,7 @@ import static externalfilesmanagement.DataFromExternalFile.readDataFromExternalF
 public class MenuMaintenance {
 
     private static int exitFromMenu = 4;
+    private boolean changeTracker = false;
 
     public void menuNavigation(String fileCategories, String fileAuthors, String fileBooks) {
         int action;
@@ -87,13 +88,15 @@ public class MenuMaintenance {
                 dataPresenting.showCategories(listOfCategories);
                 break;
             case 4:
-                System.out.println("Goodbye.");
+                goodbye(changeTracker);
                 break;
             case 5:
                 extendTheList.addAuthor();
+                changeTracker = true;
                 break;
             case 6:
                 extendTheList.addCategory();
+                changeTracker = true;
                 break;
             case 7:
                 dataToExternalFiles.writeAuthorsToFile(dataStorage.getListOfAuthors(), fileNamesMaintenance.getFileAuthors());
@@ -109,6 +112,7 @@ public class MenuMaintenance {
                 break;
             case 11:
                 extendTheList.changeCategoryName(listOfCategories);
+                changeTracker = true;
                 break;
             case 12:
                 dataPresenting.showBooks(bookFunctions.getBooksFromWzorce(listOfBooks));
@@ -120,13 +124,15 @@ public class MenuMaintenance {
                 dataToExternalFiles.writeBooksToFile(dataStorage.getListOfBooks(), fileNamesMaintenance.getFileBooks());
                 break;
             case 15:
+                changeTracker = true;
                 break;
             case 16:
                 dataToExternalFiles.writeCategoriesToFile(dataStorage.getListOfCategories(), fileNamesMaintenance.getFileCategories());
-                dataToExternalFiles.writeAuthorsToFile(dataStorage.getListOfAuthors(),fileNamesMaintenance.getFileAuthors());
-                dataToExternalFiles.writeBooksToFile(dataStorage.getListOfBooks(), fileNamesMaintenance.getFileBooks());
+                dataToExternalFiles.writeAuthorsToFile(dataStorage.getListOfAuthors(), fileNamesMaintenance.getFileAuthors());
+//                dataToExternalFiles.writeBooksToFile(dataStorage.getListOfBooks(), fileNamesMaintenance.getFileBooks());
                 break;
             case 17:
+                changeTracker = true;
                 break;
             default:
                 System.out.println("This option is unavailable");
@@ -134,12 +140,32 @@ public class MenuMaintenance {
         }
     }
 
-    private void replaceNumbers() {
-        int a = 5;
-        int b = 8;
-        System.out.println(a + ", " + b);
+    private void goodbye(boolean changeTracker) {
+        if (changeTracker == false) {
+            System.out.println("Goodbye.");
+        } else {
+            System.out.println("Some changes were made. Do you want to save all modified lists to external files? (Y/N)");
+            Scanner scanner = new Scanner(System.in);
+            String action = "";
 
+            while (!(action.equalsIgnoreCase("n") || action.equalsIgnoreCase("y"))) {
+                action = scanner.next();
+                if (action.equalsIgnoreCase("n")) {
+                    System.out.println("Goodbye.");
+                } else if (action.equalsIgnoreCase("y")) {
+                    DataToExternalFiles dataToExternalFiles = new DataToExternalFiles();
+                    DataStorage dataStorage = new DataStorage();
+                    FileNamesMaintenance fileNamesMaintenance = new FileNamesMaintenance();
 
-        System.out.println(a + ", " + b);
+                    dataToExternalFiles.writeCategoriesToFile(dataStorage.getListOfCategories(), fileNamesMaintenance.getFileCategories());
+                    dataToExternalFiles.writeAuthorsToFile(dataStorage.getListOfAuthors(), fileNamesMaintenance.getFileAuthors());
+//                        dataToExternalFiles.writeBooksToFile(dataStorage.getListOfBooks(), fileNamesMaintenance.getFileBooks());
+
+                    System.out.println("Goodbye.");
+                } else {
+                    System.out.println("Please insert 'N' or 'Y'");
+                }
+            }
+        }
     }
 }
