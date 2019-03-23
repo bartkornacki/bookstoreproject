@@ -103,6 +103,7 @@ public class AmendTheList {
                 int age = in.nextInt();
 
                 listOfAuthors.get(id).setAge(age);
+                listOfAuthors.remove(0);
             }
             return true;
         } catch (InputMismatchException e) {
@@ -122,10 +123,13 @@ public class AmendTheList {
             } while (listTypeID > 4 || listTypeID < 1);
             switch (listTypeID) {
                 case 1:
+                    listOfBooks.forEach(x -> System.out.println(x.getId() + ": " + x.getTitle()));
                     break;
                 case 2:
+                    listOfAuthors.forEach(x -> System.out.println(x.getId() + ": " + x.getName()));
                     break;
                 case 3:
+                    listOfCategories.forEach(x -> System.out.println(x.getId() + ": " + x.getName()));
                     break;
                 case 4:
                     break;

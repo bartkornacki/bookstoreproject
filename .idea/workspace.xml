@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54879fbb-c701-400a-9cf2-77cf0fcf801c" name="Default Changelist" comment="Updated 2 out of 21 points.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/RemoveItemByID.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/AmendTheList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/AmendTheList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/RemoveAuthorByID.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/RemoveBookByID.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/RemoveCategoryByID.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/RemoveItemByID.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,7 +33,7 @@
           <entry key="authorsTest" value="2" />
           <entry key="class" value="2" />
           <entry key="csv" value="88" />
-          <entry key="java" value="233" />
+          <entry key="java" value="237" />
           <entry key="txt" value="1" />
           <entry key="xml" value="7" />
         </counts>
@@ -39,7 +41,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="233" />
+          <entry key="JAVA" value="237" />
           <entry key="PLAIN_TEXT" value="91" />
           <entry key="XML" value="7" />
         </counts>
@@ -48,14 +50,14 @@
         <counts>
           <entry key="csv" value="21" />
           <entry key="dummy" value="49" />
-          <entry key="java" value="25572" />
+          <entry key="java" value="25746" />
           <entry key="txt" value="28" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="25572" />
+          <entry key="JAVA" value="25746" />
           <entry key="PLAIN_TEXT" value="98" />
           <entry key="XML" value="5" />
         </counts>
@@ -88,23 +90,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/AmendTheList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="123" column="23" selection-start-line="123" selection-start-column="23" selection-end-line="123" selection-end-column="23" />
+            <state relative-caret-position="301">
+              <caret line="120" column="38" selection-start-line="120" selection-start-column="38" selection-end-line="120" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utils/RemoveItemByID.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -117,8 +110,8 @@
         <option value="Enum" />
         <option value="Singleton" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -201,8 +194,12 @@
         <option value="$PROJECT_DIR$/src/main/java/model/Author.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/ExtendTheList.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/AmendTheList.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/RemoveItemByID.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/RemoveBookByID.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/RemoveCategoryByID.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/RemoveAuthorByIDImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/RemoveAuthorByID.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/AmendTheList.java" />
       </list>
     </option>
   </component>
@@ -361,7 +358,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553349462394" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553349929614" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
@@ -372,6 +369,9 @@
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="utils" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -838,20 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/externalfilesmanagement/FileNamesMaintenance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-          <folding>
-            <element signature="e#350#351#0" expanded="true" />
-            <element signature="e#388#389#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#490#491#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/authors2.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -984,20 +970,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/AmendTheList.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/RemoveBookByID.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="123" column="23" selection-start-line="123" selection-start-column="23" selection-end-line="123" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/RemoveAuthorByID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/RemoveCategoryByID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/RemoveItemByID.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/externalfilesmanagement/FileNamesMaintenance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <folding>
+            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#458#459#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/AmendTheList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="120" column="38" selection-start-line="120" selection-start-column="38" selection-end-line="120" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
