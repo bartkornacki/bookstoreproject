@@ -2,6 +2,7 @@ package utils;
 
 import datastorage.DataStorage;
 import externalfilesmanagement.DataToExternalFiles;
+import externalfilesmanagement.FileNamesMaintenance;
 import functions.BookFunctions;
 import model.Author;
 import model.Book;
@@ -73,6 +74,7 @@ public class MenuMaintenance {
         ExtendTheList extendTheList = new ExtendTheList();
         DataToExternalFiles dataToExternalFiles = new DataToExternalFiles();
         BookFunctions bookFunctions = new BookFunctions();
+        FileNamesMaintenance fileNamesMaintenance = new FileNamesMaintenance();
 
         switch (inputAction) {
             case 1:
@@ -94,7 +96,7 @@ public class MenuMaintenance {
                 extendTheList.addCategory();
                 break;
             case 7:
-                dataToExternalFiles.writeAuthorsToFile(dataStorage.getListOfAuthors(), "authors.csv");
+                dataToExternalFiles.writeAuthorsToFile(dataStorage.getListOfAuthors(), fileNamesMaintenance.getFileAuthors());
                 break;
             case 8:
                 dataPresenting.showBooks(bookFunctions.sortBooksFromOldestStream(listOfBooks));
@@ -115,14 +117,14 @@ public class MenuMaintenance {
                 dataPresenting.showBooks(bookFunctions.getBooksByAuthor(listOfAuthors, listOfBooks));
                 break;
             case 14:
-                dataToExternalFiles.writeBooksToFile(dataStorage.getListOfBooks(), "books.csv");
+                dataToExternalFiles.writeBooksToFile(dataStorage.getListOfBooks(), fileNamesMaintenance.getFileBooks());
                 break;
             case 15:
                 break;
             case 16:
-                dataToExternalFiles.writeCategoriesToFile(dataStorage.getListOfCategories(), "categories.csv");
-                dataToExternalFiles.writeAuthorsToFile(dataStorage.getListOfAuthors(), "authors.csv");
-                dataToExternalFiles.writeBooksToFile(dataStorage.getListOfBooks(), "books.csv");
+                dataToExternalFiles.writeCategoriesToFile(dataStorage.getListOfCategories(), fileNamesMaintenance.getFileCategories());
+                dataToExternalFiles.writeAuthorsToFile(dataStorage.getListOfAuthors(),fileNamesMaintenance.getFileAuthors());
+                dataToExternalFiles.writeBooksToFile(dataStorage.getListOfBooks(), fileNamesMaintenance.getFileBooks());
                 break;
             case 17:
                 break;
