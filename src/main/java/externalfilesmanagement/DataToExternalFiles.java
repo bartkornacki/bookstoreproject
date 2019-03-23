@@ -26,7 +26,7 @@ public class DataToExternalFiles {
             printWriter.flush();
             printWriter.close();
 
-            System.out.println("The file has been updated.");
+            System.out.println("The file containing categories has been updated.");
         } catch (FileNotFoundException e) {
             System.out.println("An unexpected error has occured.");
         }
@@ -46,7 +46,7 @@ public class DataToExternalFiles {
             printWriter.flush();
             printWriter.close();
 
-            System.out.println("The file has been updated.");
+            System.out.println("The file containing authors has been updated.");
         } catch (FileNotFoundException e) {
             System.out.println("An unexpected error has occured.");
         }
@@ -68,7 +68,7 @@ public class DataToExternalFiles {
             printWriter.flush();
             printWriter.close();
 
-            System.out.println("The file has been updated.");
+            System.out.println("The file containing books has been updated.");
         } catch (FileNotFoundException e) {
             System.out.println("An unexpected error has occured.");
         }
