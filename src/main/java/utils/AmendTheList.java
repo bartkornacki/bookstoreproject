@@ -121,19 +121,21 @@ public class AmendTheList {
             } while (listTypeID > 4 || listTypeID < 1);
             switch (listTypeID) {
                 case 1:
-                    System.out.println("Please choose the ID:");
                     listOfBooks.forEach(x -> System.out.println(x.getId() + ": " + x.getTitle()));
                     listOfBooks.remove(getIDToBeDelete());
                     break;
                 case 2:
-                    System.out.println("Please choose the ID:");
                     listOfAuthors.forEach(x -> System.out.println(x.getId() + ": " + x.getName()));
                     listOfAuthors.remove(getIDToBeDelete());
                     break;
                 case 3:
-                    System.out.println("Please choose the ID:");
                     listOfCategories.forEach(x -> System.out.println(x.getId() + ": " + x.getName()));
-                    listOfCategories.remove(getIDToBeDelete());
+                    int idToBeDelete = getIDToBeDelete();
+                    while (checkIfCategoryExists(listOfCategories, idToBeDelete)) {
+                        idToBeDelete = getIDToBeDelete();
+                    }
+                    Category categoryById = getCategoryById(listOfCategories, idToBeDelete);
+                    listOfCategories.remove(categoryById);
                     break;
                 case 4:
                     break;
@@ -145,7 +147,16 @@ public class AmendTheList {
         return false;
     }
 
+    private Category getCategoryById(List<Category> listOfCategories, int idToBeDelete) {
+        return listOfCategories.stream().filter(category -> category.getId() == idToBeDelete).findFirst().get();
+    }
+
+    private boolean checkIfCategoryExists(List<Category> listOfCategories, int idToBeDelete) {
+        return listOfCategories.stream().anyMatch(category -> category.getId() == idToBeDelete);
+    }
+
     private int getIDToBeDelete() {
+        System.out.println("Please choose the ID:");
         Scanner scanner = null;
         int insertedID = 0;
         try {
