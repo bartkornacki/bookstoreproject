@@ -73,7 +73,7 @@ public class MenuMaintenance {
         List<Category> listOfCategories = dataStorage.getListOfCategories();
         List<Book> listOfBooks = dataStorage.getListOfBooks();
         DataPresenting dataPresenting = new DataPresenting();
-        ExtendTheList extendTheList = new ExtendTheList();
+        AmendTheList extendTheList = new AmendTheList();
         DataToExternalFiles dataToExternalFiles = new DataToExternalFiles();
         BookFunctions bookFunctions = new BookFunctions();
         FileNamesMaintenance fileNamesMaintenance = new FileNamesMaintenance();
@@ -92,12 +92,10 @@ public class MenuMaintenance {
                 goodbye(changeTracker);
                 break;
             case 5:
-                extendTheList.addAuthor();
-                changeTracker = true;
+                changeTracker = extendTheList.addAuthor();
                 break;
             case 6:
-                extendTheList.addCategory();
-                changeTracker = true;
+                changeTracker = extendTheList.addCategory();
                 break;
             case 7:
                 dataToExternalFiles.writeAuthorsToFile(dataStorage.getListOfAuthors(), fileNamesMaintenance.getFileAuthors());

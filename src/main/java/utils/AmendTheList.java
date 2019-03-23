@@ -8,8 +8,8 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-public class ExtendTheList {
-    public void addAuthor() {
+public class AmendTheList {
+    public boolean addAuthor() {
         DataStorage dataStorage = new DataStorage();
         List<Author> listOfAuthors = dataStorage.getListOfAuthors();
 
@@ -30,13 +30,14 @@ public class ExtendTheList {
         } while ((result > 120) || (result < 0));
         Author author = new Author(generateIDOfAuthor(listOfAuthors), name, Integer.parseInt(age));
         listOfAuthors.add(author);
+        return true;
     }
 
     private int generateIDOfAuthor(List<Author> listOfAuthors) {
         return listOfAuthors.stream().mapToInt(x -> x.getId()).max().getAsInt() + 1;
     }
 
-    public void addCategory() {
+    public boolean addCategory() {
         DataStorage dataStorage = new DataStorage();
         List<Category> listOfCategories = dataStorage.getListOfCategories();
 
@@ -49,6 +50,8 @@ public class ExtendTheList {
 
         Category category = new Category(generateIDOfCategory(listOfCategories), name, priority);
         listOfCategories.add(category);
+
+        return true;
     }
 
     private int generateIDOfCategory(List<Category> listOfCategories) {
