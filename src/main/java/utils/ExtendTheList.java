@@ -79,4 +79,29 @@ public class ExtendTheList {
             System.out.println("The list of categories hasn't been modified, as unavailable option was chosen.");
         }
     }
+
+    public boolean changeAuthorsAge(List<Author> listOfAuthors) {
+        Scanner in = new Scanner(System.in);
+        int id = 0;
+        try {
+            do {
+                System.out.println("Please pick the author id to change his/her age:");
+                listOfAuthors.stream().forEach(x -> System.out.println("\t\t"
+                        + listOfAuthors.indexOf(x) + ": \t" + x.getName()));
+                System.out.println("\t\t" + listOfAuthors.size() + ": \tExit");
+                id = in.nextInt();
+            } while (id > listOfAuthors.size() || id < 0);
+
+            if (id != listOfAuthors.size()) {
+                System.out.println("Please provide the updated age of the author:");
+                int age = in.nextInt();
+
+                listOfAuthors.get(id).setAge(age);
+            }
+            return true;
+        } catch (InputMismatchException e) {
+            System.out.println("The age of the author hasn't been modified, as unavailable option was chosen.");
+        }
+        return false;
+    }
 }

@@ -49,7 +49,7 @@ public class MenuMaintenance {
         System.out.println("*\t\t14. Save books to external file\t\t\t\t\t\t\t*");
         System.out.println("*\t\t15. Delete item\t\t\t\t\t\t\t\t\t\t\t*");
         System.out.println("*\t\t16. Save the data to external files\t\t\t\t\t\t*");
-        System.out.println("*\t\t17. Modify author's name\t\t\t\t\t\t\t\t*");
+        System.out.println("*\t\t17. Modify author's age\t\t\t\t\t\t\t\t\t*");
         System.out.println("*\t\t18. Choose book display method\t\t\t\t\t\t\t*");
         System.out.println("*\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t*");
         System.out.println("*****************************************************************\n");
@@ -133,7 +133,7 @@ public class MenuMaintenance {
                 dataToExternalFiles.writeBooksToFile(dataStorage.getListOfBooks(), fileNamesMaintenance.getFileBooks());
                 break;
             case 17:
-                changeTracker = true;
+                changeTracker = extendTheList.changeAuthorsAge(dataStorage.getListOfAuthors());
                 break;
             case 18:
                 dataPresenting.chooseBookDisplayMethod();
