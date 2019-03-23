@@ -2,24 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54879fbb-c701-400a-9cf2-77cf0fcf801c" name="Default Changelist" comment="Updated 2 out of 21 points.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/externalfilesmanagement/DataFromExternalFileTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/externalfilesmanagement/DataToExternalFilesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/externalfilesmanagement/DataFromExternalFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/externalfilesmanagement/DataFromExternalFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/externalfilesmanagement/DataToExternalFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/externalfilesmanagement/DataToExternalFiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/DataFromExternalFileTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/DataToExternalFilesTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/test.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/externalfilesmanagement/DataFromExternalFileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/externalfilesmanagement/DataFromExternalFileTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/testAuthors.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testAuthors.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/testBooks.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testBooks.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/testCategories.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testCategories.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/externalFilesManagement/DataToExternalFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/externalFilesManagement/DataToExternalFiles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/MenuMaintenance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/MenuMaintenance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/externalfilesmanagement/DataFromExternalFileTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/externalfilesmanagement/DataFromExternalFileTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/testAuthors.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testAuthors.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/utils/DataFromExternalFileTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/utils/DataToExternalFilesTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,7 +33,7 @@
         <counts>
           <entry key="authorsTest" value="2" />
           <entry key="class" value="2" />
-          <entry key="csv" value="66" />
+          <entry key="csv" value="70" />
           <entry key="java" value="206" />
           <entry key="txt" value="1" />
           <entry key="xml" value="7" />
@@ -55,7 +43,7 @@
         <counts>
           <entry key="CLASS" value="2" />
           <entry key="JAVA" value="206" />
-          <entry key="PLAIN_TEXT" value="69" />
+          <entry key="PLAIN_TEXT" value="73" />
           <entry key="XML" value="7" />
         </counts>
       </usages-collector>
@@ -63,14 +51,14 @@
         <counts>
           <entry key="csv" value="21" />
           <entry key="dummy" value="37" />
-          <entry key="java" value="23329" />
+          <entry key="java" value="23359" />
           <entry key="txt" value="28" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="23329" />
+          <entry key="JAVA" value="23359" />
           <entry key="PLAIN_TEXT" value="86" />
           <entry key="XML" value="5" />
         </counts>
@@ -103,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/externalfilesmanagement/DataFromExternalFileTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3">
-              <caret line="30" column="60" lean-forward="true" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="60" />
+            <state relative-caret-position="385">
+              <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,14 +100,32 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/testBooks.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/externalfilesmanagement/DataFromExternalFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="103" column="36" lean-forward="true" selection-start-line="103" selection-start-column="36" selection-end-line="103" selection-end-column="36" />
+            <state relative-caret-position="127">
+              <caret line="120" column="24" selection-start-line="120" selection-start-column="24" selection-end-line="120" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/testAuthors.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="18" lean-forward="true" selection-start-column="8" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -213,11 +219,11 @@
         <option value="$PROJECT_DIR$/src/main/java/functions/BookFunctions.java" />
         <option value="$PROJECT_DIR$/src/main/java/externalfilesmanagement/DataToExternalFiles.java" />
         <option value="$PROJECT_DIR$/src/test/java/utils/DataToExternalFilesTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/externalfilesmanagement/DataFromExternalFileTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java" />
         <option value="$PROJECT_DIR$/src/test/resources/testBooks.csv" />
-        <option value="$PROJECT_DIR$/src/test/resources/testAuthors.csv" />
         <option value="$PROJECT_DIR$/src/test/java/externalfilesmanagement/DataToExternalFilesTest.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/testAuthors.csv" />
+        <option value="$PROJECT_DIR$/src/test/java/externalfilesmanagement/DataFromExternalFileTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/externalfilesmanagement/DataFromExternalFile.java" />
       </list>
     </option>
@@ -377,7 +383,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553336856012" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553338212201" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
@@ -425,16 +431,65 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DataToExternalFilesTest.writeBooksToFile">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="bookstore.Main" />
+  <component name="RunManager" selected="JUnit.DataToExternalFilesTest">
+    <configuration name="DataFromExternalFileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BookstoreProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="bookstore.*" />
+          <option name="PATTERN" value="externalfilesmanagement.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="externalfilesmanagement" />
+      <option name="MAIN_CLASS_NAME" value="externalfilesmanagement.DataFromExternalFileTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataFromExternalFileTest.readAuthorFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BookstoreProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="externalfilesmanagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="externalfilesmanagement" />
+      <option name="MAIN_CLASS_NAME" value="externalfilesmanagement.DataFromExternalFileTest" />
+      <option name="METHOD_NAME" value="readAuthorFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataFromExternalFileTest.readBookFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BookstoreProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="externalfilesmanagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="externalfilesmanagement" />
+      <option name="MAIN_CLASS_NAME" value="externalfilesmanagement.DataFromExternalFileTest" />
+      <option name="METHOD_NAME" value="readBookFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataFromExternalFileTest.readCategoryFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BookstoreProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="externalfilesmanagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="externalfilesmanagement" />
+      <option name="MAIN_CLASS_NAME" value="externalfilesmanagement.DataFromExternalFileTest" />
+      <option name="METHOD_NAME" value="readCategoryFile" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -453,68 +508,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataToExternalFilesTest.writeAuthorsToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="BookstoreProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="externalfilesmanagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="externalfilesmanagement" />
-      <option name="MAIN_CLASS_NAME" value="externalfilesmanagement.DataToExternalFilesTest" />
-      <option name="METHOD_NAME" value="writeAuthorsToFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DataToExternalFilesTest.writeBooksToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="BookstoreProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="externalfilesmanagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="externalfilesmanagement" />
-      <option name="MAIN_CLASS_NAME" value="externalfilesmanagement.DataToExternalFilesTest" />
-      <option name="METHOD_NAME" value="writeBooksToFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DataToExternalFilesTest.writeCategoriesToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="BookstoreProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="externalfilesmanagement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="externalfilesmanagement" />
-      <option name="MAIN_CLASS_NAME" value="externalfilesmanagement.DataToExternalFilesTest" />
-      <option name="METHOD_NAME" value="writeCategoriesToFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.DataToExternalFilesTest.writeAuthorsToFile" />
+      <item itemvalue="JUnit.DataFromExternalFileTest" />
+      <item itemvalue="JUnit.DataFromExternalFileTest.readBookFile" />
+      <item itemvalue="JUnit.DataFromExternalFileTest.readAuthorFile" />
+      <item itemvalue="JUnit.DataFromExternalFileTest.readCategoryFile" />
       <item itemvalue="JUnit.DataToExternalFilesTest" />
-      <item itemvalue="JUnit.DataToExternalFilesTest.writeCategoriesToFile" />
-      <item itemvalue="JUnit.DataToExternalFilesTest.writeBooksToFile" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DataToExternalFilesTest.writeBooksToFile" />
         <item itemvalue="JUnit.DataToExternalFilesTest" />
-        <item itemvalue="JUnit.DataToExternalFilesTest.writeCategoriesToFile" />
-        <item itemvalue="JUnit.DataToExternalFilesTest.writeAuthorsToFile" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.DataFromExternalFileTest" />
+        <item itemvalue="JUnit.DataFromExternalFileTest.readCategoryFile" />
+        <item itemvalue="JUnit.DataFromExternalFileTest.readAuthorFile" />
+        <item itemvalue="JUnit.DataFromExternalFileTest.readBookFile" />
       </list>
     </recent_temporary>
   </component>
@@ -532,35 +539,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DataToExternalFilesTest - 2019.03.23 at 10h 48m 25s.xml">
-      <configuration name="DataToExternalFilesTest" configurationId="JUnit" />
+    <history-entry file="DataFromExternalFileTest - 2019.03.23 at 11h 32m 01s.xml">
+      <configuration name="DataFromExternalFileTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DataToExternalFilesTest - 2019.03.23 at 10h 49m 27s.xml">
-      <configuration name="DataToExternalFilesTest" configurationId="JUnit" />
+    <history-entry file="DataFromExternalFileTest_readBookFile - 2019.03.23 at 11h 33m 07s.xml">
+      <configuration name="DataFromExternalFileTest.readBookFile" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DataToExternalFilesTest - 2019.03.23 at 11h 16m 12s.xml">
-      <configuration name="DataToExternalFilesTest" configurationId="JUnit" />
+    <history-entry file="DataFromExternalFileTest_readBookFile - 2019.03.23 at 11h 33m 24s.xml">
+      <configuration name="DataFromExternalFileTest.readBookFile" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DataToExternalFilesTest - 2019.03.23 at 11h 18m 06s.xml">
-      <configuration name="DataToExternalFilesTest" configurationId="JUnit" />
+    <history-entry file="DataFromExternalFileTest - 2019.03.23 at 11h 33m 35s.xml">
+      <configuration name="DataFromExternalFileTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DataToExternalFilesTest_writeBooksToFile - 2019.03.23 at 11h 20m 11s.xml">
-      <configuration name="DataToExternalFilesTest.writeBooksToFile" configurationId="JUnit" />
+    <history-entry file="DataFromExternalFileTest - 2019.03.23 at 11h 33m 47s.xml">
+      <configuration name="DataFromExternalFileTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DataToExternalFilesTest_writeBooksToFile - 2019.03.23 at 11h 20m 31s.xml">
-      <configuration name="DataToExternalFilesTest.writeBooksToFile" configurationId="JUnit" />
+    <history-entry file="DataFromExternalFileTest - 2019.03.23 at 11h 34m 31s.xml">
+      <configuration name="DataFromExternalFileTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DataToExternalFilesTest_writeBooksToFile - 2019.03.23 at 11h 23m 32s.xml">
-      <configuration name="DataToExternalFilesTest.writeBooksToFile" configurationId="JUnit" />
+    <history-entry file="DataFromExternalFileTest_readAuthorFile - 2019.03.23 at 11h 47m 05s.xml">
+      <configuration name="DataFromExternalFileTest.readAuthorFile" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DataToExternalFilesTest_writeBooksToFile - 2019.03.23 at 11h 24m 15s.xml">
-      <configuration name="DataToExternalFilesTest.writeBooksToFile" configurationId="JUnit" />
+    <history-entry file="DataFromExternalFileTest_readCategoryFile - 2019.03.23 at 11h 47m 11s.xml">
+      <configuration name="DataFromExternalFileTest.readCategoryFile" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DataToExternalFilesTest_writeBooksToFile - 2019.03.23 at 11h 24m 42s.xml">
-      <configuration name="DataToExternalFilesTest.writeBooksToFile" configurationId="JUnit" />
+    <history-entry file="DataFromExternalFileTest_readCategoryFile - 2019.03.23 at 11h 47m 28s.xml">
+      <configuration name="DataFromExternalFileTest.readCategoryFile" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DataToExternalFilesTest_writeBooksToFile - 2019.03.23 at 11h 26m 45s.xml">
-      <configuration name="DataToExternalFilesTest.writeBooksToFile" configurationId="JUnit" />
+    <history-entry file="DataFromExternalFileTest - 2019.03.23 at 11h 47m 52s.xml">
+      <configuration name="DataFromExternalFileTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -587,7 +594,7 @@
       <window_info anchor="bottom" id="Problems" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32780084" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32780084" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.6514523" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.3471646" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.39142463" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" />
@@ -639,18 +646,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated 2 out of 21 points." />
     <option name="LAST_COMMIT_MESSAGE" value="Updated 2 out of 21 points." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/externalfilesmanagement/DataFromExternalFile.java</url>
-          <line>106</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/util/function/Predicate.java">
@@ -932,27 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/authors.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/testBooks.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/testAuthors.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/categories.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -977,20 +951,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/authors.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/testAuthors.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="18" lean-forward="true" selection-start-column="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/externalfilesmanagement/DataFromExternalFileTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="30" column="60" lean-forward="true" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="60" />
+        <state relative-caret-position="385">
+          <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/testBooks.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/externalfilesmanagement/DataFromExternalFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="103" column="36" lean-forward="true" selection-start-line="103" selection-start-column="36" selection-end-line="103" selection-end-column="36" />
+        <state relative-caret-position="127">
+          <caret line="120" column="24" selection-start-line="120" selection-start-column="24" selection-end-line="120" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

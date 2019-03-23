@@ -117,6 +117,9 @@ public class DataFromExternalFile {
     }
 
     private static List<Author> getAuthors(String s) {
+        if (s.equalsIgnoreCase("null")){
+            return null;
+        }
         String[] authorID = s.split(",");
         List<Author> authorsInTheBook = new ArrayList<>();
         try {
