@@ -1,6 +1,5 @@
-package utils;
+package externalfilesmanagement;
 
-import externalfilesmanagement.DataFromExternalFile;
 import model.Author;
 import model.Book;
 import model.Category;
@@ -19,7 +18,7 @@ class DataFromExternalFileTest {
         tempListOfCategories.add(category1);
         Category category2 = new Category(2, "Wzorce projektowe", 1);
         tempListOfCategories.add(category2);
-        List<Category> listFromFile = DataFromExternalFile.readCategoryFile("testCategories.csv");
+        List<Category> listFromFile = DataFromExternalFile.readCategoryFile("src/test/resources/testCategories.csv");
         Assert.assertEquals(tempListOfCategories.get(0).getName(), listFromFile.get(0).getName());
         Assert.assertEquals(tempListOfCategories.get(1).getName(), listFromFile.get(1).getName());
     }
@@ -31,7 +30,7 @@ class DataFromExternalFileTest {
         tempListOfAuthors.add(author1);
         Author author2 = new Author(2, "Martin Fowler", 50);
         tempListOfAuthors.add(author2);
-        List<Author> listFromFile = DataFromExternalFile.readAuthorFile("testAuthors.csv");
+        List<Author> listFromFile = DataFromExternalFile.readAuthorFile("src/test/resources/testAuthors.csv");
         Assert.assertEquals(tempListOfAuthors.get(0).getName(), listFromFile.get(0).getName());
         Assert.assertEquals(tempListOfAuthors.get(1).getName(), listFromFile.get(1).getName());
     }
@@ -45,7 +44,7 @@ class DataFromExternalFileTest {
         Book book2 = new Book(2, "Effective Java (3rd Edition)", 134685997, 2018,
                 "M", null, null);
         tempListOfBooks.add(book2);
-        List<Book> listFromFile = DataFromExternalFile.readBookFile("testBooks.csv");
+        List<Book> listFromFile = DataFromExternalFile.readBookFile("src/test/resources/testBooks.csv");
         Assert.assertEquals(tempListOfBooks.get(0).getTitle(), listFromFile.get(0).getTitle());
         Assert.assertEquals(tempListOfBooks.get(1).getTitle(), listFromFile.get(1).getTitle());
     }

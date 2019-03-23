@@ -101,6 +101,9 @@ public class DataFromExternalFile {
     }
 
     private static Category getCategory(String s) {
+        if (s.equalsIgnoreCase("null")) {
+            return null;
+        }
         int categoryId = Integer.parseInt(s);
         Optional<Category> optionalCategory = listOfCategoriesFromFile.stream()
                 .filter(x -> x.getId() == categoryId)

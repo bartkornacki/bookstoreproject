@@ -44,7 +44,10 @@ public class MenuMaintenance {
         System.out.println("*\t\t11. Edit particular category name\t\t\t\t\t\t*");
         System.out.println("*\t\t12. Show all books from 'Wzorce projektowe'\t\t\t\t*");
         System.out.println("*\t\t13. Show all books written by particular author\t\t\t*");
-        System.out.println("*\t\t14. Add tests to methods which write csv files\t\t\t*");
+        System.out.println("*\t\t14. Save books to external file\t\t\t\t\t\t\t*");
+        System.out.println("*\t\t15. Delete item\t\t\t\t\t\t\t\t\t\t\t*");
+        System.out.println("*\t\t16. Save the data to external files\t\t\t\t\t\t*");
+        System.out.println("*\t\t17. Modify author's name\t\t\t\t\t\t\t\t*");
         System.out.println("*\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t*");
         System.out.println("*****************************************************************\n");
     }
@@ -112,11 +115,29 @@ public class MenuMaintenance {
                 dataPresenting.showBooks(bookFunctions.getBooksByAuthor(listOfAuthors, listOfBooks));
                 break;
             case 14:
-
+                dataToExternalFiles.writeBooksToFile(dataStorage.getListOfBooks(), "books.csv");
+                break;
+            case 15:
+                break;
+            case 16:
+                dataToExternalFiles.writeCategoriesToFile(dataStorage.getListOfCategories(), "categories.csv");
+                dataToExternalFiles.writeAuthorsToFile(dataStorage.getListOfAuthors(), "authors.csv");
+                dataToExternalFiles.writeBooksToFile(dataStorage.getListOfBooks(), "books.csv");
+                break;
+            case 17:
                 break;
             default:
                 System.out.println("This option is unavailable");
                 break;
         }
+    }
+
+    private void replaceNumbers() {
+        int a = 5;
+        int b = 8;
+        System.out.println(a + ", " + b);
+
+
+        System.out.println(a + ", " + b);
     }
 }
