@@ -25,7 +25,7 @@ public class DataToExternalFiles {
 
             System.out.println("The file has been updated.");
         } catch (FileNotFoundException e) {
-            System.out.println("The authors file wasn't found. New file was created");
+            System.out.println("An unexpected error has occured.");
         }
     }
 }

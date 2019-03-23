@@ -332,8 +332,8 @@ public class BookFunctions {
 
 //        Bartek K. czyli ja :)
         int j = 0;
-        for (int i = 0; i < listOfBooks.size(); i++) {
-            tempList.add(listOfBooks.get(i));
+        for (Book book : listOfBooks) {
+            tempList.add(book);
             j++;
             if (j == 2) {
                 mainList.add(new ArrayList<>(tempList));
