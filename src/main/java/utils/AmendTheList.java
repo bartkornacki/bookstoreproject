@@ -72,8 +72,6 @@ public class AmendTheList {
             } while (id > listOfCategories.size() || id < 0);
 
             if (id != listOfCategories.size()) {
-
-                int priority = listOfCategories.get(id).getPriority();
                 System.out.println("Please provide new name of the category:");
                 String name = in.next();
 
@@ -123,13 +121,19 @@ public class AmendTheList {
             } while (listTypeID > 4 || listTypeID < 1);
             switch (listTypeID) {
                 case 1:
+                    System.out.println("Please choose the ID:");
                     listOfBooks.forEach(x -> System.out.println(x.getId() + ": " + x.getTitle()));
+                    listOfBooks.remove(getIDToBeDelete());
                     break;
                 case 2:
+                    System.out.println("Please choose the ID:");
                     listOfAuthors.forEach(x -> System.out.println(x.getId() + ": " + x.getName()));
+                    listOfAuthors.remove(getIDToBeDelete());
                     break;
                 case 3:
+                    System.out.println("Please choose the ID:");
                     listOfCategories.forEach(x -> System.out.println(x.getId() + ": " + x.getName()));
+                    listOfCategories.remove(getIDToBeDelete());
                     break;
                 case 4:
                     break;
@@ -139,5 +143,17 @@ public class AmendTheList {
             System.out.println("The chosen action is incorrect.");
         }
         return false;
+    }
+
+    private int getIDToBeDelete() {
+        Scanner scanner = null;
+        int insertedID = 0;
+        try {
+            scanner = new Scanner(System.in);
+            insertedID = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Number bitch!");
+        }
+        return insertedID;
     }
 }
