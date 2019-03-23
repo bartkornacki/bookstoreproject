@@ -59,7 +59,10 @@ public class DataToExternalFiles {
             String str = booksList
                     .stream()
                     .map(x -> x.getId() + ";" + x.getTitle() + ";" + x.getIsbnNumber() + ";"
-                    +x.getYear() + ";" + x.getBezel() + ";" + x.getAuthors() + ";" + x.getCategory())
+                    +x.getYear() + ";" + x.getBezel() + ";" +
+                            x.getAuthors().stream()
+                                    .map(author -> String.valueOf(author.getId())).collect(Collectors.joining(","))
+                            + ";" + x.getCategory().getId())
                     .collect(Collectors.joining("\n"));
 
             File file = new File(fileName);

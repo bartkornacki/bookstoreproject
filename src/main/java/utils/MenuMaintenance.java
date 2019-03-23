@@ -141,31 +141,39 @@ public class MenuMaintenance {
     }
 
     private void goodbye(boolean changeTracker) {
-        if (changeTracker == false) {
+        if (!changeTracker) {
             System.out.println("Goodbye.");
         } else {
-            System.out.println("Some changes were made. Do you want to save all modified lists to external files? (Y/N)");
-            Scanner scanner = new Scanner(System.in);
-            String action = "";
+            checkingWhetherChangesShouldBeSaved();
+        }
+    }
 
-            while (!(action.equalsIgnoreCase("n") || action.equalsIgnoreCase("y"))) {
-                action = scanner.next();
-                if (action.equalsIgnoreCase("n")) {
-                    System.out.println("Goodbye.");
-                } else if (action.equalsIgnoreCase("y")) {
-                    DataToExternalFiles dataToExternalFiles = new DataToExternalFiles();
-                    DataStorage dataStorage = new DataStorage();
-                    FileNamesMaintenance fileNamesMaintenance = new FileNamesMaintenance();
+    private void checkingWhetherChangesShouldBeSaved() {
+        System.out.println("Some changes were made. Do you want to save all modified lists to external files? (Y/N)");
+        Scanner scanner = new Scanner(System.in);
+        String action = "";
 
-                    dataToExternalFiles.writeCategoriesToFile(dataStorage.getListOfCategories(), fileNamesMaintenance.getFileCategories());
-                    dataToExternalFiles.writeAuthorsToFile(dataStorage.getListOfAuthors(), fileNamesMaintenance.getFileAuthors());
-                        dataToExternalFiles.writeBooksToFile(dataStorage.getListOfBooks(), fileNamesMaintenance.getFileBooks());
-
-                    System.out.println("Goodbye.");
-                } else {
-                    System.out.println("Please insert 'N' or 'Y'");
-                }
+        while (!(action.equalsIgnoreCase("n") || action.equalsIgnoreCase("y"))) {
+            action = scanner.next();
+            if (action.equalsIgnoreCase("n")) {
+                System.out.println("Goodbye.");
+            } else if (action.equalsIgnoreCase("y")) {
+                savingChangesToExternalFilesWhileExit();
+            } else {
+                System.out.println("Please insert 'N' or 'Y'");
             }
         }
+    }
+
+    private void savingChangesToExternalFilesWhileExit() {
+        DataToExternalFiles dataToExternalFiles = new DataToExternalFiles();
+        DataStorage dataStorage = new DataStorage();
+        FileNamesMaintenance fileNamesMaintenance = new FileNamesMaintenance();
+
+        dataToExternalFiles.writeCategoriesToFile(dataStorage.getListOfCategories(), fileNamesMaintenance.getFileCategories());
+        dataToExternalFiles.writeAuthorsToFile(dataStorage.getListOfAuthors(), fileNamesMaintenance.getFileAuthors());
+        dataToExternalFiles.writeBooksToFile(dataStorage.getListOfBooks(), fileNamesMaintenance.getFileBooks());
+
+        System.out.println("Goodbye.");
     }
 }
