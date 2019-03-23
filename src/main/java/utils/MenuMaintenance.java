@@ -110,8 +110,7 @@ public class MenuMaintenance {
                 dataPresenting.showBooks(bookFunctions.getBooksReleasedAfter2003stream(listOfBooks));
                 break;
             case 11:
-                extendTheList.changeCategoryName(listOfCategories);
-                changeTracker = true;
+                changeTracker = extendTheList.changeCategoryName(listOfCategories);
                 break;
             case 12:
                 dataPresenting.showBooks(bookFunctions.getBooksFromWzorce(listOfBooks));

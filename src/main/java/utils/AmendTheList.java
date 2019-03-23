@@ -58,7 +58,7 @@ public class AmendTheList {
         return listOfCategories.stream().mapToInt(x -> x.getId()).max().getAsInt() + 1;
     }
 
-    public void changeCategoryName(List<Category> listOfCategories) {
+    public boolean changeCategoryName(List<Category> listOfCategories) {
         Scanner in = new Scanner(System.in);
         int id = 0;
         try {
@@ -77,10 +77,12 @@ public class AmendTheList {
                 String name = in.next();
 
                 listOfCategories.get(id).setName(name);
+                return true;
             }
         } catch (InputMismatchException e) {
             System.out.println("The list of categories hasn't been modified, as unavailable option was chosen.");
         }
+        return false;
     }
 
     public boolean changeAuthorsAge(List<Author> listOfAuthors) {
