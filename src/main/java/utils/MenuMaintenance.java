@@ -50,6 +50,7 @@ public class MenuMaintenance {
         System.out.println("*\t\t15. Delete item\t\t\t\t\t\t\t\t\t\t\t*");
         System.out.println("*\t\t16. Save the data to external files\t\t\t\t\t\t*");
         System.out.println("*\t\t17. Modify author's name\t\t\t\t\t\t\t\t*");
+        System.out.println("*\t\t18. Choose book display method\t\t\t\t\t\t\t*");
         System.out.println("*\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t*");
         System.out.println("*****************************************************************\n");
     }
@@ -133,6 +134,9 @@ public class MenuMaintenance {
                 break;
             case 17:
                 changeTracker = true;
+                break;
+            case 18:
+                dataPresenting.chooseBookDisplayMethod();
                 break;
             default:
                 System.out.println("This option is unavailable");

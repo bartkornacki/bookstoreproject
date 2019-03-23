@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54879fbb-c701-400a-9cf2-77cf0fcf801c" name="Default Changelist" comment="Updated 2 out of 21 points.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/externalfilesmanagement/DataToExternalFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/externalfilesmanagement/DataToExternalFiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/DataPresenting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/DataPresenting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/authors.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/authors.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/books.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/authors.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/authors.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/books.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/externalFilesManagement/DataToExternalFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/externalFilesManagement/DataToExternalFiles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/MenuMaintenance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/MenuMaintenance.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,7 +30,7 @@
           <entry key="authorsTest" value="2" />
           <entry key="class" value="2" />
           <entry key="csv" value="87" />
-          <entry key="java" value="227" />
+          <entry key="java" value="229" />
           <entry key="txt" value="1" />
           <entry key="xml" value="7" />
         </counts>
@@ -45,7 +38,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="227" />
+          <entry key="JAVA" value="229" />
           <entry key="PLAIN_TEXT" value="90" />
           <entry key="XML" value="7" />
         </counts>
@@ -54,14 +47,14 @@
         <counts>
           <entry key="csv" value="21" />
           <entry key="dummy" value="37" />
-          <entry key="java" value="24402" />
+          <entry key="java" value="24970" />
           <entry key="txt" value="28" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="24402" />
+          <entry key="JAVA" value="24970" />
           <entry key="PLAIN_TEXT" value="86" />
           <entry key="XML" value="5" />
         </counts>
@@ -70,11 +63,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/bookstore/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2400">
-              <caret line="160" column="16" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="16" />
+            <state relative-caret-position="480">
+              <caret line="82" column="37" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/utils/DataPresenting.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -155,7 +172,6 @@
         <option value="$PROJECT_DIR$/src/main/java/model/Category.java" />
         <option value="$PROJECT_DIR$/src/main/java/externalFilesManagement/DataFromExternalFile.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/DataPresenting.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/ExtendTheList.java" />
         <option value="$PROJECT_DIR$/src/test/java/functions/BookFunctionsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/functions/BookFunctions.java" />
@@ -170,6 +186,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/books.csv" />
         <option value="$PROJECT_DIR$/src/main/java/externalfilesmanagement/DataToExternalFiles.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/DataPresenting.java" />
       </list>
     </option>
   </component>
@@ -328,7 +345,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553342101521" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553346169175" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
@@ -795,16 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bookstore/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/datastorage/DataStorage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -825,16 +832,6 @@
             <element signature="e#422#423#0" expanded="true" />
             <element signature="e#458#459#0" expanded="true" />
             <element signature="e#490#491#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/DataPresenting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -946,10 +943,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bookstore/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/MenuMaintenance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2400">
-          <caret line="160" column="16" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="16" />
+        <state relative-caret-position="480">
+          <caret line="82" column="37" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/DataPresenting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
